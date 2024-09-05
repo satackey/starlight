@@ -21,9 +21,9 @@ require (
 	// newer version causes issue #24
 	github.com/urfave/cli/v2 v2.3.0
 	go.etcd.io/bbolt v1.3.7
-	golang.org/x/net v0.23.0 // indirect
+	golang.org/x/net v0.24.0 // indirect
 	golang.org/x/sync v0.3.0
-	golang.org/x/sys v0.18.0
+	golang.org/x/sys v0.19.0
 	google.golang.org/grpc v1.58.3
 )
 
@@ -65,7 +65,7 @@ require (
 	github.com/moby/locker v1.0.1 // indirect
 	github.com/moby/sys/mountinfo v0.6.2 // indirect
 	github.com/moby/sys/signal v0.7.0 // indirect
-	github.com/opencontainers/runc v1.1.12 // indirect
+	github.com/opencontainers/runc v1.1.14 // indirect
 	github.com/opencontainers/selinux v1.10.1 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/vbauerster/mpb/v8 v8.4.0
