@@ -1,0 +1,53 @@
+Base Image,Command,Intermediate Dockerfile Command,Dockerfile URL
+node:lts,npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false,,https://github.com/ionic-team/ionic-cli/blob/fbeac60cdde6f6504900e9c403fa4e79528ca067/Dockerfile
+node:lts-bullseye-slim,apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*,,https://github.com/macbre/phantomas/blob/a37b0a36d80bf1455835878d00111797aeb5934a/Dockerfile
+node:lts-bullseye-slim,chown -R nobody:nogroup .,,https://github.com/macbre/phantomas/blob/a37b0a36d80bf1455835878d00111797aeb5934a/Dockerfile
+node:lts-bullseye-slim,npm ci,,https://github.com/macbre/phantomas/blob/a37b0a36d80bf1455835878d00111797aeb5934a/Dockerfile
+node:lts-bullseye-slim,"echo ""Chrome found in: "" $(find . -wholename '*chrome-linux64/chrome') && ln -s $(find . -wholename '*chrome-linux64/chrome') .",,https://github.com/macbre/phantomas/blob/a37b0a36d80bf1455835878d00111797aeb5934a/Dockerfile
+node:lts-bullseye-slim,ldd chrome && chrome --version,,https://github.com/macbre/phantomas/blob/a37b0a36d80bf1455835878d00111797aeb5934a/Dockerfile
+node:lts,npm install,"WORKDIR /app
+COPY package*.json ./",https://github.com/sullyo/prompt2ui/blob/333875ebfc68212e9d55d9ac430c8254dc75b5fd/dockerfile
+node:lts,npm run build,"WORKDIR /app
+COPY package*.json ./",https://github.com/sullyo/prompt2ui/blob/333875ebfc68212e9d55d9ac430c8254dc75b5fd/dockerfile
+node:lts,apt-get update && apt-get install -y python3-pip,,https://github.com/seokyim8/personal_website/blob/02d7d92492feac9161a7f4eac1bf508ae21b791e/DOCKERFILE
+node:lts,pip install --upgrade pip --break-system-packages,,https://github.com/seokyim8/personal_website/blob/02d7d92492feac9161a7f4eac1bf508ae21b791e/DOCKERFILE
+node:lts,pip install -r ./requirements.txt --break-system-packages,,https://github.com/seokyim8/personal_website/blob/02d7d92492feac9161a7f4eac1bf508ae21b791e/DOCKERFILE
+node:lts,npm install,,https://github.com/seokyim8/personal_website/blob/02d7d92492feac9161a7f4eac1bf508ae21b791e/DOCKERFILE
+node:lts-iron,npm install,"WORKDIR /gautam_saurav_ui_garden
+COPY package*.json ./",https://github.com/sgautam2-1/Assignment12/blob/e92f8d7f501cd0907ac86400c8b9933a235f5199/Dockerfile.org
+ubuntu:22.04 AS linux,"set -ex && apt-get update --fix-missing && apt-get install -qy --no-install-recommends ca-certificates tzdata locales procps net-tools file ocl-icd-libopencl1 clinfo && apt-get clean && rm -rf /var/lib/apt/lists/* && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 && echo ""$TZ"" > /etc/timezone",,https://github.com/spacemeshos/go-spacemesh/blob/3adf465d182f4d5c7291be8b2f85b79a07883ccf/Dockerfile
+ubuntu:22.04 AS linux,set -ex && apt-get update --fix-missing && apt-get install -qy --no-install-recommends unzip sudo ocl-icd-opencl-dev,,https://github.com/spacemeshos/go-spacemesh/blob/3adf465d182f4d5c7291be8b2f85b79a07883ccf/Dockerfile
+ubuntu:22.04 AS linux,make get-libs,,https://github.com/spacemeshos/go-spacemesh/blob/3adf465d182f4d5c7291be8b2f85b79a07883ccf/Dockerfile
+ubuntu:22.04 AS linux,"--mount=type=secret,id=mynetrc,dst=/root/.netrc go mod download",,https://github.com/spacemeshos/go-spacemesh/blob/3adf465d182f4d5c7291be8b2f85b79a07883ccf/Dockerfile
+ubuntu:22.04 AS linux,"--mount=type=cache,id=build,target=/root/.cache/go-build make build VERSION=${VERSION}",,https://github.com/spacemeshos/go-spacemesh/blob/3adf465d182f4d5c7291be8b2f85b79a07883ccf/Dockerfile
+ubuntu:22.04 AS linux,"--mount=type=cache,id=build,target=/root/.cache/go-build make gen-p2p-identity",,https://github.com/spacemeshos/go-spacemesh/blob/3adf465d182f4d5c7291be8b2f85b79a07883ccf/Dockerfile
+ubuntu:22.04 AS linux,"--mount=type=cache,id=build,target=/root/.cache/go-build make merge-nodes VERSION=${VERSION}",,https://github.com/spacemeshos/go-spacemesh/blob/3adf465d182f4d5c7291be8b2f85b79a07883ccf/Dockerfile
+ubuntu:22.04,apt-get update,,https://github.com/piyh/gitlab_docker_compose/blob/0fdb907c2e1a2aaf97830dc7ed430439473d299e/dockerfile
+ubuntu:22.04,apt-get install -y ca-certificates curl gnupg,,https://github.com/piyh/gitlab_docker_compose/blob/0fdb907c2e1a2aaf97830dc7ed430439473d299e/dockerfile
+ubuntu:22.04,install -m 0755 -d /etc/apt/keyrings,,https://github.com/piyh/gitlab_docker_compose/blob/0fdb907c2e1a2aaf97830dc7ed430439473d299e/dockerfile
+ubuntu:22.04,curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg,,https://github.com/piyh/gitlab_docker_compose/blob/0fdb907c2e1a2aaf97830dc7ed430439473d299e/dockerfile
+ubuntu:22.04,chmod a+r /etc/apt/keyrings/docker.gpg,,https://github.com/piyh/gitlab_docker_compose/blob/0fdb907c2e1a2aaf97830dc7ed430439473d299e/dockerfile
+ubuntu:22.04,"echo ""deb [arch=""$(dpkg --print-architecture)"" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu ""$(. /etc/os-release && echo ""$VERSION_CODENAME"")"" stable"" | tee /etc/apt/sources.list.d/docker.list > /dev/null",,https://github.com/piyh/gitlab_docker_compose/blob/0fdb907c2e1a2aaf97830dc7ed430439473d299e/dockerfile
+ubuntu:22.04,apt-get update,,https://github.com/piyh/gitlab_docker_compose/blob/0fdb907c2e1a2aaf97830dc7ed430439473d299e/dockerfile
+ubuntu:22.04,apt-get install -y --no-install-recommends docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin,,https://github.com/piyh/gitlab_docker_compose/blob/0fdb907c2e1a2aaf97830dc7ed430439473d299e/dockerfile
+ubuntu:22.04,wget -P /usr/src/ https://github.com/ndducnha/pqc_socrates/raw/main/server.py && wget -P /usr/src/ https://github.com/ndducnha/pqc_socrates/raw/main/client.py,,https://github.com/ndducnha/pqc_socrates/blob/7ef21ccb6ce1e04a62f105d2e2cbf4338eafcf72/Dockerfile.txt
+ubuntu:22.04,apt-get update && apt-get install -y tar wget bash rsync gcc libfreetype6-dev libhdf5-serial-dev libpng-dev libzmq3-dev unzip pkg-config software-properties-common graphviz git curl libgeos++-dev proj-data proj-bin libgeos-dev nodejs npm build-essential gcc python3-dev libffi-dev libssl-dev python3-pip openssh-server openssh-client tk -y,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tgz,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,tar -xf Python-${PYTHON_VERSION}.tgz,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,cd ./Python-${PYTHON_VERSION} && ./configure --prefix=/usr/local/python${PYTHON_VERSION} --enable-loadable-sqlite-extensions --enable-shared && make install,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,apt-get install -y openjdk-8-jdk && apt-get install -y ant && apt-get clean;,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,apt-get install ca-certificates-java && apt-get clean && update-ca-certificates -f;,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,export JAVA_HOME,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,"echo ""export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/"" >> ~/.bashrc",,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,pip3 install --upgrade pip,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,pip install jupyterlab notebook,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,wget ${url},,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,cat requirements.txt | xargs -n 1 pip install,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,jupyter lab build,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,jupyter labextension install @jupyter-widgets/jupyterlab-manager,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,rm -rf requirements.txt,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,pip install jupyter_contrib_nbextensions,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,jupyter contrib nbextension install --sys-prefix,,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,groupadd -g ${gid} ${group},,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile
+ubuntu:22.04,useradd -u ${uid} -g ${group} -s /bin/sh -m ${user},,https://github.com/Chrisebell24/setup/blob/2ee5c31fa4cf1c58e60021ec56f59d5e54a40d98/DockerFile

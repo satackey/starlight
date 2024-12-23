@@ -1,0 +1,47 @@
+Base Image,Command,Intermediate Dockerfile Command,Dockerfile URL
+node:lts,npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false,,https://github.com/ionic-team/ionic-cli/blob/fbeac60cdde6f6504900e9c403fa4e79528ca067/Dockerfile
+node:lts-bullseye-slim,apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*,,https://github.com/macbre/phantomas/blob/a37b0a36d80bf1455835878d00111797aeb5934a/Dockerfile
+node:lts,npm install,"WORKDIR /app
+COPY package*.json ./",https://github.com/sullyo/prompt2ui/blob/333875ebfc68212e9d55d9ac430c8254dc75b5fd/dockerfile
+node:lts,apt-get update && apt-get install -y python3-pip,,https://github.com/seokyim8/personal_website/blob/02d7d92492feac9161a7f4eac1bf508ae21b791e/DOCKERFILE
+node:lts-iron,npm install,"WORKDIR /gautam_saurav_ui_garden
+COPY package*.json ./",https://github.com/sgautam2-1/Assignment12/blob/e92f8d7f501cd0907ac86400c8b9933a235f5199/Dockerfile.org
+node:lts-bookworm-slim,chmod +x /tini,ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini,https://github.com/soruly/trace.moe-api/blob/3cee984190381d4f7b15f745f9c398fb1ce63bd8/Dockerfile
+node:lts as builder,npm install,"WORKDIR /app
+COPY package*.json ./",https://github.com/joheee/NetmanFrontend/blob/b02980e66f6c0747c78b7a38b16074c0d539aeb8/dockerfile
+node:lts As production,npm ci,"WORKDIR /usr/src/app
+COPY --chown=node:node package*.json ./",https://github.com/PedroH-Santos/api-gerenciador-financeiro/blob/2fd6e4819ed64f8a7548490f39b13d11c794b701/DockerFile
+node:lts-buster,addgroup docker --gid=${docker_gid};,,https://github.com/vuejsprojects/nhs-ui/blob/b64f4428773f210c5db1ec98c355198b6aebb53a/image-build/Dockerfile-jenkins
+node:lts-buster,yarn,"WORKDIR /usr/src/app
+COPY . .",https://github.com/crybapp/api/blob/39dd345ae808c6a25f9f49b8f7085371ab494327/Dockerfile
+node:lts,yarn install,"WORKDIR /app
+COPY . .",https://github.com/rdrumond33/CronJob-YoutubeApi/blob/bb053deb8f42131d4d6aea31728af7aa736fa9ac/dockerfile
+node:lts as builder,npm install --force && NODE_OPTIONS='--openssl-legacy-provider'  npm run build,"WORKDIR /app
+COPY . /app/",https://github.com/Edirom/CollAna/blob/ca2d89e2882032e359cc1f78b9705cab25af4999/Dockerfile
+node:lts-buster,apt-get update && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && npm i pm2 -g && rm -rf /var/lib/apt/lists/*,,https://github.com/Mrtrier/TRIER_V1/blob/35d9e5af698d225b2a0db19ae17522bfc3716f9e/Dockerfile.txt
+node:lts,npm install,"WORKDIR /app
+COPY ./package*.json ./",https://github.com/aldy97/Budget-Planner/blob/b498445e46867fe6fe92ea29ffa369c4bf2d84e5/server/DockerFile
+node:lts,npm install,"WORKDIR /app
+COPY [""package.json"", ""package-lock.json*"", ""./""]",https://github.com/VirittamoHelsinki/tyoaikakirjaus/blob/7ead24455cdde9410b1a3b74feba97e1a0ce038b/dockerfile
+node:lts-stretch AS builder,yarn install,"WORKDIR /opt/build
+ADD . ./",https://github.com/BlueBrain/covid-19-find/blob/94c0a23e1e25cb9d2dad990cce8f17393c61194b/Dockerfile
+node:lts,yarn,"WORKDIR /usr/src/app
+COPY src/ /usr/src/app",https://github.com/KnightOrKnave/webAdminPortal/blob/112ff37bb14c7c9b58203e7a78686df58d646a33/DockerFIle
+node:lts,npm install pm2 -g,"WORKDIR /usr/src/app
+COPY ./package.json ./package.json",https://github.com/christianversloot/ts-express-pg-boilerplate/blob/2bee64b132946b5e8025b0610fdd9b5f8a3d911b/dockerfile
+node:lts-bullseye,set -ex && apt-get update && apt-get install -y --no-install-recommends libasound2 libatk-bridge2.0-0 libgtk-3-0 libnss3 libx11-xcb1 libxss1 libxtst6 && rm -rf /var/lib/apt/lists/*,,https://github.com/apache/hop-website/blob/d2035a60365e4cce9252034de1257c705a59f4f1/Dockerfile
+node:lts,npm install,"WORKDIR /app
+COPY ./package*.json /app",https://github.com/EldritchGriffin/ft_transcendence_dev/blob/c1411bdd8a44d69b92eda6dcdd1b48149dfc3bdf/dockerfile
+node:lts,npm install,"WORKDIR /usr/src/app
+COPY package*.json ./",https://github.com/YogaSakti/imageToSticker/blob/2462288f3b24db368d235c874a14da5e4c228a33/Dockerfile
+node:lts-slim,cargo build --release,"WORKDIR /app
+COPY . .",https://github.com/xoko14/shoudev/blob/7664965480b75f97a9d6ed766d0a21fd9cc0dade/Dockerfile
+node:lts-buster,apt-get update && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*,,https://github.com/itsmedell/GeneralBot/blob/387db70d95bb381d20ad6484525fe139e70d6ebb/Dockerfile
+node:lts-slim,echo 'Running chmod with perms' $perms,"WORKDIR /app
+ADD . /app",https://github.com/BwanaFr/photobooth-gallery/blob/45b1c490384ca261accc1fecf7d0adfd27d8332a/Dockerfile
+node:lts,mkdir -p $ROOT,,https://github.com/iamrickyspanish/mock-api/blob/7f5399bd97cb339e5b3260377fd2b0ce033a9a59/Dockerfile
+node:lts,npm install,"WORKDIR /app
+COPY package.json /app
+COPY package-lock.json /app",https://github.com/PttsDev/tesla-landing-clone/blob/616e2b6845d01d4643fe5747012dd55e6637cf9d/Dockerfile
+node:lts,npm install,COPY . .,https://github.com/nesdufrik/demo-tour/blob/04c220107527d004887af36ab49a62f7e60fd020/Dockerfile
+node:lts-buster-slim AS base,apt update && apt install libssl-dev ca-certificates -y,,https://github.com/darkterminal/nast-starter-template/blob/86e41886e8e1eaf9c273cd8ad017e5b0dc4e7f57/Dockerfile

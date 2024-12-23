@@ -6,8 +6,8 @@ GitHub Dockerfile Analyzer
 その中で使用されているコマンドを抽出・分析するツールです。
 
 主な機能:
-- GitHubのCode Search APIを使用して `node:lts` イメージを使用している Dockerfile を検索
-- `node:lts-alpine` などの派生イメージは除外
+- GitHubのCode Search APIを使用して指定されたベースイメージを使用している Dockerfile を検索
+- `alpine` などの派生イメージは除外
 - Dockerfile内の RUN コマンドを抽出（複数行コマンドに対応）
 - 結果を2つのCSVファイルとして出力:
   1. 全てのコマンドを含むファイル
@@ -24,10 +24,13 @@ GitHub Dockerfile Analyzer
   2. 最初のコマンドのみ出力（--first-output）
 
 使用方法:
-$ python dockerfile_analyzer.py --all-output <全コマンド出力ファイル> --first-output <最初のコマンドのみ出力ファイル> [--count <処理件数>]
+$ python dockerfile_analyzer.py --all-output <全コマンド出力ファイル> --first-output <最初のコマンドのみ出力ファイル> --image <ベースイメージ> [--image <ベースイメージ>...] [--count <イメージごとの処理件数>]
 
 例:
-$ python dockerfile_analyzer.py --all-output dockerfile_commands.csv --first-output dockerfile_commands_first.csv --count 10
+$ python dockerfile_analyzer.py --all-output dockerfile_commands.csv --first-output dockerfile_commands_first.csv --image node:lts --image ubuntu:22.04 --count 10
+
+注: --count オプションで指定した件数は、各イメージごとの処理上限となります。
+例えば、--count 10 を指定すると、各イメージに対してそれぞれ最大10件のDockerfileを処理します。
 
 必要なパッケージ:
 - requests
@@ -215,11 +218,12 @@ def get_github_headers(check_rate_limit: bool = False) -> dict:
     
     return headers
 
-def search_dockerfiles(count: Optional[int] = None) -> List[dict]:
+def search_dockerfiles(target_image: str, count: Optional[int] = None) -> List[dict]:
     """
-    GitHubのAPIを使用してnode:ltsを使用しているDockerfileを検索
+    GitHubのAPIを使用して指定されたイメージを使用しているDockerfileを検索
     
     Args:
+        target_image: 検索対象のベースイメージ
         count: 取得する最大件数（指定がない場合は1ページ分のみ取得）
     """
     headers = get_github_headers(check_rate_limit=False)
@@ -234,8 +238,8 @@ def search_dockerfiles(count: Optional[int] = None) -> List[dict]:
     if count:
         max_pages = (count + items_per_page - 1) // items_per_page
     
-    query = 'FROM node:lts filename:Dockerfile -filename:*alpine*'
     base_url = "https://api.github.com/search/code"
+    query = f'FROM "{target_image}" filename:Dockerfile -alpine'
     
     while page <= max_pages:
         url = f"{base_url}?q={query}&per_page={items_per_page}&page={page}"
@@ -253,16 +257,7 @@ def search_dockerfiles(count: Optional[int] = None) -> List[dict]:
             total_count = data.get('total_count', 0)
             
             # 進捗状況を表示
-            print(f"ページ {page}/{max_pages} を処理中... ({len(all_items)}/{min(count or total_count, total_count)}件)")
-            
-            # 最初のページの場合はデバッグ情報を表示
-            # if page == 1 and items:
-            #     print("\nデバッグ情報: 最初のアイテムの構造")
-            #     first_item = items[0]
-            #     print("利用可能なフィールド:", first_item.keys())
-            #     print("URL:", first_item.get('url'))
-            #     print("SHA:", first_item.get('sha'))
-            #     print("リポジトリ情報:", first_item.get('repository', {}))
+            print(f"イメージ {target_image} - ページ {page}/{max_pages} を処理中... ({len(all_items)}/{min(count or total_count, total_count)}件)")
             
             # 指定された件数に達した場合は終了
             if count and len(all_items) >= count:
@@ -275,7 +270,7 @@ def search_dockerfiles(count: Optional[int] = None) -> List[dict]:
             raise Exception(f"GitHub APIへのリクエスト中にエラーが発生しました: {str(e)}")
     
     if not all_items:
-        print("警告: 検索条件に一致するDockerfileが見つかりませんでした")
+        print(f"警告: {target_image} に一致するDockerfileが見つかりませんでした")
     
     return all_items
 
@@ -306,17 +301,21 @@ def get_dockerfile_content(url: str, headers: dict) -> str:
     except Exception as e:
         raise Exception(f"Dockerfileの取得中にエラーが発生しました: {str(e)}")
 
-def parse_dockerfile(content: str) -> Tuple[bool, str, List[str], List[str]]:
+def parse_dockerfile(content: str, target_image: str) -> Tuple[bool, str, List[str], List[str]]:
     """
-    Dockerfileをパースしてnode:ltsの使用を確認し、ベースイメージ、中間コマンド、RUNコマンドを抽出
+    Dockerfileをパースして指定されたベースイメージの使用を確認し、ベースイメージ、中間コマンド、RUNコマンドを抽出
+    
+    Args:
+        content: Dockerfileの内容
+        target_image: 検索対象のベースイメージ
     
     Returns:
-        Tuple[bool, str, List[str], List[str]]: (node:ltsを使用しているか, ベースイメージ, 中間コマンド, RUNコマンドのリスト)
+        Tuple[bool, str, List[str], List[str]]: (対象イメージを使用しているか, ベースイメージ, 中間コマンド, RUNコマンドのリスト)
     """
     lines = content.split('\n')
     run_commands = []
     intermediate_commands = []
-    uses_node_lts = False
+    uses_target_image = False
     base_image = ""
     current_command = ""
     found_from = False
@@ -336,10 +335,15 @@ def parse_dockerfile(content: str) -> Tuple[bool, str, List[str], List[str]]:
         # FROM命令を確認
         if line.startswith('FROM'):
             found_from = True
-            # node:lts-alpine は除外
-            if 'node:lts' in line and 'alpine' not in line:
-                uses_node_lts = True
-                base_image = line[5:].strip()
+            image_part = line[5:].strip()
+            # "as" が含まれている場合は削除（大文字小文字を区別しない）
+            if ' as ' in image_part.lower():
+                image_part = image_part.split(' as ', maxsplit=1)[0].strip()
+            
+            # 指定されたイメージと一致するか確認
+            if target_image in image_part and 'alpine' not in image_part:
+                uses_target_image = True
+                base_image = image_part
         
         # 中間コマンドを処理（FROM と最初のRUNの間）
         elif found_from and not found_run and line.startswith(('COPY', 'WORKDIR', 'ADD')):
@@ -366,7 +370,7 @@ def parse_dockerfile(content: str) -> Tuple[bool, str, List[str], List[str]]:
                 run_commands.append(current_command)
                 current_command = ""
                 
-    return uses_node_lts, base_image, intermediate_commands, run_commands
+    return uses_target_image, base_image, intermediate_commands, run_commands
 
 def main():
     """
@@ -379,21 +383,12 @@ def main():
     parser.add_argument('--all-output', required=True, help='全コマンドを出力するCSVファイルのパス')
     parser.add_argument('--first-output', required=True, help='最初のコマンドのみを出力するCSVファイルのパス')
     parser.add_argument('--count', type=int, help='処理するDockerfileの上限数')
+    parser.add_argument('--image', action='append', required=True, help='検索対象のベースイメージ（複数指定可）')
     args = parser.parse_args()
 
     try:
         # 初回のみレート制限をチェック
         headers = get_github_headers(check_rate_limit=True)
-        
-        print("GitHubからDockerfileを検索中...")
-        dockerfiles = search_dockerfiles(count=args.count)
-        total_files = len(dockerfiles)
-        print(f"検索結果: {total_files}件のDockerfileを処理します")
-        
-        processed = 0
-        success_all = 0
-        success_first = 0
-        errors = 0
         
         # 結果を保存するCSVファイルを開く
         with open(args.all_output, 'w', newline='', encoding='utf-8') as f_all, \
@@ -405,55 +400,89 @@ def main():
             writer_all.writerow(['Base Image', 'Command', 'Intermediate Dockerfile Command', 'Dockerfile URL'])
             writer_first.writerow(['Base Image', 'Command', 'Intermediate Dockerfile Command', 'Dockerfile URL'])
             
-            for i, dockerfile in enumerate(dockerfiles, 1):
-                try:
-                    raw_url = dockerfile['url']
-                    repo_name = dockerfile['repository']['full_name']
-                    print(f"処理中 ({i}/{total_files}): {permalink}")
-                    
-                    # URLからrefパラメータを抽出してコミットSHAを取得
-                    parsed_url = urlparse(dockerfile['url'])
-                    query_params = dict(pair.split('=') for pair in parsed_url.query.split('&') if pair)
-                    commit_sha = query_params.get('ref', '')
-                    
-                    if not commit_sha:
-                        raise Exception("コミットSHAの取得に失敗しました")
-                    
-                    # GitHubの正しいパーマリンク形式を使用
-                    permalink = f"https://github.com/{repo_name}/blob/{commit_sha}/{dockerfile['path']}"
-                    
-                    # Dockerfileの内容を取得（レート制限チェックなし）
-                    content = get_dockerfile_content(raw_url, get_github_headers(check_rate_limit=False))
-                    
-                    # Dockerfileをパース
-                    uses_node_lts, base_image, intermediate_commands, commands = parse_dockerfile(content)
-                    
-                    # 中間コマンドを文字列に結合（改行を\nで表現）
-                    intermediate_str = '\n'.join(intermediate_commands) if intermediate_commands else ''
-                    
-                    # node:ltsを使用している場合のみ結果を出力
-                    if uses_node_lts and commands:
-                        # 全てのコマンドを出力
-                        for command in commands:
-                            writer_all.writerow([base_image, command, intermediate_str, permalink])
-                            success_all += 1
+            total_processed = 0
+            total_success_all = 0
+            total_success_first = 0
+            total_errors = 0
+            
+            # 各イメージに対して処理を実行
+            for target_image in args.image:
+                print(f"\nイメージ {target_image} の検索を開始...")
+                
+                # 各イメージごとに指定された件数まで処理
+                dockerfiles = search_dockerfiles(target_image, count=args.count)
+                total_files = len(dockerfiles)
+                print(f"検索結果: {total_files}件のDockerfileを処理します")
+                
+                processed = 0
+                success_all = 0
+                success_first = 0
+                errors = 0
+                
+                for i, dockerfile in enumerate(dockerfiles, 1):
+                    try:
+                        raw_url = dockerfile['url']
+                        repo_name = dockerfile['repository']['full_name']
                         
-                        # 最初のコマンドのみを出力
-                        writer_first.writerow([base_image, commands[0], intermediate_str, permalink])
-                        success_first += 1
-                    
-                    processed += 1
-                    
-                except Exception as e:
-                    print(f"エラー: {str(e)}")
-                    errors += 1
-                    continue
-        
-        print("\n処理完了:")
-        print(f"- 処理したDockerfile: {processed}/{total_files}")
-        print(f"- 抽出した全コマンド数: {success_all}")
-        print(f"- 抽出した最初のコマンド数: {success_first}")
-        print(f"- エラー数: {errors}")
+                        # URLからrefパラメータを抽出してコミットSHAを取得
+                        parsed_url = urlparse(dockerfile['url'])
+                        query_params = dict(pair.split('=') for pair in parsed_url.query.split('&') if pair)
+                        commit_sha = query_params.get('ref', '')
+                        
+                        if not commit_sha:
+                            raise Exception("コミットSHAの取得に失敗しました")
+                        
+                        # GitHubの正しいパーマリンク形式を使用
+                        permalink = f"https://github.com/{repo_name}/blob/{commit_sha}/{dockerfile['path']}"
+
+                        print(f"処理中 ({i}/{total_files}): {permalink}")
+                        
+                        # Dockerfileの内容を取得（レート制限チェックなし）
+                        content = get_dockerfile_content(raw_url, get_github_headers(check_rate_limit=False))
+                        
+                        # Dockerfileをパース
+                        uses_target_image, base_image, intermediate_commands, commands = parse_dockerfile(content, target_image)
+                        
+                        # 中間コマンドを文字列に結合（改行を\nで表現）
+                        intermediate_str = '\n'.join(intermediate_commands) if intermediate_commands else ''
+                        
+                        # 指定されたイメージを使用している場合のみ結果を出力
+                        if uses_target_image and commands:
+                            # 全てのコマンドを出力
+                            for command in commands:
+                                writer_all.writerow([base_image, command, intermediate_str, permalink])
+                                success_all += 1
+                            
+                            # 最初のコマンドのみを出力
+                            writer_first.writerow([base_image, commands[0], intermediate_str, permalink])
+                            success_first += 1
+                        
+                        processed += 1
+                        
+                    except Exception as e:
+                        print(f"エラー: {str(e)}")
+                        errors += 1
+                        continue
+                
+                # イメージごとの集計を表示
+                print(f"\nイメージ {target_image} の処理完了:")
+                print(f"- 処理したDockerfile: {processed}/{total_files}")
+                print(f"- 抽出した全コマンド数: {success_all}")
+                print(f"- 抽出した最初のコマンド数: {success_first}")
+                print(f"- エラー数: {errors}")
+                
+                # 全体の集計に加算
+                total_processed += processed
+                total_success_all += success_all
+                total_success_first += success_first
+                total_errors += errors
+            
+            # 全体の集計を表示
+            print("\n全体の処理完了:")
+            print(f"- 処理したDockerfile: {total_processed}")
+            print(f"- 抽出した全コマンド数: {total_success_all}")
+            print(f"- 抽出した最初のコマンド数: {total_success_first}")
+            print(f"- エラー数: {total_errors}")
         
     except Exception as e:
         print(f"致命的なエラーが発生しました: {str(e)}")
