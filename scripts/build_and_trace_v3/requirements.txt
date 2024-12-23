@@ -13,7 +13,6 @@ colorlog>=6.7.0
 # 型チェック
 mypy>=1.0.0
 types-aiofiles>=23.1.0
-types-colorlog>=6.7.0
 
 # テスト
 pytest>=7.0.0

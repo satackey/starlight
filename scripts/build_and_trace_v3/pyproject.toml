@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "build_and_trace_v3"
+version = "0.1.0"
+description = "A sample Python package"
+
+[tool.setuptools]
+packages = ["executors", "processors"]
