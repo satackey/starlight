@@ -17,7 +17,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from build_and_trace_v3.main import (
+from build_and_trace.main import (
     parse_args,
     read_urls_from_csv,
     process_dockerfiles,
@@ -121,7 +121,7 @@ class TestProcessDockerfiles:
         ]
         
         # BatchDockerfileProcessorをモック
-        with patch('build_and_trace_v3.main.BatchDockerfileProcessor') as mock_processor:
+        with patch('build_and_trace.main.BatchDockerfileProcessor') as mock_processor:
             processor_instance = mock_processor.return_value
             processor_instance.process_dockerfiles = AsyncMock()
             
@@ -151,7 +151,7 @@ class TestMain:
         # コマンドライン引数をモック
         with patch('sys.argv', ['script.py', str(csv_path)]):
             # 処理をモック
-            with patch('build_and_trace_v3.main.process_dockerfiles') as mock_process:
+            with patch('build_and_trace.main.process_dockerfiles') as mock_process:
                 mock_process.return_value = None
                 
                 # 実行
@@ -205,7 +205,7 @@ class TestMain:
         # コマンドライン引数をモック
         with patch('sys.argv', ['script.py', str(csv_path)]):
             # 処理中にKeyboardInterruptを発生させる
-            with patch('build_and_trace_v3.main.process_dockerfiles', side_effect=KeyboardInterrupt):
+            with patch('build_and_trace.main.process_dockerfiles', side_effect=KeyboardInterrupt):
                 caplog.set_level(logging.INFO)
                 
                 # 実行

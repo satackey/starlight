@@ -14,8 +14,8 @@ from typing import List
 
 import pytest
 
-from build_and_trace_v3.executors.buildctl import BuildctlExecutor, BuildOptions
-from build_and_trace_v3.executors.base import CommandError
+from build_and_trace.executors.buildctl import BuildctlExecutor, BuildOptions
+from build_and_trace.executors.base import CommandError
 
 class TestBuildOptions:
     """BuildOptionsのテスト"""

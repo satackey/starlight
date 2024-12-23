@@ -14,7 +14,7 @@ from typing import AsyncGenerator, Generator
 import pytest
 from _pytest.logging import LogCaptureFixture
 
-from build_and_trace_v3.utils.logging import setup_logging
+from build_and_trace.utils.logging import setup_logging
 
 # テスト用の一時ディレクトリ
 @pytest.fixture

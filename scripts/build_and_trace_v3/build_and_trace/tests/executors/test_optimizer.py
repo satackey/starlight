@@ -10,7 +10,7 @@ OptimizerExecutorの機能テスト。
 
 import pytest
 
-from build_and_trace_v3.executors.optimizer import (
+from build_and_trace.executors.optimizer import (
     OptimizerExecutor,
     OptimizerOptions,
     OptimizerAction,

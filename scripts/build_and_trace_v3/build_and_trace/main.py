@@ -16,8 +16,8 @@ import sys
 from pathlib import Path
 from typing import List, Optional
 
-from processors.dockerfile import BatchDockerfileProcessor
-from utils.logging import setup_logging, get_logger
+from .processors.dockerfile import BatchDockerfileProcessor
+from .utils.logging import setup_logging, get_logger
 
 logger = get_logger()
 

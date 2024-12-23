@@ -14,7 +14,7 @@ from typing import List, Optional
 
 import pytest
 
-from build_and_trace_v3.utils.async_helpers import (
+from build_and_trace.utils.async_helpers import (
     AsyncTimeout,
     with_timeout,
     RetryPolicy,

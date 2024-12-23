@@ -15,12 +15,12 @@ from typing import List
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
 
-from build_and_trace_v3.processors.dockerfile import (
+from build_and_trace.processors.dockerfile import (
     DockerfileProcessor,
     BatchDockerfileProcessor,
     DockerfileInfo
 )
-from build_and_trace_v3.executors.base import CommandError
+from build_and_trace.executors.base import CommandError
 
 class TestDockerfileInfo:
     """DockerfileInfoのテスト"""

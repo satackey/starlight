@@ -15,7 +15,7 @@ from typing import List
 
 import pytest
 
-from build_and_trace_v3.executors.base import BaseExecutor, CommandError, ExecutionResult
+from build_and_trace.executors.base import BaseExecutor, CommandError, ExecutionResult
 
 class TestExecutor(BaseExecutor):
     """テスト用のExecutor実装"""

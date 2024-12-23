@@ -17,7 +17,7 @@ from typing import List, Dict, Any
 import pytest
 from _pytest.logging import LogCaptureFixture
 
-from build_and_trace_v3.utils.logging import (
+from build_and_trace.utils.logging import (
     setup_logging,
     get_logger,
     ContextLogger,

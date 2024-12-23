@@ -16,7 +16,7 @@ from typing import Generator
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
 
-from build_and_trace_v3.processors.github import (
+from build_and_trace.processors.github import (
     GitHubManager,
     GitHubRepository,
     RepositoryInfo,
