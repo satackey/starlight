@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# 最新バージョンをダウンロード
+export BUILDKIT_VERSION=v0.18.2  # 最新バージョンに適宜更新してください
+wget https://github.com/moby/buildkit/releases/download/${BUILDKIT_VERSION}/buildkit-${BUILDKIT_VERSION}.linux-amd64.tar.gz
+
+# 解凍してインストール
+tar xzvf buildkit-${BUILDKIT_VERSION}.linux-amd64.tar.gz
+sudo mv bin/buildctl /usr/local/bin/
+sudo chmod +x /usr/local/bin/buildctl
