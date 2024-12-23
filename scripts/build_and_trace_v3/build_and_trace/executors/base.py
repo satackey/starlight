@@ -166,6 +166,9 @@ class BaseExecutor(ABC):
         cmd = self._build_command(**kwargs)
         start_time = time.time()
         
+        # コマンドをログ出力
+        logger.info(f"Executing command: {' '.join(cmd)}")
+        
         try:
             # プロセス作成
             self.process = await asyncio.create_subprocess_exec(

@@ -87,7 +87,7 @@ class BuildctlExecutor(BaseExecutor):
             "sudo", self.buildctl_path, "build",
             # フロントエンド設定
             f"--frontend={options.frontend}",
-            "--frontend-opt", f"filename={options.dockerfile_name}",
+            # "--frontend-opt", f"filename={options.dockerfile_name}",
             
             # コンテキストとDockerfile
             f"--local=context={options.context_dir}",

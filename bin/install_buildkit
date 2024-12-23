@@ -1,10 +1,57 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
+script_dir=$(dirname ${BASH_SOURCE[0]})
 # 最新バージョンをダウンロード
 export BUILDKIT_VERSION=v0.18.2  # 最新バージョンに適宜更新してください
-wget https://github.com/moby/buildkit/releases/download/${BUILDKIT_VERSION}/buildkit-${BUILDKIT_VERSION}.linux-amd64.tar.gz
+
+download_dir=$script_dir/downloads
+mkdir -p $download_dir
+buildkit_tgz=$download_dir/buildkit-${BUILDKIT_VERSION}.linux-amd64.tar.gz
+buildkit_dir=$download_dir/buildkit-${BUILDKIT_VERSION}
+
+# if already exists, skip downloading
+if [ ! -f $buildkit_tgz ]; then
+    wget https://github.com/moby/buildkit/releases/download/${BUILDKIT_VERSION}/buildkit-${BUILDKIT_VERSION}.linux-amd64.tar.gz \
+    -O $buildkit_tgz
+fi
 
 # 解凍してインストール
-tar xzvf buildkit-${BUILDKIT_VERSION}.linux-amd64.tar.gz
-sudo mv bin/buildctl /usr/local/bin/
+mkdir -p $buildkit_dir
+tar -C $buildkit_dir -xzf $buildkit_tgz
+sudo cp -f $buildkit_dir/bin/* /usr/local/bin/
 sudo chmod +x /usr/local/bin/buildctl
+
+# buildkitd.toml 設定ファイルを作成
+echo "Creating buildkitd.toml configuration..."
+sudo mkdir -p /etc/buildkit
+sudo bash -c 'cat > /etc/buildkit/buildkitd.toml << EOF
+[worker.containerd]
+address = "/run/containerd/containerd.sock"
+EOF'
+
+# systemd サービスファイルの作成
+echo "Creating systemd service..."
+sudo bash -c 'cat > /etc/systemd/system/buildkitd.service << EOF
+[Unit]
+Description=BuildKit Daemon
+After=containerd.service
+Requires=containerd.service
+
+[Service]
+ExecStart=/usr/local/bin/buildkitd --config /etc/buildkit/buildkitd.toml
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+EOF'
+
+# systemd サービスのリロード、ビルドkitd サービスの有効化と起動
+echo "Enabling and starting buildkitd service..."
+sudo systemctl daemon-reload
+sudo systemctl enable buildkitd
+sudo systemctl start buildkitd
+
+# 完了メッセージ
+echo "BuildKit installation and setup completed!"

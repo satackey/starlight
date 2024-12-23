@@ -94,9 +94,10 @@ class OptimizerExecutor(BaseExecutor):
         if options.action == OptimizerAction.REPORT:
             cmd.extend(["report"])
         else:
+            cmd.extend(["optimizer"])
             if options.group_name:
                 cmd.extend(["--group", options.group_name])
-            cmd.extend(["optimizer", options.action.name.lower()])
+            cmd.extend([options.action.name.lower()])
         
         return cmd
     

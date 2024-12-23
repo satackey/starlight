@@ -148,7 +148,11 @@ class GitHubRepository:
         # レート制限を考慮
         await self.rate_limiter.wait()
         
-        repo_path = os.path.join(work_dir, self.info.repo)
+        # .cloned_reposディレクトリを作成
+        clone_dir = os.path.join(work_dir, '.cloned_repos')
+        os.makedirs(clone_dir, exist_ok=True)
+        
+        repo_path = os.path.join(clone_dir, self.info.repo)
         logger.info(f"Cloning repository: {self.info.clone_url}")
         
         try:
