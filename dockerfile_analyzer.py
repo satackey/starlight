@@ -1,17 +1,70 @@
+"""
+GitHub Dockerfile Analyzer
+-------------------------
+
+このスクリプトは、GitHubのパブリックリポジトリから特定の条件に合うDockerfileを検索し、
+その中で使用されているコマンドを抽出・分析するツールです。
+
+主な機能:
+- GitHubのCode Search APIを使用して `node:lts` イメージを使用している Dockerfile を検索
+- `node:lts-alpine` などの派生イメージは除外
+- Dockerfile内の RUN コマンドを抽出（複数行コマンドに対応）
+- 結果をCSVファイルとして出力
+
+出力形式:
+- CSV形式（2列）
+  - 列1: Dockerfileへのパーマリンク
+  - 列2: 抽出されたコマンド
+
+使用方法:
+$ python dockerfile_analyzer.py
+
+必要なパッケージ:
+- requests
+
+注意事項:
+1. GitHub APIの利用制限
+   - 認証なし: 60リクエスト/時
+   - 認証あり: 5000リクエスト/時
+2. 大量のDockerfileを分析する場合は、Personal Access Tokenの使用を推奨
+3. API制限に達した場合は適切なエラーメッセージが表示されます
+
+環境変数:
+GITHUB_TOKEN - GitHub Personal Access Token（オプション）
+
+Author: [作成者名]
+Created: [作成日]
+License: [ライセンス]
+"""
+
 import requests
 import csv
 import re
 from typing import List, Tuple
 from urllib.parse import urljoin
 
+def get_github_headers() -> dict:
+    """
+    GitHub APIリクエスト用のヘッダーを生成
+    環境変数GITHUB_TOKENが設定されている場合は認証ヘッダーを追加
+    """
+    import os
+    
+    headers = {
+        "Accept": "application/vnd.github.v3+json"
+    }
+    
+    token = os.getenv('GITHUB_TOKEN')
+    if token:
+        headers["Authorization"] = f"token {token}"
+    
+    return headers
+
 def search_dockerfiles() -> List[dict]:
     """
     GitHubのAPIを使用してnode:ltsを使用しているDockerfileを検索
     """
-    headers = {
-        "Accept": "application/vnd.github.v3+json",
-        # 必要に応じてGitHub Personal Access Tokenを追加
-    }
+    headers = get_github_headers()
     
     query = 'FROM node:lts filename:Dockerfile -filename:*alpine*'
     url = f"https://api.github.com/search/code?q={query}&per_page=100"
@@ -104,7 +157,7 @@ def main():
                 )
                 
                 # Dockerfileの内容を取得
-                content = get_dockerfile_content(raw_url, {})
+                content = get_dockerfile_content(raw_url, get_github_headers())
                 
                 # Dockerfileをパース
                 uses_node_lts, commands = parse_dockerfile(content)
