@@ -58,6 +58,15 @@ python -m build_and_trace_v3 <csv_file> [options]
 - `--log-dir PATH`: ログ出力ディレクトリ
 - `--log-level LEVEL`: ログレベル（DEBUG/INFO/WARNING/ERROR/CRITICAL）
 
+3. optimizerの制御：
+```bash
+# optimizerの開始
+sudo ctr-starlight --group <group_name> optimizer on
+
+# optimizerの停止
+sudo ctr-starlight --group <group_name> optimizer off
+```
+
 ## 開発
 
 1. テストの実行：

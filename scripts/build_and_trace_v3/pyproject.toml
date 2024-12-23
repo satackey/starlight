@@ -11,3 +11,6 @@ dependencies = []
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["build_and_trace*"]
+
+[project.scripts]
+build_and_trace = "build_and_trace.main:main"
