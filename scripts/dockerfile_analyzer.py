@@ -14,18 +14,20 @@ GitHub Dockerfile Analyzer
   2. 各Dockerfileの最初のコマンドのみを含むファイル
 
 出力形式:
-- CSV形式（2列）
-  - 列1: Dockerfileへのパーマリンク
-  - 列2: 抽出されたコマンド
+- CSV形式（4列）
+  - 列1: Base Image
+  - 列2: Command
+  - 列3: Intermediate Dockerfile Command
+  - 列4: Dockerfile URL
 - 2種類の出力ファイル:
   1. 全コマンド出力（--all-output）
   2. 最初のコマンドのみ出力（--first-output）
 
 使用方法:
-$ python dockerfile_analyzer.py --all-output <全コマンド出力ファイル> --first-output <最初のコマンドのみ出力ファイル>
+$ python dockerfile_analyzer.py --all-output <全コマンド出力ファイル> --first-output <最初のコマンドのみ出力ファイル> [--count <処理件数>]
 
 例:
-$ python dockerfile_analyzer.py --all-output dockerfile_commands.csv --first-output dockerfile_commands_first.csv
+$ python dockerfile_analyzer.py --all-output dockerfile_commands.csv --first-output dockerfile_commands_first.csv --count 10
 
 必要なパッケージ:
 - requests
@@ -49,8 +51,123 @@ License: [ライセンス]
 import requests
 import csv
 import re
-from typing import List, Tuple
-from urllib.parse import urljoin
+import os
+import json
+import sqlite3
+from datetime import datetime, timedelta
+from typing import List, Tuple, Optional, Dict, Any
+from urllib.parse import urljoin, urlparse
+
+class HttpCache:
+    """HTTPリクエストのキャッシュを管理するクラス"""
+    
+    def __init__(self, cache_dir: str = '.cache'):
+        """
+        Args:
+            cache_dir: キャッシュディレクトリのパス
+        """
+        self.cache_dir = cache_dir
+        os.makedirs(cache_dir, exist_ok=True)
+        self.db_path = os.path.join(cache_dir, 'http_cache.db')
+        self._init_db()
+    
+    def _init_db(self):
+        """データベースの初期化"""
+        with sqlite3.connect(self.db_path) as conn:
+            conn.execute('''
+                CREATE TABLE IF NOT EXISTS http_cache (
+                    url TEXT PRIMARY KEY,
+                    method TEXT,
+                    headers TEXT,
+                    response TEXT,
+                    timestamp DATETIME
+                )
+            ''')
+    
+    def get(self, url: str, headers: Optional[Dict] = None) -> Optional[Dict]:
+        """
+        キャッシュからレスポンスを取得
+        
+        Args:
+            url: リクエストURL
+            headers: リクエストヘッダー
+        
+        Returns:
+            キャッシュされたレスポンス（なければNone）
+        """
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.execute(
+                'SELECT response, timestamp FROM http_cache WHERE url = ? AND headers = ?',
+                (url, json.dumps(headers or {}))
+            )
+            row = cursor.fetchone()
+            
+            if row:
+                response_data, timestamp = row
+                cached_time = datetime.fromisoformat(timestamp)
+                # 7日以内のキャッシュのみ有効
+                if datetime.now() - cached_time < timedelta(days=7):
+                    return json.loads(response_data)
+        return None
+    
+    def set(self, url: str, headers: Optional[Dict], response_data: Dict):
+        """
+        レスポンスをキャッシュに保存
+        
+        Args:
+            url: リクエストURL
+            headers: リクエストヘッダー
+            response_data: レスポンスデータ
+        """
+        with sqlite3.connect(self.db_path) as conn:
+            conn.execute(
+                'INSERT OR REPLACE INTO http_cache (url, method, headers, response, timestamp) VALUES (?, ?, ?, ?, ?)',
+                (
+                    url,
+                    'GET',
+                    json.dumps(headers or {}),
+                    json.dumps(response_data),
+                    datetime.now().isoformat()
+                )
+            )
+
+# グローバルなキャッシュインスタンス
+http_cache = HttpCache()
+
+def cached_request(url: str, headers: Optional[Dict] = None) -> Dict:
+    """
+    キャッシュを考慮したHTTPリクエスト
+    
+    Args:
+        url: リクエストURL
+        headers: リクエストヘッダー
+    
+    Returns:
+        レスポンスデータ
+    """
+    # キャッシュをチェック
+    cached_response = http_cache.get(url, headers)
+    if cached_response:
+        return cached_response
+    
+    # キャッシュがない場合は実際にリクエスト
+    response = requests.get(url, headers=headers)
+    
+    if response.status_code == 403:
+        rate_limit = response.headers.get('X-RateLimit-Remaining', '不明')
+        reset_time = response.headers.get('X-RateLimit-Reset', '不明')
+        raise Exception(f"GitHub APIのレート制限に達しました。\n"
+                      f"残りリクエスト数: {rate_limit}\n"
+                      f"リセット時刻: {reset_time}")
+    elif response.status_code != 200:
+        raise Exception(f"APIエラー: ステータスコード {response.status_code}\n"
+                      f"レスポンス: {response.text}")
+    
+    # レスポンスをキャッシュ
+    response_data = response.json()
+    http_cache.set(url, headers, response_data)
+    
+    return response_data
 
 def get_github_headers(check_rate_limit: bool = False) -> dict:
     """
@@ -60,10 +177,6 @@ def get_github_headers(check_rate_limit: bool = False) -> dict:
     Args:
         check_rate_limit: レート制限をチェックするかどうか
     """
-    import os
-    from datetime import datetime, timezone
-    import time
-    
     headers = {
         "Accept": "application/vnd.github.v3+json"
     }
@@ -71,7 +184,7 @@ def get_github_headers(check_rate_limit: bool = False) -> dict:
     token = os.getenv('GITHUB_TOKEN')
     if token:
         headers["Authorization"] = f"token {token}"
-        print("GitHub Personal Access Tokenが設定されています（5000リクエスト/時）")
+        # print("GitHub Personal Access Tokenが設定されています（5000リクエスト/時）")
     else:
         print("警告: GitHub Personal Access Tokenが設定されていません（60リクエスト/時）")
         print("環境変数GITHUB_TOKENを設定することで制限を緩和できます")
@@ -80,108 +193,118 @@ def get_github_headers(check_rate_limit: bool = False) -> dict:
         # レート制限の確認
         check_url = "https://api.github.com/rate_limit"
         try:
-            response = requests.get(check_url, headers=headers)
-            if response.status_code == 200:
-                data = response.json()
-                remaining = data['resources']['search']['remaining']
-                reset_timestamp = data['resources']['search']['reset']
-                
-                # UTCからローカル時間に変換
-                reset_time = datetime.fromtimestamp(reset_timestamp, timezone.utc).astimezone()
-                
-                print(f"APIレート制限情報:")
-                print(f"- 残りのリクエスト数: {remaining}")
-                print(f"- 制限リセット時刻: {reset_time.strftime('%Y-%m-%d %H:%M:%S')}")
-                
-                # 制限に近い場合は警告
-                if remaining < 10:
-                    print(f"警告: APIリクエスト数が残り{remaining}回です")
-                    reset_wait = reset_timestamp - time.time()
-                    if reset_wait > 0:
-                        print(f"制限リセットまであと約{int(reset_wait/60)}分です")
+            data = cached_request(check_url, headers)
+            remaining = data['resources']['search']['remaining']
+            reset_timestamp = data['resources']['search']['reset']
+            
+            # UTCからローカル時間に変換
+            reset_time = datetime.fromtimestamp(reset_timestamp).astimezone()
+            
+            print(f"APIレート制限情報:")
+            print(f"- 残りのリクエスト数: {remaining}")
+            print(f"- 制限リセット時刻: {reset_time.strftime('%Y-%m-%d %H:%M:%S')}")
+            
+            # 制限に近い場合は警告
+            if remaining < 10:
+                print(f"警告: APIリクエスト数が残り{remaining}回です")
+                reset_wait = reset_timestamp - int(datetime.now().timestamp())
+                if reset_wait > 0:
+                    print(f"制限リセットまであと約{int(reset_wait/60)}分です")
         except Exception as e:
             print(f"APIレート制限情報の取得に失敗しました: {str(e)}")
     
     return headers
 
-def search_dockerfiles() -> List[dict]:
+def search_dockerfiles(count: Optional[int] = None) -> List[dict]:
     """
     GitHubのAPIを使用してnode:ltsを使用しているDockerfileを検索
+    
+    Args:
+        count: 取得する最大件数（指定がない場合は1ページ分のみ取得）
     """
     headers = get_github_headers(check_rate_limit=False)
+    all_items = []
+    page = 1
+    
+    # 1ページあたり100件
+    items_per_page = 100
+    
+    # 必要なページ数を計算（countが指定されている場合）
+    max_pages = 1
+    if count:
+        max_pages = (count + items_per_page - 1) // items_per_page
     
     query = 'FROM node:lts filename:Dockerfile -filename:*alpine*'
-    url = f"https://api.github.com/search/code?q={query}&per_page=100"
+    base_url = "https://api.github.com/search/code"
     
-    try:
-        response = requests.get(url, headers=headers)
-        
-        if response.status_code == 403:
-            rate_limit = response.headers.get('X-RateLimit-Remaining', '不明')
-            reset_time = response.headers.get('X-RateLimit-Reset', '不明')
-            raise Exception(f"GitHub APIのレート制限に達しました。\n"
-                          f"残りリクエスト数: {rate_limit}\n"
-                          f"リセット時刻: {reset_time}")
-        elif response.status_code != 200:
-            raise Exception(f"GitHub APIエラー: ステータスコード {response.status_code}\n"
-                          f"レスポンス: {response.text}")
-        
-        data = response.json()
-        if 'items' not in data:
-            raise Exception(f"予期しないAPIレスポンス形式です: {data}")
+    while page <= max_pages:
+        url = f"{base_url}?q={query}&per_page={items_per_page}&page={page}"
+        try:
+            data = cached_request(url, headers)
             
-        if len(data['items']) == 0:
-            print("警告: 検索条件に一致するDockerfileが見つかりませんでした")
-        
-        # レスポンスの構造を確認
-        if data['items'] and len(data['items']) > 0:
-            print("\nデバッグ情報: 最初のアイテムの構造")
-            first_item = data['items'][0]
-            print("利用可能なフィールド:", first_item.keys())
-            print("URL:", first_item.get('url'))
-            print("SHA:", first_item.get('sha'))
-            print("リポジトリ情報:", first_item.get('repository', {}))
+            if 'items' not in data:
+                raise Exception(f"予期しないAPIレスポンス形式です: {data}")
+                
+            items = data['items']
+            if not items:
+                break
+                
+            all_items.extend(items)
+            total_count = data.get('total_count', 0)
             
-        return data['items']
-        
-    except requests.exceptions.RequestException as e:
-        raise Exception(f"GitHub APIへのリクエスト中にエラーが発生しました: {str(e)}")
+            # 進捗状況を表示
+            print(f"ページ {page}/{max_pages} を処理中... ({len(all_items)}/{min(count or total_count, total_count)}件)")
+            
+            # 最初のページの場合はデバッグ情報を表示
+            # if page == 1 and items:
+            #     print("\nデバッグ情報: 最初のアイテムの構造")
+            #     first_item = items[0]
+            #     print("利用可能なフィールド:", first_item.keys())
+            #     print("URL:", first_item.get('url'))
+            #     print("SHA:", first_item.get('sha'))
+            #     print("リポジトリ情報:", first_item.get('repository', {}))
+            
+            # 指定された件数に達した場合は終了
+            if count and len(all_items) >= count:
+                all_items = all_items[:count]  # 指定件数でカット
+                break
+                
+            page += 1
+            
+        except Exception as e:
+            raise Exception(f"GitHub APIへのリクエスト中にエラーが発生しました: {str(e)}")
+    
+    if not all_items:
+        print("警告: 検索条件に一致するDockerfileが見つかりませんでした")
+    
+    return all_items
 
 def get_dockerfile_content(url: str, headers: dict) -> str:
     """
     指定されたURLからDockerfileの内容を取得してデコード
+    
+    Args:
+        url: DockerfileのURL
+        headers: リクエストヘッダー
     """
     import base64
     
     try:
-        response = requests.get(url, headers=headers)
+        data = cached_request(url, headers)
         
-        if response.status_code == 403:
-            raise Exception("Dockerfileの取得に失敗しました: アクセス権限がありません")
-        elif response.status_code == 404:
-            raise Exception("Dockerfileの取得に失敗しました: ファイルが見つかりません")
-        elif response.status_code != 200:
-            raise Exception(f"Dockerfileの取得に失敗しました: ステータスコード {response.status_code}\n"
-                          f"レスポンス: {response.text}")
-        
-        try:
-            data = response.json()
-            if 'content' not in data:
-                raise Exception(f"予期しないAPIレスポンス形式です: {data}")
-                
-            # GitHubのAPIはbase64エンコードされたコンテンツを返すのでデコード
-            content = data['content']
-            try:
-                decoded_content = base64.b64decode(content).decode('utf-8')
-                return decoded_content
-            except Exception as e:
-                raise Exception(f"コンテンツのデコードに失敗しました: {str(e)}")
-                
-        except ValueError as e:
-            raise Exception(f"JSONのパースに失敗しました: {str(e)}")
+        if 'content' not in data:
+            raise Exception(f"予期しないAPIレスポンス形式です: {data}")
             
-    except requests.exceptions.RequestException as e:
-        raise Exception(f"Dockerfileの取得中にネットワークエラーが発生しました: {str(e)}")
+        # GitHubのAPIはbase64エンコードされたコンテンツを返すのでデコード
+        content = data['content']
+        try:
+            decoded_content = base64.b64decode(content).decode('utf-8')
+            return decoded_content
+        except Exception as e:
+            raise Exception(f"コンテンツのデコードに失敗しました: {str(e)}")
+            
+    except Exception as e:
+        raise Exception(f"Dockerfileの取得中にエラーが発生しました: {str(e)}")
 
 def parse_dockerfile(content: str) -> Tuple[bool, str, List[str], List[str]]:
     """
@@ -255,6 +378,7 @@ def main():
     parser = argparse.ArgumentParser(description='Dockerfile解析ツール')
     parser.add_argument('--all-output', required=True, help='全コマンドを出力するCSVファイルのパス')
     parser.add_argument('--first-output', required=True, help='最初のコマンドのみを出力するCSVファイルのパス')
+    parser.add_argument('--count', type=int, help='処理するDockerfileの上限数')
     args = parser.parse_args()
 
     try:
@@ -262,9 +386,9 @@ def main():
         headers = get_github_headers(check_rate_limit=True)
         
         print("GitHubからDockerfileを検索中...")
-        dockerfiles = search_dockerfiles()
+        dockerfiles = search_dockerfiles(count=args.count)
         total_files = len(dockerfiles)
-        print(f"検索結果: {total_files}件のDockerfileが見つかりました")
+        print(f"検索結果: {total_files}件のDockerfileを処理します")
         
         processed = 0
         success_all = 0
@@ -274,8 +398,8 @@ def main():
         # 結果を保存するCSVファイルを開く
         with open(args.all_output, 'w', newline='', encoding='utf-8') as f_all, \
              open(args.first_output, 'w', newline='', encoding='utf-8') as f_first:
-            writer_all = csv.writer(f_all)
-            writer_first = csv.writer(f_first)
+            writer_all = csv.writer(f_all, quoting=csv.QUOTE_MINIMAL, escapechar='\\')
+            writer_first = csv.writer(f_first, quoting=csv.QUOTE_MINIMAL, escapechar='\\')
             
             # ヘッダー行を書き込む
             writer_all.writerow(['Base Image', 'Command', 'Intermediate Dockerfile Command', 'Dockerfile URL'])
@@ -285,13 +409,12 @@ def main():
                 try:
                     raw_url = dockerfile['url']
                     repo_name = dockerfile['repository']['full_name']
-                    print(f"\n処理中 ({i}/{total_files}): {repo_name}")
+                    print(f"処理中 ({i}/{total_files}): {permalink}")
                     
                     # URLからrefパラメータを抽出してコミットSHAを取得
-                    from urllib.parse import urlparse, parse_qs
                     parsed_url = urlparse(dockerfile['url'])
-                    query_params = parse_qs(parsed_url.query)
-                    commit_sha = query_params.get('ref', [''])[0]
+                    query_params = dict(pair.split('=') for pair in parsed_url.query.split('&') if pair)
+                    commit_sha = query_params.get('ref', '')
                     
                     if not commit_sha:
                         raise Exception("コミットSHAの取得に失敗しました")
@@ -305,8 +428,8 @@ def main():
                     # Dockerfileをパース
                     uses_node_lts, base_image, intermediate_commands, commands = parse_dockerfile(content)
                     
-                    # 中間コマンドを文字列に結合
-                    intermediate_str = '; '.join(intermediate_commands) if intermediate_commands else ''
+                    # 中間コマンドを文字列に結合（改行を\nで表現）
+                    intermediate_str = '\n'.join(intermediate_commands) if intermediate_commands else ''
                     
                     # node:ltsを使用している場合のみ結果を出力
                     if uses_node_lts and commands:
