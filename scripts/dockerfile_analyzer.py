@@ -9,15 +9,23 @@ GitHub Dockerfile Analyzer
 - GitHubのCode Search APIを使用して `node:lts` イメージを使用している Dockerfile を検索
 - `node:lts-alpine` などの派生イメージは除外
 - Dockerfile内の RUN コマンドを抽出（複数行コマンドに対応）
-- 結果をCSVファイルとして出力
+- 結果を2つのCSVファイルとして出力:
+  1. 全てのコマンドを含むファイル
+  2. 各Dockerfileの最初のコマンドのみを含むファイル
 
 出力形式:
 - CSV形式（2列）
   - 列1: Dockerfileへのパーマリンク
   - 列2: 抽出されたコマンド
+- 2種類の出力ファイル:
+  1. 全コマンド出力（--all-output）
+  2. 最初のコマンドのみ出力（--first-output）
 
 使用方法:
-$ python dockerfile_analyzer.py
+$ python dockerfile_analyzer.py --all-output <全コマンド出力ファイル> --first-output <最初のコマンドのみ出力ファイル>
+
+例:
+$ python dockerfile_analyzer.py --all-output dockerfile_commands.csv --first-output dockerfile_commands_first.csv
 
 必要なパッケージ:
 - requests
@@ -34,6 +42,7 @@ GITHUB_TOKEN - GitHub Personal Access Token（オプション）
 
 Author: [作成者名]
 Created: [作成日]
+Updated: 2023-12-23 - 2つのCSVファイル出力機能を追加
 License: [ライセンス]
 """
 
@@ -229,6 +238,14 @@ def main():
     """
     メイン処理
     """
+    import argparse
+
+    # コマンドライン引数の設定
+    parser = argparse.ArgumentParser(description='Dockerfile解析ツール')
+    parser.add_argument('--all-output', required=True, help='全コマンドを出力するCSVファイルのパス')
+    parser.add_argument('--first-output', required=True, help='最初のコマンドのみを出力するCSVファイルのパス')
+    args = parser.parse_args()
+
     try:
         # 初回のみレート制限をチェック
         headers = get_github_headers(check_rate_limit=True)
@@ -239,13 +256,19 @@ def main():
         print(f"検索結果: {total_files}件のDockerfileが見つかりました")
         
         processed = 0
-        success = 0
+        success_all = 0
+        success_first = 0
         errors = 0
         
         # 結果を保存するCSVファイルを開く
-        with open('dockerfile_commands.csv', 'w', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow(['Dockerfile URL', 'Command'])
+        with open(args.all_output, 'w', newline='', encoding='utf-8') as f_all, \
+             open(args.first_output, 'w', newline='', encoding='utf-8') as f_first:
+            writer_all = csv.writer(f_all)
+            writer_first = csv.writer(f_first)
+            
+            # ヘッダー行を書き込む
+            writer_all.writerow(['Dockerfile URL', 'Command'])
+            writer_first.writerow(['Dockerfile URL', 'Command'])
             
             for i, dockerfile in enumerate(dockerfiles, 1):
                 try:
@@ -272,10 +295,15 @@ def main():
                     uses_node_lts, commands = parse_dockerfile(content)
                     
                     # node:ltsを使用している場合のみ結果を出力
-                    if uses_node_lts:
+                    if uses_node_lts and commands:
+                        # 全てのコマンドを出力
                         for command in commands:
-                            writer.writerow([permalink, command])
-                            success += 1
+                            writer_all.writerow([permalink, command])
+                            success_all += 1
+                        
+                        # 最初のコマンドのみを出力
+                        writer_first.writerow([permalink, commands[0]])
+                        success_first += 1
                     
                     processed += 1
                     
@@ -286,7 +314,8 @@ def main():
         
         print("\n処理完了:")
         print(f"- 処理したDockerfile: {processed}/{total_files}")
-        print(f"- 抽出したコマンド数: {success}")
+        print(f"- 抽出した全コマンド数: {success_all}")
+        print(f"- 抽出した最初のコマンド数: {success_first}")
         print(f"- エラー数: {errors}")
         
     except Exception as e:

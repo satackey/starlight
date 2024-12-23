@@ -1,0 +1,40 @@
+Dockerfile URL,Command
+https://github.com/maxbotmd/MAXBOT-MD/blob/f8c6543d032c6f8dd1264cf53dd8646ccd39f62c/Dockerfile.txt,apt-get update && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+https://github.com/YogaSakti/imageToSticker/blob/2462288f3b24db368d235c874a14da5e4c228a33/Dockerfile,npm install
+https://github.com/Mrtrier/TRIER_V1/blob/35d9e5af698d225b2a0db19ae17522bfc3716f9e/Dockerfile.txt,apt-get update && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && npm i pm2 -g && rm -rf /var/lib/apt/lists/*
+https://github.com/sgautam2-1/Assignment12/blob/e92f8d7f501cd0907ac86400c8b9933a235f5199/Dockerfile.org,npm install
+https://github.com/DEVMOI/RogueIO/blob/9c388050812d24e3e77933daf1c0e9bab8670a75/Dockerfile,npm i -g nodemon
+https://github.com/HisokaLabs/hisoka-waweb.js/blob/d826ead1f8538117062903c0401be13f99aa6b2a/Dockerfile,apt-get update && apt-get install -y ffmpeg chromium webp && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+https://github.com/TungLe0319/DontTrustSkinnyCooks/blob/47cd826b88f3d5529e90e024d8723be159ccbfcd/dockerfile,npm i -g pnpm
+https://github.com/vhs/SpaceBus/blob/29cd56b417863f29f7ccbf0d8ec39cee2fabf0ae/Dockerfile,yarn install
+https://github.com/Whynot830/whynotpc-svelte/blob/1f35adb8229fabba8822a4f26446d9556a85bd4d/dockerfile,rm -rf node_modules
+https://github.com/cedlerouge/mydocs/blob/28231331341af866772d0f3ebd15bf542ac708b4/Dockerfile,npm install
+https://github.com/jarierca/GameVaultFront/blob/6e83b48bb549fb79d4d1d009f037d6e02b40e547/dockerfile,npm cache clean --force
+https://github.com/SimDaeSoo/develop-story/blob/fe4a74af41d643d553845f8ba673211fc5ebddff/dockerfile,yarn install && yarn build
+https://github.com/gojnimer-wedding/invitation-frontend/blob/eb9bc4fdf1279e4d8b8e14ad274ec367a660d046/Dockerfile,yarn install --frozen-lockfile
+https://github.com/martibobby/bobbymartin.dev/blob/5c95342c8f68db95fa7646c5817898b256f322c3/Dockerfile,npm i
+https://github.com/SwiftFiddle/swiftregex/blob/4e2bdd7df721d52a129af5e5b257d725a689c2ff/Dockerfile,"echo ""@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_TOKEN}"" > ./.npmrc && npm ci && rm -f ./.npmrc"
+https://github.com/joheee/NetmanFrontend/blob/b02980e66f6c0747c78b7a38b16074c0d539aeb8/dockerfile,npm install
+https://github.com/Tristan-Muggridge/pafin-code-challenge/blob/3957fa1ffa499035a19cebdb7d020c58151df4f7/dockerfile,npm ci
+https://github.com/adr1enbe4udou1n/nestjs-realworld-example-app/blob/82069881bffb1c10627b121d5bc03016ecf3ddae/Dockerfile,apt-get update && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
+https://github.com/jobscale/kabuka/blob/3595232f036316486d9b932365ee183738899dec/Dockerfile,npm i --omit=dev
+https://github.com/lucaslopezf/insta-api/blob/eaee51666e0667b279ee9159dab8582e42f0f570/Dockerfile,npm install
+https://github.com/lizheming/wxhermit/blob/42f9ef17ca1a5b0fd000024fe6463f7082635d69/Dockerfile,npm install --production
+https://github.com/jtamminga/jotto_multi/blob/a120505bd868b1bc800cad2014be4d8592e5f917/Dockerfile,yarn set version 4.1.1
+https://github.com/solarwinds/nova/blob/8b204787472ab46c146c6ac3c7f3d3e742956280/Dockerfile,apt-get update && apt-get -y install git curl wget nano vim procps sudo xvfb
+https://github.com/maswadkar/crm/blob/0ad13d0e27382458d29654363318a732efad61e3/Dockerfile,npm install
+https://github.com/halkeye/example-express-websocket/blob/3a1d7ac1d94f517151d09514482fec0a642a6a63/Dockerfile,NODE_ENV=development npm install
+https://github.com/Eren-Nevin/AWS-Change-IP/blob/7d92f5ed4c4528a9779f052c0d4afcf2c1c79462/aws-rotation/Dockerfile,npm install
+https://github.com/jobscale/certbot/blob/b31d35f01f2459a5c0915563518db01c3a233c7d/Dockerfile,apt-get update && apt-get install -y --no-install-recommends curl git vim zip unzip tree tmux openssh-client iproute2 dnsutils iputils-ping ncat netcat-openbsd procps bc certbot && rm -fr /var/lib/apt/lists/*
+https://github.com/csprance/next-smrt/blob/9bd5cc2cad5f96d42867c7931b85446695f46979/Dockerfile,mkdir /app
+https://github.com/PerwiraKusuma111/hiso/blob/d43d64f36d574d080116ca52fcbb016a0b132fa4/Dockerfile,apt-get update -y && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+https://github.com/China-bellabe/Shadow-Md/blob/febab3f46dfa29e424eac1d9326385e1b874cb0d/Dockerfile,apt-get update && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && npm i pm2 -g && rm -rf /var/lib/apt/lists/*
+https://github.com/thiagodeev/stellar-learning/blob/561230c6bac28da44169597f219931e1c409ab2b/Dockerfile,npm ci --omit=dev && npm cache clean --force
+https://github.com/blastmotion/docker-tools-devops/blob/f1d926c263cff0d9fe2ebad9ee900ae38b134349/Dockerfile,apt-get update && apt-get -y install --no-install-recommends apt-utils 2>&1
+https://github.com/michaelc143/personal-angular-site/blob/9f5d316e3370100137c7ebd2235e17c43faa709c/Dockerfile,npm install -g @angular/cli
+https://github.com/BOTCAHX/Recode-Hyzer-Md/blob/f245984eb387be7f7eed093755fb85e1938405f6/Dockerfile,apt-get update && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+https://github.com/Helio609/chatgpt-api-nest/blob/58b80061879cdafacda9b52866dcf70727c40c0c/Dockerfile,npm install --production
+https://github.com/RealOrangeOne/web-rng/blob/72aa499f7d27ab83acc75c36e39ca79c0d1af9be/Dockerfile,npm ci
+https://github.com/ZennoLab/capmonstercloud-docs/blob/08085cbc92bcf6bc4b58893965714716b3d83c66/Dockerfile,npm install
+https://github.com/delbaze/demo_ci_back/blob/c689c7af3ad5c19f7961713d28ef8c0660a4a786/Dockerfile,mkdir app
+https://github.com/atsarouchas/Movie-List/blob/0d2524e0e186c3b550a6ccb28c5ea1f3531f597c/Dockerfile,npm install
