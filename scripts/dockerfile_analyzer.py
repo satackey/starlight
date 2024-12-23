@@ -183,17 +183,21 @@ def get_dockerfile_content(url: str, headers: dict) -> str:
     except requests.exceptions.RequestException as e:
         raise Exception(f"Dockerfileの取得中にネットワークエラーが発生しました: {str(e)}")
 
-def parse_dockerfile(content: str) -> Tuple[bool, List[str]]:
+def parse_dockerfile(content: str) -> Tuple[bool, str, List[str], List[str]]:
     """
-    Dockerfileをパースしてnode:ltsの使用を確認し、RUNコマンドを抽出
+    Dockerfileをパースしてnode:ltsの使用を確認し、ベースイメージ、中間コマンド、RUNコマンドを抽出
     
     Returns:
-        Tuple[bool, List[str]]: (node:ltsを使用しているか, RUNコマンドのリスト)
+        Tuple[bool, str, List[str], List[str]]: (node:ltsを使用しているか, ベースイメージ, 中間コマンド, RUNコマンドのリスト)
     """
     lines = content.split('\n')
     run_commands = []
+    intermediate_commands = []
     uses_node_lts = False
+    base_image = ""
     current_command = ""
+    found_from = False
+    found_run = False
     
     for line in lines:
         line = line.strip()
@@ -208,12 +212,19 @@ def parse_dockerfile(content: str) -> Tuple[bool, List[str]]:
             
         # FROM命令を確認
         if line.startswith('FROM'):
+            found_from = True
             # node:lts-alpine は除外
             if 'node:lts' in line and 'alpine' not in line:
                 uses_node_lts = True
+                base_image = line[5:].strip()
+        
+        # 中間コマンドを処理（FROM と最初のRUNの間）
+        elif found_from and not found_run and line.startswith(('COPY', 'WORKDIR', 'ADD')):
+            intermediate_commands.append(line.strip())
                 
         # RUN命令を処理
-        if line.startswith('RUN'):
+        elif line.startswith('RUN'):
+            found_run = True
             current_command = line[3:].strip()
             # バックスラッシュで終わる場合は継続
             if current_command.endswith('\\'):
@@ -232,7 +243,7 @@ def parse_dockerfile(content: str) -> Tuple[bool, List[str]]:
                 run_commands.append(current_command)
                 current_command = ""
                 
-    return uses_node_lts, run_commands
+    return uses_node_lts, base_image, intermediate_commands, run_commands
 
 def main():
     """
@@ -267,8 +278,8 @@ def main():
             writer_first = csv.writer(f_first)
             
             # ヘッダー行を書き込む
-            writer_all.writerow(['Dockerfile URL', 'Command'])
-            writer_first.writerow(['Dockerfile URL', 'Command'])
+            writer_all.writerow(['Base Image', 'Command', 'Intermediate Dockerfile Command', 'Dockerfile URL'])
+            writer_first.writerow(['Base Image', 'Command', 'Intermediate Dockerfile Command', 'Dockerfile URL'])
             
             for i, dockerfile in enumerate(dockerfiles, 1):
                 try:
@@ -292,17 +303,20 @@ def main():
                     content = get_dockerfile_content(raw_url, get_github_headers(check_rate_limit=False))
                     
                     # Dockerfileをパース
-                    uses_node_lts, commands = parse_dockerfile(content)
+                    uses_node_lts, base_image, intermediate_commands, commands = parse_dockerfile(content)
+                    
+                    # 中間コマンドを文字列に結合
+                    intermediate_str = '; '.join(intermediate_commands) if intermediate_commands else ''
                     
                     # node:ltsを使用している場合のみ結果を出力
                     if uses_node_lts and commands:
                         # 全てのコマンドを出力
                         for command in commands:
-                            writer_all.writerow([permalink, command])
+                            writer_all.writerow([base_image, command, intermediate_str, permalink])
                             success_all += 1
                         
                         # 最初のコマンドのみを出力
-                        writer_first.writerow([permalink, commands[0]])
+                        writer_first.writerow([base_image, commands[0], intermediate_str, permalink])
                         success_first += 1
                     
                     processed += 1
