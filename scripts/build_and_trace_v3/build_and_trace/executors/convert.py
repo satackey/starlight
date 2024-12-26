@@ -62,14 +62,19 @@ class ConvertExecutor(BaseExecutor):
         
         cmd = ["sudo", self.ctr_starlight_path, "convert"]
         
-        if options.insecure_destination:
-            cmd.append("--insecure-destination")
+        # if options.insecure_destination:
+        #     cmd.append("--insecure-destination")
+
+        # とりあえず 常に insecure にしておく
+        cmd.append("--insecure-destination")
         
         if options.notify:
             cmd.append("--notify")
         
         # if options.profile:
         #     cmd.extend(["--profile", options.profile])
+
+        # とりあえず 常に myproxy にしておく
         cmd.extend(["--profile", "myproxy"])
         
         cmd.extend(["--platform", options.platform])
