@@ -101,7 +101,15 @@ class BaseExecutor(ABC):
                 await self._handle_output(text, stream_type)
                 
                 # ログ出力
-                if stream_type == "stderr":
+                # buildctlの進捗情報とエラーを区別
+                if stream_type == "stderr" and any(pattern in text.lower() for pattern in [
+                    "error:", 
+                    "failed:", 
+                    "fatal:", 
+                    "panic:", 
+                    "] err",  # buildctlの一般的なエラーパターン
+                    "unable to resolve"
+                ]):
                     logger.error(text)
                 else:
                     logger.info(text)
