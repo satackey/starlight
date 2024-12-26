@@ -61,6 +61,19 @@ def parse_args() -> argparse.Namespace:
         help='ログレベル（デフォルト: INFO）'
     )
     
+    parser.add_argument(
+        '--profile',
+        type=str,
+        help='Starlightプロファイル名（例：myproxy）'
+    )
+    
+    parser.add_argument(
+        '--registry',
+        type=str,
+        default='cloud.cluster.local:5000',
+        help='レジストリのアドレス（デフォルト: cloud.cluster.local:5000）'
+    )
+    
     return parser.parse_args()
 
 def read_urls_from_csv(csv_file: str) -> List[str]:
@@ -98,6 +111,8 @@ def read_urls_from_csv(csv_file: str) -> List[str]:
 async def process_dockerfiles(
     urls: List[str],
     concurrency: int,
+    profile: Optional[str] = None,
+    registry: str = "cloud.cluster.local:5000",
     log_dir: Optional[str] = None
 ) -> None:
     """
@@ -106,9 +121,14 @@ async def process_dockerfiles(
     Args:
         urls: Dockerfile URLのリスト
         concurrency: 同時処理数
+        profile: Starlightプロファイル名
         log_dir: ログ出力ディレクトリ
     """
-    processor = BatchDockerfileProcessor(concurrency=concurrency)
+    processor = BatchDockerfileProcessor(
+        concurrency=concurrency,
+        profile=profile,
+        registry=registry
+    )
     
     try:
         await processor.process_dockerfiles(urls)
@@ -141,6 +161,8 @@ async def main() -> None:
         await process_dockerfiles(
             urls=urls,
             concurrency=args.concurrency,
+            profile=args.profile,
+            registry=args.registry,
             log_dir=args.log_dir
         )
         

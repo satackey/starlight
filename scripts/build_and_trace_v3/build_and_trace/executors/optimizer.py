@@ -27,12 +27,10 @@ class OptimizerOptions:
     
     action: OptimizerAction
     group_name: Optional[str] = None
+    profile: Optional[str] = None
     
     def validate(self):
         """オプションの検証"""
-        if self.action == OptimizerAction.ON and not self.group_name:
-            raise ValueError("Group name is required for optimizer ON action")
-        
         if self.group_name:
             # グループ名の検証
             if not re.match(r'^[a-zA-Z0-9-]+$', self.group_name):
@@ -93,6 +91,8 @@ class OptimizerExecutor(BaseExecutor):
         
         if options.action == OptimizerAction.REPORT:
             cmd.extend(["report"])
+            if options.profile:
+                cmd.extend(["--profile", options.profile])
         else:
             cmd.extend(["optimizer"])
             if options.group_name:
@@ -147,14 +147,20 @@ class OptimizerExecutor(BaseExecutor):
         finally:
             self._current_group = None
     
-    async def report_traces(self) -> None:
+    async def report_traces(self, profile: Optional[str] = None) -> None:
         """
         トレースを報告
+        
+        Args:
+            profile: プロファイル名（例：myproxy）
         
         Raises:
             CommandError: コマンド実行に失敗した場合
         """
-        options = OptimizerOptions(action=OptimizerAction.REPORT)
+        options = OptimizerOptions(
+            action=OptimizerAction.REPORT,
+            profile=profile
+        )
         
         try:
             await self.execute(options=options)
