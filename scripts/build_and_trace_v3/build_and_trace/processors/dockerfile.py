@@ -22,6 +22,7 @@ import git
 from ..executors.buildctl import BuildctlExecutor, BuildOptions
 from ..executors.convert import ConvertExecutor
 from ..executors.optimizer import OptimizerExecutor
+from ..executors.pull import PullExecutor
 
 logger = logging.getLogger(__name__)
 
@@ -104,6 +105,7 @@ class DockerfileProcessor:
         self.buildctl = BuildctlExecutor()
         self.convert = ConvertExecutor()
         self.optimizer = OptimizerExecutor()
+        self.pull = PullExecutor()
         self.profile = profile
         self.registry = registry
     
@@ -248,11 +250,18 @@ class DockerfileProcessor:
                 )
                 
                 # 非同期コンテキストマネージャを使用
-                async with self.buildctl, self.optimizer:
+                async with self.buildctl, self.optimizer, self.pull:
                     # optimizerを開始（グループ名は任意）
                     await self.optimizer.start_optimizer(info.group_name if info.group_name else "default")
                     
                     try:
+                        # 変換したイメージをpull
+                        logger.info(f"Pulling image: {destination_image}")
+                        await self.pull.pull(
+                            image=destination_image,
+                            profile=self.profile
+                        )
+                        
                         # Dockerfileをビルド
                         await self.buildctl.build(
                             context_dir=os.path.dirname(dockerfile_path),

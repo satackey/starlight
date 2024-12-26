@@ -71,11 +71,11 @@ class ConvertExecutor(BaseExecutor):
         if options.notify:
             cmd.append("--notify")
         
-        # if options.profile:
-        #     cmd.extend(["--profile", options.profile])
+        if options.profile:
+            cmd.extend(["--profile", options.profile])
 
-        # とりあえず 常に myproxy にしておく
-        cmd.extend(["--profile", "myproxy"])
+        # # とりあえず 常に myproxy にしておく
+        # cmd.extend(["--profile", "myproxy"])
         
         cmd.extend(["--platform", options.platform])
         cmd.extend([options.source_image, options.destination_image])
