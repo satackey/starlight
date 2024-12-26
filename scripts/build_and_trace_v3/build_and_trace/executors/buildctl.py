@@ -8,11 +8,16 @@ buildctlコマンドの実行を管理するモジュール。
 - ビルド固有のエラーハンドリング
 """
 
+import asyncio
+import logging
 import os
+import time
 from dataclasses import dataclass
-from typing import Optional, List
+from typing import Optional, List, Dict
 
-from .base import BaseExecutor, CommandError
+from .base import BaseExecutor, CommandError, ExecutionResult
+
+logger = logging.getLogger(__name__)
 
 @dataclass
 class BuildOptions:
@@ -106,6 +111,79 @@ class BuildctlExecutor(BaseExecutor):
         ]
         
         return cmd
+    
+    async def execute(self, **kwargs) -> ExecutionResult:
+        """
+        コマンドを実行（環境変数を設定）
+        
+        Args:
+            **kwargs: コマンドのパラメータ
+            
+        Returns:
+            ExecutionResult: 実行結果
+            
+        Raises:
+            CommandError: コマンド実行に失敗した場合
+        """
+        # 現在の環境変数をコピー
+        env = os.environ.copy()
+        # CONTAINERD_SNAPSHOTTERを設定
+        env["CONTAINERD_SNAPSHOTTER"] = "starlight"
+        
+        start_time = time.time()
+        cmd = self._build_command(**kwargs)
+        logger.info(f"Executing command: {' '.join(cmd)}")
+        
+        try:
+            # プロセス作成（環境変数を設定）
+            self.process = await asyncio.create_subprocess_exec(
+                *cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                env=env  # 環境変数を渡す
+            )
+            
+            # 出力ストリームの処理を開始
+            stdout_task = asyncio.create_task(
+                self._stream_output(self.process.stdout, "stdout")
+            )
+            stderr_task = asyncio.create_task(
+                self._stream_output(self.process.stderr, "stderr")
+            )
+            
+            # プロセスの完了を待つ
+            return_code = await self.process.wait()
+            
+            # 出力の収集を完了
+            stdout_lines = await stdout_task
+            stderr_lines = await stderr_task
+            
+            duration = time.time() - start_time
+            
+            # 実行結果を作成
+            result = ExecutionResult(
+                return_code=return_code,
+                stdout=stdout_lines,
+                stderr=stderr_lines,
+                duration=duration,
+                command=' '.join(cmd)
+            )
+            
+            if not result.success:
+                raise CommandError(
+                    f"Command failed with return code {return_code}",
+                    result=result
+                )
+            
+            return result
+            
+        except asyncio.CancelledError:
+            await self.stop()
+            raise
+        
+        finally:
+            self.process = None
+            self._stop_event.clear()
     
     async def build(self, context_dir: str, dockerfile: str, **kwargs) -> None:
         """
