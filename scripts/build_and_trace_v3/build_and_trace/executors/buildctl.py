@@ -99,7 +99,7 @@ class BuildctlExecutor(BaseExecutor):
                        f"push={str(options.push).lower()}",
             
             # トレース設定
-            "--trace", f"mode={options.trace_mode}",
+            # "--trace", f"mode={options.trace_mode}",
             
             # 進捗表示
             f"--progress={options.progress}"
