@@ -308,10 +308,10 @@ class DockerfileProcessor:
                         
                         logger.info(f"Found RUN instruction: {run_cmd}")
                         
-                        # データディレクトリを作成（一時的なディレクトリ）
-                        data_dir = f"/tmp/test-{info.repo}-data"
-                        os.makedirs(data_dir, exist_ok=True)
-                        logger.info(f"Created data directory: {data_dir}")
+                        # # データディレクトリを作成（一時的なディレクトリ）
+                        # data_dir = f"/tmp/test-{info.repo}-data"
+                        # os.makedirs(data_dir, exist_ok=True)
+                        # logger.info(f"Created data directory: {data_dir}")
                         
                         try:
                             # コンテナを作成して起動
@@ -319,8 +319,8 @@ class DockerfileProcessor:
                                 image=destination_image,
                                 instance=f"{info.repo}-{info.sha[:7]}",  # リポジトリ名を含める
                                 command=run_cmd,  # 最初のRUN命令を使用
-                                mount_src=data_dir,
-                                mount_dst="/data",
+                                # mount_src=data_dir,
+                                # mount_dst="/data",
                                 env_file="../demo/config/all.env"
                             )
                             

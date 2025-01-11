@@ -189,6 +189,9 @@ class ContainerExecutor(BaseExecutor):
         
         start_time = time.time()
         cmd = self._build_command(action="create", options=options)
+        print("====================================")
+        print(cmd)
+        print("====================================")
         logger.info(f"Creating container: {' '.join(cmd)}")
         
         try:
