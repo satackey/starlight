@@ -65,8 +65,19 @@ def extract_repo_info(dockerfile_url: str) -> tuple:
         return parts[3], parts[4]
     return None, None
 
+STEP_COLUMNS = [
+    "Step1 convert",
+    "Step2 optimizer on",
+    "Step3 pull",
+    "Step4 create",
+    "Step5 start",
+    "Step6 remove",
+    "Step7 optimizer off",
+    "Step8 report"
+]
+
 def process_image(base_image, first_command, proxy_host, dockerfile_url):
-    """単一のイメージを処理し、トレースを収集する"""
+    step_results = {col: "" for col in STEP_COLUMNS}
     image_name = base_image.replace(":", "-").replace("/", "-")
     owner, repo = extract_repo_info(dockerfile_url)
     if owner and repo:
@@ -78,69 +89,105 @@ def process_image(base_image, first_command, proxy_host, dockerfile_url):
     
     print(f"\nProcessing image: {base_image}")
     
+    convert_cmd = f"sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 {base_image} {starlight_tag}"
+    pull_cmd = f"sudo ctr-starlight pull --profile myproxy {starlight_tag}"
+    
     try:
-        # もし starlight_tag イメージが存在する場合は、すでに処理済みとみなしてスキップ
-        if run_command(f"sudo ctr image ls | grep {starlight_tag}", allow_failure=True, shell=True) != 0:
-            # 1. イメージをStarlight形式に変換
-            print("Converting image to Starlight format...")
-            convert_cmd = f"sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 {base_image} {starlight_tag}"
-            run_command(convert_cmd, shell=True)
-            
-            # 2. オプティマイザーを有効化
-            print("Enabling optimizer...")
-            run_command("sudo ctr-starlight optimizer on")
-            
-            # 3. イメージをプル
-            print("Pulling image...")
-            pull_cmd = f"sudo ctr-starlight pull --profile myproxy {starlight_tag}"
-            run_command(pull_cmd, shell=True)
-        
-        # 4. コンテナを作成して実行
-        print("Creating and running container...")
-        container_name = f"trace-{image_name}-{starlight_tag.split(':')[-1]}"
-
-        # もし container_name がすでに存在する場合は削除
-        while run_command(f"sudo ctr task ps {container_name}", allow_failure=True) == 0:
+        # Step1～Step3: イメージが既にあれば "skipped", なければ実行
+        if run_command(f"sudo ctr image ls | grep {starlight_tag}", allow_failure=True, shell=True) == 0:
+            step_results["Step1 convert"] = "skipped"
+            step_results["Step2 optimizer on"] = "skipped"
+            step_results["Step3 pull"] = "skipped"
+        else:
+            # Step1 convert
             try:
-                run_command(f"sudo ctr container rm -f {container_name}")
+                run_command(convert_cmd, shell=True)
+                step_results["Step1 convert"] = "success"
+            except:
+                step_results["Step1 convert"] = "failure"
+                raise
+
+            # Step2 optimizer on
+            try:
+                run_command("sudo ctr-starlight optimizer on")
+                step_results["Step2 optimizer on"] = "success"
+            except:
+                step_results["Step2 optimizer on"] = "failure"
+                raise
+
+            # Step3 pull
+            try:
+                run_command(pull_cmd, shell=True)
+                step_results["Step3 pull"] = "success"
+            except:
+                step_results["Step3 pull"] = "failure"
+                raise
+        
+        # Step4 create
+        try:
+            print("Creating and running container...")
+            container_name = f"trace-{image_name}-{starlight_tag.split(':')[-1]}"
+            # 既に存在するコンテナがいれば削除
+            while run_command(f"sudo ctr task ps {container_name}", allow_failure=True) == 0:
+                try:
+                    run_command(f"sudo ctr container rm -f {container_name}")
+                except:
+                    pass
+            create_cmd = f"sudo ctr c create --snapshotter=starlight {starlight_tag} {container_name} sh -c {shlex.quote(first_command)}"
+            run_command(create_cmd, shell=True)
+            step_results["Step4 create"] = "success"
+        except:
+            step_results["Step4 create"] = "failure"
+            raise
+
+        # Step5 start
+        try:
+            start_cmd = f"sudo ctr task start {container_name}"
+            run_command(start_cmd, shell=True, timeout=30)
+            step_results["Step5 start"] = "success"
+        except:
+            step_results["Step5 start"] = "failure"
+            raise
+
+        # Step6 remove
+        try:
+            print("Stopping container...")
+            try:
+                run_command(f"sudo ctr task kill {container_name}")
             except:
                 pass
-            
-        # コンテナ作成
-        create_cmd = f"sudo ctr c create --snapshotter=starlight {starlight_tag} {container_name} sh -c {shlex.quote(first_command)}"
-        run_command(create_cmd, shell=True)
-        
-        # コンテナ起動
-        start_cmd = f"sudo ctr task start {container_name}"
-        run_command(start_cmd, shell=True, timeout=30)
-        
-        # コンテナを停止
-        print("Stopping container...")
-        try:
-            run_command(f"sudo ctr task kill {container_name}")
+            print("Removing container...")
+            run_command(f"sudo ctr container rm {container_name}", shell=True, allow_failure=True)
+            step_results["Step6 remove"] = "success"
         except:
-            pass
-        
-        # コンテナを削除
-        print("Removing container...")
-        try:
-            run_command(f"sudo ctr container rm {container_name}")
-        except:
-            pass
+            step_results["Step6 remove"] = "failure"
+            raise
 
-        # オプティマイザーを無効化
-        print("\nDisabling optimizer...")
-        run_command("sudo ctr-starlight optimizer off")
-        
-        # トレースをレポート
-        print("Reporting traces...")
-        run_command("sudo ctr-starlight report --profile myproxy")
+        # Step7 optimizer off
+        try:
+            print("\nDisabling optimizer...")
+            run_command("sudo ctr-starlight optimizer off")
+            step_results["Step7 optimizer off"] = "success"
+        except:
+            step_results["Step7 optimizer off"] = "failure"
+            raise
+
+        # Step8 report
+        try:
+            print("Reporting traces...")
+            run_command("sudo ctr-starlight report --profile myproxy")
+            step_results["Step8 report"] = "success"
+        except:
+            step_results["Step8 report"] = "failure"
+            raise
         
     except Exception as e:
         print(f"Error processing image {base_image}: {str(e)}")
-        return False
+        # 失敗ステップを "failure" とし、それ以降は空欄のまま
+        # すでに "skipped" or "success" のステップ以外は空欄のまま
+        return False, step_results
     
-    return True
+    return True, step_results
 
 def main():
     if len(sys.argv) != 3:
@@ -149,6 +196,8 @@ def main():
         
     csv_file = sys.argv[1]
     proxy_host = sys.argv[2]
+
+    start_datetime = time.strftime("%Y-%m-%d_%H%M%S")
     
     # CSVファイルを読み込む
     with open(csv_file, 'r') as f:
@@ -157,11 +206,21 @@ def main():
     
     successful = 0
     failed = 0
+    results_for_csv = []
     
     # 各イメージを処理
     for base_image, first_command, dockerfile_url in images:
         try:
-            if process_image(base_image, first_command, proxy_host, dockerfile_url):
+            success, step_results = process_image(base_image, first_command, proxy_host, dockerfile_url)
+            row_dict = {
+                "Base Image": base_image,
+                "Command": first_command,
+                "Intermediate Dockerfile Command": "",  # 必要に応じて代入
+                "Dockerfile URL": dockerfile_url
+            }
+            row_dict.update(step_results)
+            results_for_csv.append(row_dict)
+            if success:
                 successful += 1
             else:
                 failed += 1
@@ -169,6 +228,15 @@ def main():
             print(f"Failed to process {base_image}: {str(e)}")
             failed += 1
     
+    
+    # すべての処理完了後、新しい CSV を書き出す
+    output_file = f"result_{start_datetime}_{csv_file}_with_steps.csv"
+    fieldnames = ["Base Image", "Command", "Intermediate Dockerfile Command", "Dockerfile URL"] + STEP_COLUMNS
+    with open(output_file, 'w', newline='') as out_f:
+        writer = csv.DictWriter(out_f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(results_for_csv)
+
     # オプティマイザーを無効化
     print("\nDisabling optimizer...")
     run_command("sudo ctr-starlight optimizer off")
