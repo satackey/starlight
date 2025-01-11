@@ -19,7 +19,7 @@ from urllib.parse import urlparse
 
 import git
 
-from ..executors.buildctl import BuildctlExecutor, BuildOptions
+from ..executors.container import ContainerExecutor, ContainerOptions
 from ..executors.convert import ConvertExecutor
 from ..executors.optimizer import OptimizerExecutor
 from ..executors.pull import PullExecutor
@@ -102,7 +102,7 @@ class DockerfileProcessor:
             profile: Starlightプロファイル名（例：myproxy）
             registry: レジストリのアドレス
         """
-        self.buildctl = BuildctlExecutor()
+        self.container = ContainerExecutor()
         self.convert = ConvertExecutor()
         self.optimizer = OptimizerExecutor()
         self.pull = PullExecutor()
@@ -161,6 +161,44 @@ class DockerfileProcessor:
         tag = match.group(2) or "latest"
         
         return image, tag
+
+    def _extract_first_run(self, dockerfile_path: str) -> Optional[str]:
+        """
+        Dockerfileから最初のRUN命令を抽出
+        
+        Args:
+            dockerfile_path: Dockerfileのパス
+            
+        Returns:
+            RUN命令の文字列、見つからない場合はNone
+        """
+        with open(dockerfile_path, 'r') as f:
+            content = f.read()
+        
+        # RUN命令を探す（最初のRUNを使用）
+        matches = list(re.finditer(r'RUN\s+(.+?)(?:\n|$)', content))
+        if not matches:
+            return None
+        
+        # 最初のRUN命令を取得
+        first_run = matches[0].group(1).strip()
+        
+        # バックスラッシュで続く行を結合
+        if first_run.endswith('\\'):
+            lines = []
+            current_line = first_run[:-1].strip()
+            for line in content[matches[0].end():].split('\n'):
+                line = line.strip()
+                if not line:
+                    continue
+                if line.endswith('\\'):
+                    lines.append(line[:-1].strip())
+                else:
+                    lines.append(line)
+                    break
+            first_run = ' '.join([current_line] + lines)
+        
+        return first_run
     
     def _rewrite_dockerfile(
         self,
@@ -250,7 +288,7 @@ class DockerfileProcessor:
                 )
                 
                 # 非同期コンテキストマネージャを使用
-                async with self.buildctl, self.optimizer, self.pull:
+                async with self.container, self.optimizer, self.pull:
                     # optimizerを開始（グループ名は任意）
                     await self.optimizer.start_optimizer(info.group_name if info.group_name else "default")
                     
@@ -262,11 +300,51 @@ class DockerfileProcessor:
                             profile=self.profile
                         )
                         
-                        # Dockerfileをビルド
-                        await self.buildctl.build(
-                            context_dir=os.path.dirname(dockerfile_path),
-                            dockerfile=dockerfile_path
-                        )
+                        # RUNを抽出（見つからない場合はスキップ）
+                        run_cmd = self._extract_first_run(dockerfile_path)
+                        if run_cmd is None:
+                            logger.info(f"No RUN instruction found in Dockerfile: {dockerfile_path}, skipping...")
+                            return
+                        
+                        logger.info(f"Found RUN instruction: {run_cmd}")
+                        
+                        # データディレクトリを作成（一時的なディレクトリ）
+                        data_dir = f"/tmp/test-{info.repo}-data"
+                        os.makedirs(data_dir, exist_ok=True)
+                        logger.info(f"Created data directory: {data_dir}")
+                        
+                        try:
+                            # コンテナを作成して起動
+                            options = ContainerOptions(
+                                image=destination_image,
+                                instance=f"{info.repo}-{info.sha[:7]}",  # リポジトリ名を含める
+                                command=run_cmd,  # 最初のRUN命令を使用
+                                mount_src=data_dir,
+                                mount_dst="/data",
+                                env_file="../demo/config/all.env"
+                            )
+                            
+                            # コンテナを作成して起動（インスタンス名を取得）
+                            instance = await self.container.create_and_start(options=options)
+                            
+                            try:
+                                # Ctrl-Cで停止されるまで待機
+                                while True:
+                                    await asyncio.sleep(1)
+                            except asyncio.CancelledError:
+                                # コンテナを削除してから例外を再送出
+                                await self.container.remove_container(instance)
+                                raise
+                            
+                        finally:
+                            # データディレクトリのクリーンアップ
+                            try:
+                                import shutil
+                                shutil.rmtree(data_dir)
+                                logger.info(f"Cleaned up data directory: {data_dir}")
+                            except Exception as e:
+                                logger.warning(f"Failed to clean up data directory {data_dir}: {e}")
+                        
                     finally:
                         # 必ずoptimizerを停止
                         await self.optimizer.stop_optimizer()
