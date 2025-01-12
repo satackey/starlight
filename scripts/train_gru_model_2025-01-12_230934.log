@@ -1,0 +1,5 @@
+前処理済みデータを読み込み中: ./train_gru_model_data
+モデルの学習と評価中...
+
+Fold 1/5
+Epoch 1/20
