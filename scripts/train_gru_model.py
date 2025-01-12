@@ -13,7 +13,9 @@ GRUによるファイルアクセス予測モデル
 """
 
 import sys
+import os
 import json
+import pickle
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import KFold
@@ -35,6 +37,37 @@ class FileAccessPredictor:
         self.command_vectorizer = None
         self.filepath_encoder = None
         self.model = None
+    
+    def save_preprocessed_data(self, X: Dict[str, np.ndarray], y: np.ndarray, 
+                             save_dir: str) -> None:
+        """前処理済みデータを保存"""
+        os.makedirs(save_dir, exist_ok=True)
+        
+        # NumPy配列を保存
+        for key, value in X.items():
+            np.save(os.path.join(save_dir, f'X_{key}.npy'), value)
+        np.save(os.path.join(save_dir, 'y.npy'), y)
+        
+        # エンコーダーを保存
+        with open(os.path.join(save_dir, 'command_vectorizer.pkl'), 'wb') as f:
+            pickle.dump(self.command_vectorizer, f)
+        with open(os.path.join(save_dir, 'filepath_encoder.pkl'), 'wb') as f:
+            pickle.dump(self.filepath_encoder, f)
+    
+    def load_preprocessed_data(self, save_dir: str) -> Tuple[Dict[str, np.ndarray], np.ndarray]:
+        """前処理済みデータを読み込み"""
+        X = {}
+        for key in ['command', 'history', 'history_sizes']:
+            X[key] = np.load(os.path.join(save_dir, f'X_{key}.npy'))
+        y = np.load(os.path.join(save_dir, 'y.npy'))
+        
+        # エンコーダーを読み込み
+        with open(os.path.join(save_dir, 'command_vectorizer.pkl'), 'rb') as f:
+            self.command_vectorizer = pickle.load(f)
+        with open(os.path.join(save_dir, 'filepath_encoder.pkl'), 'rb') as f:
+            self.filepath_encoder = pickle.load(f)
+        
+        return X, y
     
     def preprocess_data(self, df: pd.DataFrame) -> Tuple[Dict[str, np.ndarray], np.ndarray]:
         """データの前処理"""
@@ -281,22 +314,46 @@ class FileAccessPredictor:
                 print(f"{j+1}. {path}: {prob:.4f}")
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: train_gru_model.py <data_csv>")
+    if len(sys.argv) < 2:
+        print("Usage: train_gru_model.py <data_csv> [--load-data <data_dir>] [--save-data <data_dir>]")
         sys.exit(1)
     
     data_csv = sys.argv[1]
+    load_data_dir = None
+    save_data_dir = None
     
-    # データの読み込み
-    print("データの読み込み中...")
-    df = pd.read_csv(data_csv)
-    print(f"読み込んだデータ: {len(df)}行")
+    # コマンドライン引数の解析
+    i = 2
+    while i < len(sys.argv):
+        if sys.argv[i] == '--load-data':
+            load_data_dir = sys.argv[i + 1]
+            i += 2
+        elif sys.argv[i] == '--save-data':
+            save_data_dir = sys.argv[i + 1]
+            i += 2
+        else:
+            i += 1
     
-    # モデルの初期化と学習
+    # モデルの初期化
     predictor = FileAccessPredictor()
     
-    print("データの前処理中...")
-    X, y = predictor.preprocess_data(df)
+    # データの準備
+    if load_data_dir:
+        print(f"前処理済みデータを読み込み中: {load_data_dir}")
+        X, y = predictor.load_preprocessed_data(load_data_dir)
+    else:
+        # データの読み込みと前処理
+        print("データの読み込み中...")
+        df = pd.read_csv(data_csv)
+        print(f"読み込んだデータ: {len(df)}行")
+        
+        print("データの前処理中...")
+        X, y = predictor.preprocess_data(df)
+        
+        # 前処理済みデータの保存
+        if save_data_dir:
+            print(f"前処理済みデータを保存中: {save_data_dir}")
+            predictor.save_preprocessed_data(X, y, save_data_dir)
     
     print("モデルの学習と評価中...")
     results = predictor.train_and_evaluate(X, y)
