@@ -8,7 +8,6 @@ GRUによるファイルアクセス予測モデル
 特徴:
 - コマンドとファイルパスの特徴量化（Embedding）
 - GRUによるファイルアクセス順序の学習
-- Attentionによるアクセス履歴の活用
 - 可変長シーケンスの処理
 """
 
@@ -24,7 +23,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
     GRU, Dense, Dropout, Embedding, Input, TextVectorization,
-    Concatenate, Attention, LayerNormalization
+    Concatenate, LayerNormalization, GlobalAveragePooling1D
 )
 from tensorflow.keras.callbacks import EarlyStopping
 from typing import Dict, List, Tuple, Set
@@ -77,14 +76,14 @@ class FileAccessPredictor:
                 max_tokens=5000,
                 output_sequence_length=self.max_text_length
             )
-            self.command_vectorizer.adapt(df['command'])
+            self.command_vectorizer.adapt(df['command'].fillna(''))
         
         print("ファイルパスのエンコーディング...")
         if self.filepath_encoder is None:
             self.filepath_encoder = LabelEncoder()
             # 全ファイルパスを収集
             all_paths = set()
-            for files_json in tqdm(df['accessed_files'], desc="ファイルパスの収集"):
+            for files_json in tqdm(df['accessed_files'].fillna('[]'), desc="ファイルパスの収集"):
                 try:
                     files = json.loads(files_json)
                     all_paths.update(f['path'] for f in files)
@@ -95,13 +94,13 @@ class FileAccessPredictor:
             self.filepath_encoder.fit(list(all_paths))
         
         # 入力データの準備
-        commands = self.command_vectorizer(df['command'])
+        commands = self.command_vectorizer(df['command'].fillna(''))
         history_sequences = []
         size_sequences = []
         targets = []
         
         print("シーケンスデータの生成...")
-        for command_idx, files_json in tqdm(enumerate(df['accessed_files']), total=len(df)):
+        for command_idx, files_json in tqdm(enumerate(df['accessed_files'].fillna('[]')), total=len(df)):
             try:
                 files = json.loads(files_json)
                 if not files:
@@ -141,7 +140,7 @@ class FileAccessPredictor:
         
         print("NumPy配列への変換...")
         X = {
-            'command': commands.numpy(),
+            'command': commands.numpy().astype(np.int32),
             'history': np.array(history_sequences, dtype=np.int32),
             'history_sizes': np.array(size_sequences, dtype=np.float32)
         }
@@ -160,7 +159,7 @@ class FileAccessPredictor:
         # コマンド入力
         command_input = Input(shape=(self.max_text_length,), name='command', dtype=tf.int32)
         command_embedding = Embedding(5000, 32)(command_input)
-        command_features = Dense(64)(command_embedding)
+        command_features = GlobalAveragePooling1D()(command_embedding)
         
         # アクセス履歴入力
         history_input = Input(shape=(self.max_sequence_length,), name='history', dtype=tf.int32)
@@ -178,15 +177,15 @@ class FileAccessPredictor:
         features = Concatenate(axis=-1)([history_embedding, sizes_reshape])
         
         # GRU層（アクセス順序の学習）
-        gru = GRU(128, return_sequences=True)(features)
+        gru = GRU(128)(features)
         gru = LayerNormalization()(gru)
         gru = Dropout(0.3)(gru)
         
-        # Attention層（アクセス履歴との関連性）
-        attention = Attention()([gru, command_features])
+        # 特徴量の結合
+        combined = Concatenate()([gru, command_features])
         
         # 出力層（次のファイルの予測）
-        dense = Dense(128, activation='relu')(attention)
+        dense = Dense(128, activation='relu')(combined)
         dropout = Dropout(0.3)(dense)
         output = Dense(len(self.filepath_encoder.classes_), activation='softmax')(dropout)
         
