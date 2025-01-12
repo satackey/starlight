@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -x
+
 ## This script reset the experiment environment
 ## Please cd into the project's root directory and run this script using this command:
 ##  sudo ./demo/reset.sh

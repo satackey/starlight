@@ -335,11 +335,11 @@ def parse_dockerfile(content: str, target_image: str) -> Tuple[bool, str, List[s
         # FROM命令を確認
         if line.startswith('FROM'):
             found_from = True
-            image_part = line[5:].strip()
-            # "as" が含まれている場合は削除（大文字小文字を区別しない）
-            if ' as ' in image_part.lower():
-                image_part = image_part.split(' as ', maxsplit=1)[0].strip()
-            
+            import re
+            # remove AS ****
+            image_part = re.sub(r'(?i)\s+as\s+.*$', '', line[5:].strip()).strip()
+            # remove --platform=linux/amd64 from `--platform=linux/amd64 ubuntu:22.04`
+            image_part = re.sub(r'(?i)^\s*--platform=.*\s+', '', image_part).strip()
             # 指定されたイメージと一致するか確認
             if target_image in image_part and 'alpine' not in image_part:
                 uses_target_image = True
