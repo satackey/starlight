@@ -158,7 +158,7 @@ class FileAccessPredictor:
         """GRUモデルの構築"""
         # コマンド入力
         command_input = Input(shape=(self.max_text_length,), name='command', dtype=tf.int32)
-        command_embedding = Embedding(5000, 32)(command_input)
+        command_embedding = Embedding(5000, 32, mask_zero=True)(command_input)
         command_features = GlobalAveragePooling1D()(command_embedding)
         
         # アクセス履歴入力
@@ -171,10 +171,10 @@ class FileAccessPredictor:
         
         # サイズ入力
         sizes_input = Input(shape=(self.max_sequence_length,), name='history_sizes', dtype=tf.float32)
-        sizes_reshape = tf.keras.layers.Reshape((self.max_sequence_length, 1))(sizes_input)
+        sizes_reshape = tf.expand_dims(sizes_input, axis=-1)  # (batch_size, seq_len, 1)
         
         # 特徴量の結合
-        features = Concatenate(axis=-1)([history_embedding, sizes_reshape])
+        features = tf.concat([history_embedding, sizes_reshape], axis=-1)
         
         # GRU層（アクセス順序の学習）
         gru = GRU(128)(features)
@@ -182,7 +182,7 @@ class FileAccessPredictor:
         gru = Dropout(0.3)(gru)
         
         # 特徴量の結合
-        combined = Concatenate()([gru, command_features])
+        combined = tf.concat([gru, command_features], axis=-1)
         
         # 出力層（次のファイルの予測）
         dense = Dense(128, activation='relu')(combined)
