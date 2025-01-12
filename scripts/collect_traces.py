@@ -87,6 +87,8 @@ STEP_COLUMNS = [
     "Step8 report"
 ]
 
+use_mirror = False
+
 def process_image(base_image, first_command, proxy_host, dockerfile_url):
     step_results = {col: "" for col in STEP_COLUMNS}
     registry_repo = base_image.split(':')[0]
@@ -104,18 +106,18 @@ def process_image(base_image, first_command, proxy_host, dockerfile_url):
     image_name = f"{registry_repo.lower()}-{original_tag.lower()}-{owner.lower()}-{repo.lower()}"
     print(f"\nProcessing image: {base_image}")
     
-    # mirrored_base_image = f"cloud.cluster.local:5000/mirror/{base_image}"
-    # convert_cmd = f"sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 {mirrored_base_image} {starlight_tag}"
-    
-    convert_cmd = f"sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 {base_image} {starlight_tag}"
+    if use_mirror:
+        mirrored_base_image = f"mirror.gcr.io/{base_image}"
+        convert_cmd = f"sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 {mirrored_base_image} {starlight_tag}"
+    else:
+        convert_cmd = f"sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 {base_image} {starlight_tag}"
+
     pull_cmd = f"sudo ctr-starlight pull --profile myproxy {starlight_tag}"
     
     try:
         # Step1～Step3: イメージが既にあれば "skipped", なければ実行
         if run_command(f"sudo ctr image ls | grep {starlight_tag}", allow_failure=True, shell=True, quiet=True) == 0:
             step_results["Step1 convert"] = "skipped"
-            step_results["Step2 optimizer on"] = "skipped"
-            step_results["Step3 pull"] = "skipped"
         else:
             # Step1 convert
             try:
@@ -125,26 +127,33 @@ def process_image(base_image, first_command, proxy_host, dockerfile_url):
                 step_results["Step1 convert"] = "failure"
                 raise
 
-            # Step2 optimizer on
-            try:
-                run_command("sudo ctr-starlight optimizer on")
-                step_results["Step2 optimizer on"] = "success"
-            except:
-                step_results["Step2 optimizer on"] = "failure"
-                raise
+        # Step2 optimizer on
+        try:
+            run_command("sudo ctr-starlight optimizer on")
+            step_results["Step2 optimizer on"] = "success"
+        except:
+            step_results["Step2 optimizer on"] = "failure"
+            raise
 
-            # Step3 pull
-            try:
-                run_command(pull_cmd, shell=True)
-                step_results["Step3 pull"] = "success"
-            except:
-                step_results["Step3 pull"] = "failure"
-                raise
+        # Step3 pull
+        try:
+            run_command(pull_cmd, shell=True)
+            step_results["Step3 pull"] = "success"
+        except:
+            step_results["Step3 pull"] = "failure"
+            raise
         
         # Step4 create
         try:
             print("Creating and running container...")
             container_name = f"trace-{image_name}-{starlight_tag.split(':')[-1]}"
+            # すでに存在するタスクがあれば削除
+            while run_command(f"sudo ctr task ls | grep {container_name}", allow_failure=True, shell=True, quiet=True) == 0:
+                try:
+                    run_command(f"sudo ctr task kill --all {container_name}", quiet=True)
+                    time.sleep(1)
+                except:
+                    pass
             # 既に存在するコンテナがいれば削除
             while run_command(f"sudo ctr container ls | grep {container_name}", allow_failure=True, shell=True, quiet=True) == 0:
                 try:
