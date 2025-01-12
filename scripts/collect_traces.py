@@ -87,7 +87,7 @@ STEP_COLUMNS = [
     "Step8 report"
 ]
 
-use_mirror = False
+use_mirror = True
 
 def process_image(base_image, first_command, proxy_host, dockerfile_url):
     step_results = {col: "" for col in STEP_COLUMNS}
@@ -116,7 +116,7 @@ def process_image(base_image, first_command, proxy_host, dockerfile_url):
     
     try:
         # Step1～Step3: イメージが既にあれば "skipped", なければ実行
-        if run_command(f"sudo ctr image ls | grep {starlight_tag}", allow_failure=True, shell=True, quiet=True) == 0:
+        if run_command(f"{pull_cmd} | grep 'pull image failed'", allow_failure=True, shell=True, quiet=True) == 1:
             step_results["Step1 convert"] = "skipped"
         else:
             # Step1 convert
