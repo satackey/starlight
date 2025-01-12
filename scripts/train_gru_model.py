@@ -57,24 +57,21 @@ class FileAccessPredictor:
                     all_paths.update(f['path'] for f in files)
                 except json.JSONDecodeError as e:
                     print(f"JSONデコードエラー: {e}")
-                    print(f"問題のデータ: {files_json[:100]}...")
                     continue
             print(f"ユニークなファイルパス数: {len(all_paths)}")
             self.filepath_encoder.fit(list(all_paths))
         
         # 入力データの準備
-        X = {
-            'command': self.command_vectorizer(df['command']),
-            'history': [],
-            'history_sizes': []
-        }
-        y = []
+        commands = self.command_vectorizer(df['command'])
+        history_sequences = []
+        size_sequences = []
+        targets = []
         
         print("シーケンスデータの生成...")
         for command_idx, files_json in tqdm(enumerate(df['accessed_files']), total=len(df)):
             try:
                 files = json.loads(files_json)
-                if not files:  # 空のリストをスキップ
+                if not files:
                     continue
                 
                 # アクセス順序でソート
@@ -84,7 +81,7 @@ class FileAccessPredictor:
                 for i in range(len(files)):
                     # 入力：これまでのアクセス履歴
                     history_paths = [f['path'] for f in files[:i]]
-                    history_sizes = [f['size'] for f in files[:i]]
+                    history_sizes = [float(f['size']) for f in files[:i]]  # 明示的に float に変換
                     
                     # パディング
                     if len(history_paths) > self.max_sequence_length:
@@ -92,29 +89,30 @@ class FileAccessPredictor:
                         history_sizes = history_sizes[-self.max_sequence_length:]
                     while len(history_paths) < self.max_sequence_length:
                         history_paths.append('')
-                        history_sizes.append(0)
+                        history_sizes.append(0.0)  # float型で0を追加
                     
                     # 出力：次のアクセスファイル
                     next_file = files[i]['path']
                     
                     # データを追加
-                    X['history'].append([
-                        self.filepath_encoder.transform([path])[0] if path else -1
+                    history_encoded = [
+                        self.filepath_encoder.transform([path])[0] if path else 0
                         for path in history_paths
-                    ])
-                    X['history_sizes'].append(history_sizes)
-                    y.append(self.filepath_encoder.transform([next_file])[0])
-            except json.JSONDecodeError as e:
-                print(f"JSONデコードエラー (コマンド {command_idx}): {e}")
-                continue
+                    ]
+                    history_sequences.append(history_encoded)
+                    size_sequences.append(history_sizes)
+                    targets.append(self.filepath_encoder.transform([next_file])[0])
             except Exception as e:
-                print(f"予期せぬエラー (コマンド {command_idx}): {e}")
+                print(f"エラー (コマンド {command_idx}): {e}")
                 continue
         
         print("NumPy配列への変換...")
-        X['history'] = np.array(X['history'])
-        X['history_sizes'] = np.array(X['history_sizes'])
-        y = np.array(y)
+        X = {
+            'command': commands.numpy(),
+            'history': np.array(history_sequences, dtype=np.int32),
+            'history_sizes': np.array(size_sequences, dtype=np.float32)
+        }
+        y = np.array(targets, dtype=np.int32)
         
         print(f"生成されたシーケンス数: {len(y)}")
         print(f"入力シェイプ:")
@@ -127,12 +125,12 @@ class FileAccessPredictor:
     def build_model(self) -> None:
         """GRUモデルの構築"""
         # コマンド入力
-        command_input = Input(shape=(self.max_text_length,), name='command')
+        command_input = Input(shape=(self.max_text_length,), name='command', dtype=tf.int32)
         command_embedding = Embedding(5000, 32)(command_input)
         command_features = Dense(64)(command_embedding)
         
         # アクセス履歴入力
-        history_input = Input(shape=(self.max_sequence_length,), name='history')
+        history_input = Input(shape=(self.max_sequence_length,), name='history', dtype=tf.int32)
         history_embedding = Embedding(
             len(self.filepath_encoder.classes_) + 1,  # +1 はパディング用
             32,
@@ -140,7 +138,7 @@ class FileAccessPredictor:
         )(history_input)
         
         # サイズ入力
-        sizes_input = Input(shape=(self.max_sequence_length,), name='history_sizes')
+        sizes_input = Input(shape=(self.max_sequence_length,), name='history_sizes', dtype=tf.float32)
         sizes_reshape = tf.keras.layers.Reshape((self.max_sequence_length, 1))(sizes_input)
         
         # 特徴量の結合
@@ -181,17 +179,17 @@ class FileAccessPredictor:
             
             # データの分割
             X_train = {
-                'command': tf.gather(X['command'], train_idx),
-                'history': tf.gather(X['history'], train_idx),
-                'history_sizes': tf.gather(X['history_sizes'], train_idx)
+                'command': tf.convert_to_tensor(X['command'][train_idx], dtype=tf.int32),
+                'history': tf.convert_to_tensor(X['history'][train_idx], dtype=tf.int32),
+                'history_sizes': tf.convert_to_tensor(X['history_sizes'][train_idx], dtype=tf.float32)
             }
             X_val = {
-                'command': tf.gather(X['command'], val_idx),
-                'history': tf.gather(X['history'], val_idx),
-                'history_sizes': tf.gather(X['history_sizes'], val_idx)
+                'command': tf.convert_to_tensor(X['command'][val_idx], dtype=tf.int32),
+                'history': tf.convert_to_tensor(X['history'][val_idx], dtype=tf.int32),
+                'history_sizes': tf.convert_to_tensor(X['history_sizes'][val_idx], dtype=tf.float32)
             }
-            y_train = y[train_idx]
-            y_val = y[val_idx]
+            y_train = tf.convert_to_tensor(y[train_idx], dtype=tf.int32)
+            y_val = tf.convert_to_tensor(y[val_idx], dtype=tf.int32)
             
             # モデルの構築
             self.build_model()
@@ -257,7 +255,7 @@ class FileAccessPredictor:
             history_paths = [
                 self.filepath_encoder.inverse_transform([idx])[0]
                 for idx in X['history'][i]
-                if idx != -1  # パディングをスキップ
+                if idx != 0  # パディングをスキップ
             ]
             print("\nアクセス履歴:")
             for j, path in enumerate(history_paths):
@@ -270,9 +268,9 @@ class FileAccessPredictor:
             
             # 予測
             y_pred = self.model.predict({
-                'command': X['command'][i:i+1],
-                'history': X['history'][i:i+1],
-                'history_sizes': X['history_sizes'][i:i+1]
+                'command': tf.convert_to_tensor(X['command'][i:i+1], dtype=tf.int32),
+                'history': tf.convert_to_tensor(X['history'][i:i+1], dtype=tf.int32),
+                'history_sizes': tf.convert_to_tensor(X['history_sizes'][i:i+1], dtype=tf.float32)
             })[0]
             
             print("\n予測されたファイル (確率):")
