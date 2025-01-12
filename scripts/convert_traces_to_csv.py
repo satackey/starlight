@@ -6,14 +6,13 @@
 collect_traces.py で収集されたデータを機械学習用のCSVデータに変換します。
 
 入力:
+- ファイルアクセストレース収集結果のCSV
 - PostgreSQLデータベース内のトレース情報
-- 実行コマンドのCSVファイル
 
 出力:
-- 学習用CSVファイル（全データ）
+- 学習用CSVファイル
   - コマンド情報
-  - アクセスされたファイルのシーケンス
-  - 次にアクセスされるファイル
+  - アクセスされたファイル情報（パス、サイズ、順序）
 """
 
 import os
@@ -26,7 +25,9 @@ from typing import List, Dict, Tuple
 def connect_to_db(connection_string: str) -> psycopg2.extensions.connection:
     """PostgreSQLデータベースに接続"""
     try:
+        print(f"データベースに接続中...")
         conn = psycopg2.connect(connection_string)
+        print("接続成功")
         return conn
     except Exception as e:
         print(f"データベース接続エラー: {str(e)}")
@@ -36,187 +37,185 @@ def get_file_access_traces(conn: psycopg2.extensions.connection, image_name: str
     """
     指定されたイメージのファイルアクセストレースを取得
     
-    Args:
-        conn: データベース接続
-        image_name: イメージ名 (Converted Repotag)
-    
     Returns:
-        ファイルアクセストレースのリスト
+        List[Dict]: アクセスされたファイルのリスト（パス、サイズ、順序を含む）
     """
     cursor = conn.cursor()
     
-    # イメージIDを取得
-    cursor.execute("""
-        SELECT id FROM image 
-        WHERE image = %s
-    """, (image_name,))
+    try:
+        # イメージIDを取得
+        print(f"イメージの検索: {image_name}")
+        cursor.execute("""
+            SELECT id, image, hash FROM image 
+            WHERE image = %s
+        """, (image_name,))
+        
+        image_records = cursor.fetchall()
+        if not image_records:
+            print(f"イメージが見つかりません: {image_name}")
+            # 部分一致で再試行
+            cursor.execute("""
+                SELECT id, image, hash FROM image 
+                WHERE image LIKE %s
+            """, (f"%{image_name}%",))
+            image_records = cursor.fetchall()
+            if not image_records:
+                print("部分一致でも見つかりません")
+                return []
+        
+        print(f"見つかったイメージ:")
+        for record in image_records:
+            print(f"- ID: {record[0]}, イメージ: {record[1]}, ハッシュ: {record[2]}")
+        
+        image_id = image_records[0][0]  # 最初のマッチを使用
+        
+        # ファイルアクセストレースを取得
+        print(f"ファイルアクセストレースの取得中...")
+        cursor.execute("""
+            SELECT DISTINCT ON (f.file)
+                f.file as path,
+                f.size,
+                f."order"[1] as first_access,
+                ROW_NUMBER() OVER (ORDER BY f."order"[1]) as access_order
+            FROM layer l
+            JOIN filesystem fs ON l.layer = fs.id
+            JOIN file f ON f.fs = fs.id
+            WHERE l.image = %s
+            AND f."order" IS NOT NULL
+            AND array_length(f."order", 1) > 0
+            ORDER BY f.file, f."order"[1];
+        """, (image_id,))
+        
+        files = []
+        for path, size, first_access, order in cursor.fetchall():
+            files.append({
+                'path': path,
+                'size': size,
+                'order': order
+            })
+        
+        print(f"取得したファイル数: {len(files)}")
+        if files:
+            print("最初の5件:")
+            for f in files[:5]:
+                print(f"- {f['path']} (size: {f['size']}, order: {f['order']})")
+        
+        return files
     
-    image_id = cursor.fetchone()
-    if not image_id:
-        print(f"イメージが見つかりません: {image_name}")
+    except Exception as e:
+        print(f"エラー発生: {str(e)}")
+        cursor.execute("ROLLBACK")
         return []
     
-    # ファイルアクセストレースを取得
-    cursor.execute("""
-        SELECT 
-            f.file,
-            f."order",
-            f.metadata,
-            l."stackIndex",
-            f.size,
-            f.hash
-        FROM file f
-        JOIN layer l ON f.fs = l.layer
-        WHERE l.image = %s
-        AND f."order" IS NOT NULL
-        ORDER BY l."stackIndex", 
-                 (SELECT AVG(o) FROM UNNEST(f."order") o)
-    """, (image_id[0],))
-    
-    traces = []
-    for row in cursor.fetchall():
-        file_path, access_order, metadata, stack_index, size, file_hash = row
-        if access_order:  # アクセス順序が記録されている場合のみ
-            trace = {
-                'file_path': file_path,
-                'access_order': access_order,
-                'metadata': metadata if isinstance(metadata, dict) else json.loads(metadata) if metadata else {},
-                'stack_index': stack_index,
-                'size': size,
-                'hash': file_hash
-            }
-            traces.append(trace)
-    
-    cursor.close()
-    return traces
+    finally:
+        cursor.close()
 
-def create_sequence_data(traces: List[Dict], command: str, image_name: str, sequence_length: int = 5) -> List[Dict]:
-    """
-    ファイルアクセストレースからシーケンスデータを生成
-    
-    Args:
-        traces: ファイルアクセストレースのリスト
-        command: 実行コマンド
-        image_name: イメージ名
-        sequence_length: 入力シーケンスの長さ
-    
-    Returns:
-        シーケンスデータのリスト
-    """
-    sequences = []
-    
-    # アクセス順でソート
-    sorted_traces = sorted(traces, key=lambda x: min(x['access_order']))
-    
-    # シーケンスデータを生成
-    for i in range(len(sorted_traces) - sequence_length):
-        sequence = sorted_traces[i:i+sequence_length]
-        next_file = sorted_traces[i+sequence_length]
+def process_image_name(image_name: str) -> str:
+    """イメージ名の前処理"""
+    try:
+        # cloud.cluster.local:5000/ を除去
+        if 'cloud.cluster.local:5000/' in image_name:
+            image_name = image_name.split('cloud.cluster.local:5000/')[1]
         
-        # 入力シーケンスの各ファイルの情報
-        input_sequence = []
-        for t in sequence:
-            file_info = {
-                'path': t['file_path'],
-                'stack_index': t['stack_index'],
-                'size': t['size'],
-                'hash': t['hash'],
-                'type': t['metadata'].get('type', ''),
-                'mode': t['metadata'].get('mode', 0)
-            }
-            input_sequence.append(file_info)
+        # :starlight を除去
+        if ':starlight' in image_name:
+            image_name = image_name.split(':starlight')[0]
         
-        # 次のファイル（予測対象）の情報
-        target_info = {
-            'path': next_file['file_path'],
-            'stack_index': next_file['stack_index'],
-            'size': next_file['size'],
-            'hash': next_file['hash'],
-            'type': next_file['metadata'].get('type', ''),
-            'mode': next_file['metadata'].get('mode', 0)
-        }
+        # node-lts/ を除去
+        if 'node-lts/' in image_name:
+            image_name = image_name.split('node-lts/')[1]
+        elif 'node-lts-' in image_name:
+            image_name = image_name.split('/', 1)[1]
         
-        sequence_data = {
-            'image_name': image_name,
-            'command': command,
-            'input_sequence': input_sequence,
-            'target': target_info
-        }
-        sequences.append(sequence_data)
-    
-    return sequences
+        print(f"処理後のイメージ名: {image_name}")
+        return image_name
+    except Exception as e:
+        print(f"イメージ名の処理中にエラー: {str(e)}")
+        return image_name
 
 def main():
     if len(sys.argv) != 3:
-        print("Usage: convert_traces_to_csv.py <commands_csv> <output_csv>")
+        print("Usage: convert_traces_to_csv.py <input_csv> <output_csv>")
         sys.exit(1)
     
-    commands_csv = sys.argv[1]
+    input_csv = sys.argv[1]
     output_csv = sys.argv[2]
     
     # データベース接続文字列
-    db_conn_string = os.getenv('POSTGRES_CONNECTION_STRING', 
-                              'postgresql://postgres:postgres@localhost:5432/postgres')
+    db_conn_string = os.getenv('POSTGRES_CONNECTION_STRING')
+    if not db_conn_string:
+        print("POSTGRES_CONNECTION_STRING環境変数が設定されていません")
+        sys.exit(1)
     
     # データベースに接続
     conn = connect_to_db(db_conn_string)
+    conn.autocommit = True  # 自動コミットを有効化
     
-    # コマンドCSVを読み込み
-    commands_df = pd.read_csv(commands_csv)
-    
-    all_sequences = []
-    image_sequence_counts = {}  # イメージごとのシーケンス数を追跡
-    
-    # 各イメージのトレースを処理
-    for _, row in commands_df.iterrows():
-        # repotagからtagを削除
-        image_name = str(row['Converted Repotag']).rsplit(':', 1)[0]
-        command = row['Command']
+    try:
+        # 入力CSVを読み込み
+        print(f"入力CSVの読み込み中: {input_csv}")
+        df_input = pd.read_csv(input_csv)
+        print(f"読み込み完了: {len(df_input)}行")
+        print("\nカラム一覧:")
+        for col in df_input.columns:
+            print(f"- {col}")
         
-        print(f"処理中: {image_name}")
+        # 各イメージのトレースを取得
+        rows = []
+        for idx, row in df_input.iterrows():
+            print(f"\n行 {idx+1}/{len(df_input)} の処理中...")
+            
+            # コマンドの取得
+            command = row.get('Command')
+            if pd.isna(command):
+                print("コマンドがありません")
+                continue
+            
+            # イメージ名の取得
+            image_name = row.get('Converted Repotag')
+            if pd.isna(image_name):
+                print("イメージ名がありません")
+                continue
+            
+            print(f"コマンド: {command}")
+            print(f"元のイメージ名: {image_name}")
+            
+            # イメージ名の処理
+            processed_image_name = process_image_name(image_name)
+            print(f"処理後のイメージ名: {processed_image_name}")
+            
+            # トレースを取得
+            accessed_files = get_file_access_traces(conn, processed_image_name)
+            if not accessed_files:
+                print("ファイルアクセストレースなし")
+                continue
+            
+            # 行データを作成
+            rows.append({
+                'command': command,
+                'accessed_files': json.dumps(accessed_files, ensure_ascii=False)
+            })
+            print(f"データ追加: トレース数 {len(accessed_files)}")
         
-        # トレースを取得
-        traces = get_file_access_traces(conn, image_name)
-        if not traces:
-            continue
+        # DataFrameを作成
+        df_output = pd.DataFrame(rows)
         
-        # シーケンスデータを生成
-        sequences = create_sequence_data(traces, command, image_name)
-        image_sequence_counts[image_name] = len(sequences)
-        all_sequences.extend(sequences)
+        # CSVとして保存
+        print(f"\nデータを保存中: {output_csv}")
+        df_output.to_csv(output_csv, index=False)
+        
+        print(f"\n処理完了:")
+        print(f"- 入力コマンド数: {len(df_input)}")
+        print(f"- 出力コマンド数: {len(df_output)}")
+        print(f"- 出力ファイル: {output_csv}")
     
-    # データフレームに変換
-    rows = []
-    for seq in all_sequences:
-        row = {
-            'image_name': seq['image_name'],
-            'command': seq['command'],
-            'input_files': json.dumps([f['path'] for f in seq['input_sequence']]),
-            'input_stack_indices': json.dumps([f['stack_index'] for f in seq['input_sequence']]),
-            'input_sizes': json.dumps([f['size'] for f in seq['input_sequence']]),
-            'input_hashes': json.dumps([f['hash'] for f in seq['input_sequence']]),
-            'input_types': json.dumps([f['type'] for f in seq['input_sequence']]),
-            'input_modes': json.dumps([f['mode'] for f in seq['input_sequence']]),
-            'target_file': seq['target']['path'],
-            'target_stack_index': seq['target']['stack_index'],
-            'target_size': seq['target']['size'],
-            'target_hash': seq['target']['hash'],
-            'target_type': seq['target']['type'],
-            'target_mode': seq['target']['mode']
-        }
-        rows.append(row)
+    except Exception as e:
+        print(f"エラー発生: {str(e)}")
+        sys.exit(1)
     
-    # CSVとして保存
-    df = pd.DataFrame(rows)
-    df.to_csv(output_csv, index=False)
-    
-    print(f"\n処理完了:")
-    print(f"- 総シーケンス数: {len(rows)}")
-    print(f"- イメージ数: {len(image_sequence_counts)}")
-    print(f"- イメージごとの平均シーケンス数: {len(rows) / len(image_sequence_counts):.1f}")
-    print(f"- 出力ファイル: {output_csv}")
-    
-    conn.close()
+    finally:
+        conn.close()
+        print("データベース接続を閉じました")
 
 if __name__ == "__main__":
     main()
