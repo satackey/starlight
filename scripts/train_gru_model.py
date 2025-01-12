@@ -22,13 +22,14 @@ import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
     GRU, Dense, Dropout, Embedding, Input, TextVectorization,
-    Concatenate, Attention, LayerNormalization, Masking
+    Concatenate, Attention, LayerNormalization
 )
 from tensorflow.keras.callbacks import EarlyStopping
 from typing import Dict, List, Tuple, Set
+from tqdm import tqdm
 
 class FileAccessPredictor:
-    def __init__(self, max_text_length: int = 100, max_sequence_length: int = 100):
+    def __init__(self, max_text_length: int = 50, max_sequence_length: int = 50):
         self.max_text_length = max_text_length
         self.max_sequence_length = max_sequence_length
         self.command_vectorizer = None
@@ -37,7 +38,7 @@ class FileAccessPredictor:
     
     def preprocess_data(self, df: pd.DataFrame) -> Tuple[Dict[str, np.ndarray], np.ndarray]:
         """データの前処理"""
-        # コマンドのベクトル化
+        print("コマンドのベクトル化...")
         if self.command_vectorizer is None:
             self.command_vectorizer = TextVectorization(
                 max_tokens=5000,
@@ -45,14 +46,20 @@ class FileAccessPredictor:
             )
             self.command_vectorizer.adapt(df['command'])
         
-        # ファイルパスのエンコーディング
+        print("ファイルパスのエンコーディング...")
         if self.filepath_encoder is None:
             self.filepath_encoder = LabelEncoder()
             # 全ファイルパスを収集
             all_paths = set()
-            for files_json in df['accessed_files']:
-                files = json.loads(files_json)
-                all_paths.update(f['path'] for f in files)
+            for files_json in tqdm(df['accessed_files'], desc="ファイルパスの収集"):
+                try:
+                    files = json.loads(files_json)
+                    all_paths.update(f['path'] for f in files)
+                except json.JSONDecodeError as e:
+                    print(f"JSONデコードエラー: {e}")
+                    print(f"問題のデータ: {files_json[:100]}...")
+                    continue
+            print(f"ユニークなファイルパス数: {len(all_paths)}")
             self.filepath_encoder.fit(list(all_paths))
         
         # 入力データの準備
@@ -63,38 +70,57 @@ class FileAccessPredictor:
         }
         y = []
         
-        # 各コマンドのアクセス履歴を処理
-        for command_idx, files_json in enumerate(df['accessed_files']):
-            files = json.loads(files_json)
-            # アクセス順序でソート
-            files = sorted(files, key=lambda x: x['order'])
-            
-            # 各ステップでの入力と出力を作成
-            for i in range(len(files)):
-                # 入力：これまでのアクセス履歴
-                history_paths = [f['path'] for f in files[:i]]
-                history_sizes = [f['size'] for f in files[:i]]
+        print("シーケンスデータの生成...")
+        for command_idx, files_json in tqdm(enumerate(df['accessed_files']), total=len(df)):
+            try:
+                files = json.loads(files_json)
+                if not files:  # 空のリストをスキップ
+                    continue
                 
-                # パディング
-                while len(history_paths) < self.max_sequence_length:
-                    history_paths.append('')  # パディング用の特別な値
-                    history_sizes.append(0)
+                # アクセス順序でソート
+                files = sorted(files, key=lambda x: x['order'])
                 
-                # 出力：次のアクセスファイル
-                next_file = files[i]['path']
-                
-                # データを追加
-                X['history'].append([
-                    self.filepath_encoder.transform([path])[0] if path else -1
-                    for path in history_paths[:self.max_sequence_length]
-                ])
-                X['history_sizes'].append(history_sizes[:self.max_sequence_length])
-                y.append(self.filepath_encoder.transform([next_file])[0])
+                # 各ステップでの入力と出力を作成
+                for i in range(len(files)):
+                    # 入力：これまでのアクセス履歴
+                    history_paths = [f['path'] for f in files[:i]]
+                    history_sizes = [f['size'] for f in files[:i]]
+                    
+                    # パディング
+                    if len(history_paths) > self.max_sequence_length:
+                        history_paths = history_paths[-self.max_sequence_length:]
+                        history_sizes = history_sizes[-self.max_sequence_length:]
+                    while len(history_paths) < self.max_sequence_length:
+                        history_paths.append('')
+                        history_sizes.append(0)
+                    
+                    # 出力：次のアクセスファイル
+                    next_file = files[i]['path']
+                    
+                    # データを追加
+                    X['history'].append([
+                        self.filepath_encoder.transform([path])[0] if path else -1
+                        for path in history_paths
+                    ])
+                    X['history_sizes'].append(history_sizes)
+                    y.append(self.filepath_encoder.transform([next_file])[0])
+            except json.JSONDecodeError as e:
+                print(f"JSONデコードエラー (コマンド {command_idx}): {e}")
+                continue
+            except Exception as e:
+                print(f"予期せぬエラー (コマンド {command_idx}): {e}")
+                continue
         
-        # NumPy配列に変換
+        print("NumPy配列への変換...")
         X['history'] = np.array(X['history'])
         X['history_sizes'] = np.array(X['history_sizes'])
         y = np.array(y)
+        
+        print(f"生成されたシーケンス数: {len(y)}")
+        print(f"入力シェイプ:")
+        for key, value in X.items():
+            print(f"- {key}: {value.shape}")
+        print(f"出力シェイプ: {y.shape}")
         
         return X, y
     
@@ -102,8 +128,8 @@ class FileAccessPredictor:
         """GRUモデルの構築"""
         # コマンド入力
         command_input = Input(shape=(self.max_text_length,), name='command')
-        command_embedding = Embedding(5000, 64)(command_input)
-        command_features = Dense(128)(command_embedding)
+        command_embedding = Embedding(5000, 32)(command_input)
+        command_features = Dense(64)(command_embedding)
         
         # アクセス履歴入力
         history_input = Input(shape=(self.max_sequence_length,), name='history')
@@ -121,7 +147,7 @@ class FileAccessPredictor:
         features = Concatenate(axis=-1)([history_embedding, sizes_reshape])
         
         # GRU層（アクセス順序の学習）
-        gru = GRU(256, return_sequences=True)(features)
+        gru = GRU(128, return_sequences=True)(features)
         gru = LayerNormalization()(gru)
         gru = Dropout(0.3)(gru)
         
@@ -129,7 +155,7 @@ class FileAccessPredictor:
         attention = Attention()([gru, command_features])
         
         # 出力層（次のファイルの予測）
-        dense = Dense(256, activation='relu')(attention)
+        dense = Dense(128, activation='relu')(attention)
         dropout = Dropout(0.3)(dense)
         output = Dense(len(self.filepath_encoder.classes_), activation='softmax')(dropout)
         
@@ -145,7 +171,7 @@ class FileAccessPredictor:
         )
     
     def train_and_evaluate(self, X: Dict[str, np.ndarray], y: np.ndarray, 
-                          n_splits: int = 10) -> List[Dict[str, float]]:
+                          n_splits: int = 5) -> List[Dict[str, float]]:
         """モデルの学習と評価（k分割交差検証）"""
         kf = KFold(n_splits=n_splits, shuffle=True, random_state=42)
         fold_results = []
@@ -173,7 +199,7 @@ class FileAccessPredictor:
             # Early Stopping
             early_stopping = EarlyStopping(
                 monitor='val_loss',
-                patience=5,
+                patience=3,
                 restore_best_weights=True
             )
             
@@ -182,8 +208,8 @@ class FileAccessPredictor:
                 X_train,
                 y_train,
                 validation_data=(X_val, y_val),
-                epochs=50,
-                batch_size=32,
+                epochs=20,
+                batch_size=64,
                 callbacks=[early_stopping],
                 verbose=1
             )
@@ -266,6 +292,7 @@ def main():
     # データの読み込み
     print("データの読み込み中...")
     df = pd.read_csv(data_csv)
+    print(f"読み込んだデータ: {len(df)}行")
     
     # モデルの初期化と学習
     predictor = FileAccessPredictor()
