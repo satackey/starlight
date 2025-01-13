@@ -23,7 +23,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
     GRU, Dense, Dropout, Embedding, Input, TextVectorization,
-    Concatenate, LayerNormalization, GlobalAveragePooling1D
+    Concatenate, LayerNormalization, GlobalAveragePooling1D, Reshape
 )
 from tensorflow.keras.callbacks import EarlyStopping
 from typing import Dict, List, Tuple, Set
@@ -193,9 +193,7 @@ class FileAccessPredictor:
         
         # サイズ入力
         sizes_input = Input(shape=(self.max_sequence_length,), name='history_sizes', dtype=tf.float32)
-        sizes_features = Dense(32, activation='relu')(sizes_input)
-        sizes_features = Dense(32, activation='relu')(sizes_features)
-        sizes_features = tf.keras.layers.Reshape((self.max_sequence_length, 32))(sizes_features)
+        sizes_features = Reshape((self.max_sequence_length, 1))(sizes_input)
         
         # 特徴量の結合
         combined_features = Concatenate(axis=-1)([history_embedding, sizes_features])
