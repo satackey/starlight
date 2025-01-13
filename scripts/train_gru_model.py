@@ -38,6 +38,8 @@ class FileAccessPredictor:
         self.filepath_encoder = None
         self.model = None
         self.df = None  # データフレームを保持
+        self.model_a = None  # モデルAを追加
+        self.model_b = None  # モデルBを追加
     
     def save_preprocessed_data(self, X: Dict[str, np.ndarray], y: np.ndarray, 
                              save_dir: str) -> None:
@@ -208,6 +210,91 @@ class FileAccessPredictor:
             metrics=['accuracy']
         )
     
+    def build_model_a(self) -> None:
+        """モデルAの構築 (コマンド → 最初のファイル)"""
+        command_input = Input(shape=(self.max_text_length,), name='command', dtype=tf.int32)
+        command_embedding = Embedding(10000, 128)(command_input)
+        x = Bidirectional(GRU(128))(command_embedding)
+        x = Dense(256, activation='relu')(x)
+        x = Dropout(0.5)(x)
+        output = Dense(len(self.filepath_encoder.classes_), activation='softmax')(x)
+        
+        self.model_a = Model(inputs=command_input, outputs=output)
+        self.model_a.compile(
+            optimizer=Adam(learning_rate=0.0001),
+            loss='sparse_categorical_crossentropy',
+            metrics=['accuracy']
+        )
+
+    def build_model_b(self) -> None:
+        """モデルBの構築 (コマンド & 履歴 → 次のファイル)"""
+        # ...existing build_model code...
+        # Rename existing model to model_b
+        self.model_b = self.model
+        self.model = None  # 既存のmodelをクリア
+
+    def train_models(self, X: Dict[str, np.ndarray], y: np.ndarray, 
+                    n_splits: int = 5) -> Dict[str, List[Dict[str, float]]]:
+        """モデルAとモデルBの学習と評価"""
+        results = {'model_a': [], 'model_b': []}
+        kf = KFold(n_splits=n_splits, shuffle=True, random_state=42)
+        
+        for fold, (train_idx, val_idx) in enumerate(kf.split(X['command']), 1):
+            print(f"\nFold {fold}/{n_splits} - Model A")
+            # モデルAの構築と学習
+            self.build_model_a()
+            history_a = self.model_a.fit(
+                X['command'][train_idx], y[train_idx],
+                validation_data=(X['command'][val_idx], y[val_idx]),
+                epochs=50,
+                batch_size=32,
+                callbacks=[
+                    EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True),
+                    ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2, min_lr=1e-6)
+                ],
+                verbose=1
+            )
+            val_loss_a, val_acc_a = self.model_a.evaluate(X['command'][val_idx], y[val_idx], verbose=0)
+            results['model_a'].append({'fold': fold, 'val_loss': val_loss_a, 'val_accuracy': val_acc_a})
+            self.model_a.save(f'model_a_fold{fold}.h5')
+            
+            print(f"\nFold {fold}/{n_splits} - Model B")
+            # モデルBの構築と学習
+            self.build_model_b()
+            X_train_b = {
+                'command': tf.convert_to_tensor(X['command'][train_idx], dtype=tf.int32),
+                'history': tf.convert_to_tensor(X['history'][train_idx], dtype=tf.int32)
+            }
+            X_val_b = {
+                'command': tf.convert_to_tensor(X['command'][val_idx], dtype=tf.int32),
+                'history': tf.convert_to_tensor(X['history'][val_idx], dtype=tf.int32)
+            }
+            y_train_b = tf.convert_to_tensor(y[train_idx], dtype=tf.int32)
+            y_val_b = tf.convert_to_tensor(y[val_idx], dtype=tf.int32)
+            
+            history_b = self.model_b.fit(
+                X_train_b, y_train_b,
+                validation_data=(X_val_b, y_val_b),
+                epochs=50,
+                batch_size=32,
+                callbacks=[
+                    EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True),
+                    ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2, min_lr=1e-6)
+                ],
+                verbose=1
+            )
+            val_loss_b, val_acc_b = self.model_b.evaluate(X_val_b, y_val_b, verbose=0)
+            top5_acc_b = self.calculate_top_k_accuracy(y[val_idx], self.model_b.predict(X_val_b), k=5)
+            results['model_b'].append({
+                'fold': fold, 
+                'val_loss': val_loss_b, 
+                'val_accuracy': val_acc_b,
+                'top5_accuracy': top5_acc_b
+            })
+            self.model_b.save(f'model_b_fold{fold}.h5')
+        
+        return results
+
     def train_and_evaluate(self, X: Dict[str, np.ndarray], y: np.ndarray, 
                           n_splits: int = 5) -> List[Dict[str, float]]:
         """モデルの学習と評価（k分割交差検証）"""
@@ -367,16 +454,22 @@ def main():
             print(f"前処理済みデータを保存中: {save_data_dir}")
             predictor.save_preprocessed_data(X, y, save_data_dir)
     
-    print("モデルの学習と評価中...")
-    results = predictor.train_and_evaluate(X, y)
+    print("モデルAとモデルBの学習と評価中...")
+    results = predictor.train_models(X, y)
     
     # 結果の表示
-    print("\n評価結果:")
-    for fold_result in results:
-        print(f"\nFold {fold_result['fold']}:")
-        print(f"- 検証損失: {fold_result['val_loss']:.4f}")
-        print(f"- 検証精度: {fold_result['val_accuracy']:.4f}")
-        print(f"- Top-5精度: {fold_result['top5_accuracy']:.4f}")
+    print("\nモデルAの評価結果:")
+    for res in results['model_a']:
+        print(f"\nFold {res['fold']}:")
+        print(f"- 検証損失: {res['val_loss']:.4f}")
+        print(f"- 検証精度: {res['val_accuracy']:.4f}")
+    
+    print("\nモデルBの評価結果:")
+    for res in results['model_b']:
+        print(f"\nFold {res['fold']}:")
+        print(f"- 検証損失: {res['val_loss']:.4f}")
+        print(f"- 検証精度: {res['val_accuracy']:.4f}")
+        print(f"- Top-5精度: {res['top5_accuracy']:.4f}")
     
     # 平均スコアの計算
     avg_acc = np.mean([r['val_accuracy'] for r in results])
