@@ -198,6 +198,10 @@ class CommandDatasetA(Dataset):
         self.commands = commands
         self.first_files = first_files
         self.vocab = vocab
+        # 文字列を数値にマッピングする辞書を作成
+        self.file_to_idx = {file: idx for idx, file in enumerate(sorted(set(self.first_files)))}
+        # `self.first_files` を数値にエンコード
+        self.first_files = [self.file_to_idx[file] for file in self.first_files]
 
     def __len__(self):
         return len(self.commands)
@@ -237,8 +241,10 @@ def train_model_by_type(df: pd.DataFrame, model_dir: str):
     """base_image_typeごとにモデルを学習"""
     results = {}
     
+    image_types = df['base_image_type'].unique()
+    
     # タイプごとにデータを分割
-    for image_type in df['base_image_type'].unique():
+    for image_type in image_types:
         print(f"\n=== Training model for {image_type} type ===")
         type_df = df[df['base_image_type'] == image_type]
         

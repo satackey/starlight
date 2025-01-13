@@ -1,0 +1,40 @@
+Loading data from: result_2025-01-12_075226_processed_traces_v2.csv
+
+=== Training model for node type ===
+ModelA Epoch 1 Loss: 6.7052
+ModelB Epoch 1 Loss: 6.8288
+Epoch 1 - ModelA Accuracy: 0.556, ModelB Top-5 Accuracy: 0.667
+ModelA Epoch 2 Loss: 6.0250
+ModelB Epoch 2 Loss: 5.5744
+Epoch 2 - ModelA Accuracy: 0.667, ModelB Top-5 Accuracy: 0.833
+ModelA Epoch 3 Loss: 4.9490
+ModelB Epoch 3 Loss: 4.5536
+Epoch 3 - ModelA Accuracy: 0.667, ModelB Top-5 Accuracy: 0.944
+ModelA Epoch 4 Loss: 4.6218
+ModelB Epoch 4 Loss: 3.4645
+Epoch 4 - ModelA Accuracy: 0.667, ModelB Top-5 Accuracy: 0.944
+ModelA Epoch 5 Loss: 3.9741
+ModelB Epoch 5 Loss: 2.4271
+Epoch 5 - ModelA Accuracy: 0.667, ModelB Top-5 Accuracy: 0.944
+ModelA Epoch 6 Loss: 3.3128
+ModelB Epoch 6 Loss: 1.8655
+Epoch 6 - ModelA Accuracy: 0.722, ModelB Top-5 Accuracy: 0.944
+ModelA Epoch 7 Loss: 2.3055
+ModelB Epoch 7 Loss: 1.1763
+Epoch 7 - ModelA Accuracy: 0.611, ModelB Top-5 Accuracy: 0.944
+ModelA Epoch 8 Loss: 2.1567
+ModelB Epoch 8 Loss: 1.0522
+Epoch 8 - ModelA Accuracy: 0.611, ModelB Top-5 Accuracy: 0.944
+ModelA Epoch 9 Loss: 2.1914
+ModelB Epoch 9 Loss: 0.5270
+Epoch 9 - ModelA Accuracy: 0.611, ModelB Top-5 Accuracy: 0.944
+ModelA Epoch 10 Loss: 2.1085
+ModelB Epoch 10 Loss: 0.5472
+Epoch 10 - ModelA Accuracy: 0.556, ModelB Top-5 Accuracy: 0.944
+
+=== Training Results ===
+
+node:
+- Data size: 87
+- Model A accuracy: 0.5556
+- Model B top-5 accuracy: 0.9444

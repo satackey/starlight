@@ -1,0 +1,7 @@
+{
+  "node": {
+    "accuracy_A": 0.0,
+    "accuracy_B_top5": 1.0,
+    "data_size": 87
+  }
+}
