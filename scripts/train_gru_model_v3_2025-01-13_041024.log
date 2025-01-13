@@ -1,0 +1,31 @@
+ModelA Epoch 1 Loss: 6.7196
+ModelB Epoch 1 Loss: 6.6279
+Epoch 1 - ModelA Accuracy: 0.444, ModelB Top-5 Accuracy: 0.500
+ModelA Epoch 2 Loss: 5.7000
+ModelB Epoch 2 Loss: 5.7169
+Epoch 2 - ModelA Accuracy: 0.611, ModelB Top-5 Accuracy: 0.778
+ModelA Epoch 3 Loss: 4.6848
+ModelB Epoch 3 Loss: 4.2928
+Epoch 3 - ModelA Accuracy: 0.611, ModelB Top-5 Accuracy: 0.833
+ModelA Epoch 4 Loss: 4.3926
+ModelB Epoch 4 Loss: 3.2717
+Epoch 4 - ModelA Accuracy: 0.722, ModelB Top-5 Accuracy: 0.889
+ModelA Epoch 5 Loss: 3.1007
+ModelB Epoch 5 Loss: 2.2990
+Epoch 5 - ModelA Accuracy: 0.722, ModelB Top-5 Accuracy: 0.889
+ModelA Epoch 6 Loss: 2.4241
+ModelB Epoch 6 Loss: 1.5510
+Epoch 6 - ModelA Accuracy: 0.778, ModelB Top-5 Accuracy: 0.889
+ModelA Epoch 7 Loss: 1.9559
+ModelB Epoch 7 Loss: 1.0233
+Epoch 7 - ModelA Accuracy: 0.778, ModelB Top-5 Accuracy: 0.889
+ModelA Epoch 8 Loss: 1.5490
+ModelB Epoch 8 Loss: 0.8963
+Epoch 8 - ModelA Accuracy: 0.611, ModelB Top-5 Accuracy: 0.889
+ModelA Epoch 9 Loss: 0.9898
+ModelB Epoch 9 Loss: 0.5599
+Epoch 9 - ModelA Accuracy: 0.722, ModelB Top-5 Accuracy: 0.889
+ModelA Epoch 10 Loss: 0.9892
+ModelB Epoch 10 Loss: 0.4318
+Epoch 10 - ModelA Accuracy: 0.722, ModelB Top-5 Accuracy: 0.889
+推定結果: [14, 1186, 1186, 1186, 1186]
