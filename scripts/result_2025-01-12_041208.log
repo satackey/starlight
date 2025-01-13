@@ -1,0 +1,58 @@
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container rm trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight trace-node-lts-ionic-team-ionic-cli-starlight sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+ctr: connection error: desc = "transport: Error while dialing: dial unix:///run/starlight/starlight-snapshotter.sock: timeout": unavailable
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight trace-node-lts-ionic-team-ionic-cli-starlight sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+Error processing image node:lts: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight trace-node-lts-ionic-team-ionic-cli-starlight sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'' returned non-zero exit status 1.
+
+Processing image: node:lts-bullseye-slim
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-bullseye-slim/macbre-phantomas:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-bullseye-slim-macbre-phantomas-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-bullseye-slim-macbre-phantomas-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim/macbre-phantomas:starlight trace-node-lts-bullseye-slim-macbre-phantomas-starlight sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'
+ctr: connection error: desc = "transport: Error while dialing: dial unix:///run/starlight/starlight-snapshotter.sock: timeout": unavailable
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim/macbre-phantomas:starlight trace-node-lts-bullseye-slim-macbre-phantomas-starlight sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'
+Error processing image node:lts-bullseye-slim: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim/macbre-phantomas:starlight trace-node-lts-bullseye-slim-macbre-phantomas-starlight sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/sullyo-prompt2ui:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-sullyo-prompt2ui-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-sullyo-prompt2ui-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/sullyo-prompt2ui:starlight trace-node-lts-sullyo-prompt2ui-starlight sh -c 'npm install'
+ctr: connection error: desc = "transport: Error while dialing: dial unix:///run/starlight/starlight-snapshotter.sock: timeout": unavailable
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/sullyo-prompt2ui:starlight trace-node-lts-sullyo-prompt2ui-starlight sh -c 'npm install'
+Error processing image node:lts: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/sullyo-prompt2ui:starlight trace-node-lts-sullyo-prompt2ui-starlight sh -c 'npm install'' returned non-zero exit status 1.
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-buster/sachu-fx-siya-mol-md:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-buster cloud.cluster.local:5000/node-lts-buster/sachu-fx-siya-mol-md:starlight
+time="Jan 12 04:12:14.854863499" level=info msg="requested platform" platform=linux/amd64
+time="Jan 12 04:12:14.854896597" level=info msg="fetching container image" image="node:lts-buster"
+time="Jan 12 04:12:16.974308993" level=info msg="found platform" _skip=false digest="sha256:210343259138ad1b7bad23cd3be6aa1126f764f887c639749411387c9321c2d5" platform="&{amd64 linux  []  []}" size=2496
+time="Jan 12 04:12:16.974603713" level=info msg="found platform" _skip=true digest="sha256:837872332ac827cb8b56f293e76363d92da59774c6e69d912b1e5fbaafeb4f9f" platform="&{unknown unknown  []  []}" size=842
+time="Jan 12 04:12:16.974726074" level=info msg="found platform" _skip=true digest="sha256:da3b46cbd714a98a2cbee5e316347ffaa6a2fac735a0cbc393195c0db651fa7b" platform="&{unknown unknown  []  []}" size=842
+time="Jan 12 04:12:16.974911274" level=info msg="found platform" _skip=true digest="sha256:c0c113f17313347af14fc655b70333c291c79d864d0e258bb75bdc4d0900ecae" platform="&{arm64 linux  [] v8 []}" size=2498

@@ -242,6 +242,7 @@ def train_model_by_type(df: pd.DataFrame, model_dir: str):
     results = {}
     
     image_types = df['base_image_type'].unique()
+    print(f"Image types: {image_types}")
     
     # タイプごとにデータを分割
     for image_type in image_types:

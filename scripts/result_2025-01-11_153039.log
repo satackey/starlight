@@ -1,0 +1,573 @@
+ctr: container "trace-node-lts-lts-starlight-ionic-team-ionic-cli": already exists
+ctr: container "trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas": already exists
+ctr: container "trace-node-lts-lts-starlight-sullyo-prompt2ui": already exists
+ctr: container "trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD": already exists
+ctr: container "trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro": already exists
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli trace-node-lts-lts-starlight-ionic-team-ionic-cli sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli trace-node-lts-lts-starlight-ionic-team-ionic-cli sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+Error processing image node:lts: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli trace-node-lts-lts-starlight-ionic-team-ionic-cli sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'' returned non-zero exit status 1.
+
+Processing image: node:lts-bullseye-slim
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'
+Error processing image node:lts-bullseye-slim: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-sullyo-prompt2ui
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-sullyo-prompt2ui
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-node-lts-lts-starlight-sullyo-prompt2ui
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-sullyo-prompt2ui
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui trace-node-lts-lts-starlight-sullyo-prompt2ui sh -c 'npm install'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui trace-node-lts-lts-starlight-sullyo-prompt2ui sh -c 'npm install'
+Error processing image node:lts: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui trace-node-lts-lts-starlight-sullyo-prompt2ui sh -c 'npm install'' returned non-zero exit status 1.
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD sh -c 'git clone https://github.com/AbhishekSuresh2/X-AsenaDuplicated/ /root/X'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD sh -c 'git clone https://github.com/AbhishekSuresh2/X-AsenaDuplicated/ /root/X'
+Error processing image node:lts-buster: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD sh -c 'git clone https://github.com/AbhishekSuresh2/X-AsenaDuplicated/ /root/X'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro sh -c 'npm ci'
+ctr: container "trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex": already exists
+ctr: no running task found: task trace-node-lts-lts-starlight-Yang1998-jiale-node-sever not found: not found
+set optimizer: completed request
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: collected 0.000s file access traces - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: collected 0.000s file access traces - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: collected 0.000s file access traces - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: collected 0.000s file access traces - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 0.000s file access traces - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: collected 0.000s file access traces - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: collected 0.000s file access traces - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: collected 0.000s file access traces - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: collected 0.000s file access traces - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: collected 0.000s file access traces - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+reported traces: uploaded traces
+ctr: container "trace-node-lts-lts-starlight-aldy97-Budget-Planner": already exists
+ctr: container "trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12": already exists
+yarn install v1.22.22
+warning You don't appear to have an internet connection. Try the --offline flag to use the cache for registry queries.
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+Done in 0.03s.
+ctr: no running task found: task trace-node-lts-lts-starlight-equinor-flowify-workflows-UI not found: not found
+set optimizer: completed request
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: collected 0.000s file access traces - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: collected 0.000s file access traces - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: collected 0.000s file access traces - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 0.000s file access traces - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 0.000s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 0.000s file access traces - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: collected 0.000s file access traces - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: collected 0.000s file access traces - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: collected 0.000s file access traces - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: collected 0.000s file access traces - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: collected 0.000s file access traces - okay 
+reported traces: uploaded traces
+time="Jan 11 15:30:42.927657841" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:30:42.927701652" level=info msg="fetching container image" image="ubuntu:22.04"
+time="Jan 11 15:30:44.801718183" level=info msg="found platform" _skip=true digest="sha256:a5e64271c378f07afca9473a3cf82db16c7b4eabe8111835d48c9e165230f20d" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:30:44.801784626" level=info msg="found platform" _skip=false digest="sha256:3d1556a8a18cf5307b121e0a98e93f1ddf1f3f8e092f1fddfd941254785b95d7" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:30:44.802088372" level=info msg="found platform" _skip=true digest="sha256:e5759e2b46d96e97d8b55718bfa25ff0ab94afc675bcbdcc75ece806e75eb0ef" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:30:44.802118583" level=info msg="found platform" _skip=true digest="sha256:fbbbc3b83f7fb5d64c8ad86a44765c8eb4ceced4a43b00c58b2f625d2ed61676" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:30:44.802132452" level=info msg="found platform" _skip=true digest="sha256:17d75c44d078810c2264962f31c2c3c8a5889ec05edd4e2a00e273a5e1219ebf" platform="&{arm linux  [] v7 []}" size=424
+time="Jan 11 15:30:44.802143017" level=info msg="found platform" _skip=true digest="sha256:4e626f9c1a3cda3c405b8907ac8117f502446f2004a8688fcade23acbb31195b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:30:44.802153241" level=info msg="found platform" _skip=true digest="sha256:7c75ab2b0567edbb9d4834a2c51e462ebd709740d1f2c40bcd23c56e974fe2a8" platform="&{arm64 linux  [] v8 []}" size=424
+time="Jan 11 15:30:44.802165328" level=info msg="found platform" _skip=true digest="sha256:e04b34e48954230514d2d2178f4eb0f9629caa21700c263680fc8cc1e0b87b71" platform="&{riscv64 linux  []  []}" size=424
+time="Jan 11 15:30:44.802175642" level=info msg="found platform" _skip=true digest="sha256:15abdf6cd20e250f2cd5796047ca8370c45c70a2a1279fe0c37c061116d9a525" platform="&{ppc64le linux  []  []}" size=424
+time="Jan 11 15:30:44.802185395" level=info msg="found platform" _skip=true digest="sha256:9727e060ae8adf67b5180ef47749720b6e88503e50167da84eab32faf47cc12f" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:30:44.802195529" level=info msg="found platform" _skip=true digest="sha256:af903bc2047b8dd70bb96aaf5a35df3b722966b7c6659cb37001535f0d643d9c" platform="&{s390x linux  []  []}" size=424
+time="Jan 11 15:30:44.802206426" level=info msg="found platform" _skip=true digest="sha256:b1a48753c24aeb7c76f5691efb6a38bd59870130eb06e57687181356545e975b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:30:55.195319264" level=info msg="converted platform" digest="sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:30:55.195346021" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh"
+time="Jan 11 15:30:55.516820172" level=info msg="conversion completed"
+time="Jan 11 15:30:55.844855114" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh"
+time="Jan 11 15:30:55.844931750" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T15:30:55Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:30:55Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:30:55Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:30:55Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:30:55Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T15:30:55Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:30:55Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T15:30:55Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T15:30:55Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T15:30:55Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T15:30:55Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:30:55Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:30:55Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T15:30:55Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:30:55Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T15:30:55Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T15:30:55Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T15:30:55Z - okay 
+requested to pull image cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh based on cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Jocuz-docker_practica@sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37 in 115ms 
+delta image 198.2KiB / original 31.0MiB (skipped: 30.8MiB = 99.38%)
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro sh -c 'npm ci'
+Error processing image node:lts: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro sh -c 'npm ci'' returned non-zero exit status 1.
+
+Processing image: node:lts-slim
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex sh -c 'echo "@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_TOKEN}" > ./.npmrc && npm ci && rm -f ./.npmrc'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex sh -c 'echo "@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_TOKEN}" > ./.npmrc && npm ci && rm -f ./.npmrc'
+Error processing image node:lts-slim: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex sh -c 'echo "@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_TOKEN}" > ./.npmrc && npm ci && rm -f ./.npmrc'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever trace-node-lts-lts-starlight-Yang1998-jiale-node-sever sh -c 'mkdir -p /home/node-serve'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-aldy97-Budget-Planner
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-aldy97-Budget-Planner
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-node-lts-lts-starlight-aldy97-Budget-Planner
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-aldy97-Budget-Planner
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner trace-node-lts-lts-starlight-aldy97-Budget-Planner sh -c 'npm install'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner trace-node-lts-lts-starlight-aldy97-Budget-Planner sh -c 'npm install'
+Error processing image node:lts: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner trace-node-lts-lts-starlight-aldy97-Budget-Planner sh -c 'npm install'' returned non-zero exit status 1.
+
+Processing image: node:lts-iron
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12 trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12 sh -c 'npm install'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12 trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12 sh -c 'npm install'
+Error processing image node:lts-iron: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12 trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12 sh -c 'npm install'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-equinor-flowify-workflows-UI
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-equinor-flowify-workflows-UI trace-node-lts-lts-starlight-equinor-flowify-workflows-UI sh -c 'yarn install'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh
+Creating and running container...
++ apt-get update --fix-missing
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
++ apt-get install -qy --no-install-recommends ca-certificates tzdata locales procps net-tools file ocl-icd-libopencl1 clinfo
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+ctr: container "trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup": already exists
+ctr: container "trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt": already exists
+ctr: container "trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer": already exists
+ctr: container "trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container": already exists
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh sh -c 'set -ex && apt-get update --fix-missing && apt-get install -qy --no-install-recommends ca-certificates tzdata locales procps net-tools file ocl-icd-libopencl1 clinfo && apt-get clean && rm -rf /var/lib/apt/lists/* && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 && echo "$TZ" > /etc/timezone'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
+Command failed with exit code 100: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
+Error processing image ubuntu:22.04: Command 'sudo ctr task start trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh' returned non-zero exit status 100.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup sh -c 'apt-get update && apt-get install -y tar wget bash rsync gcc libfreetype6-dev libhdf5-serial-dev libpng-dev libzmq3-dev unzip pkg-config software-properties-common graphviz git curl libgeos++-dev proj-data proj-bin libgeos-dev nodejs npm build-essential gcc python3-dev libffi-dev libssl-dev python3-pip openssh-server openssh-client tk -y'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup sh -c 'apt-get update && apt-get install -y tar wget bash rsync gcc libfreetype6-dev libhdf5-serial-dev libpng-dev libzmq3-dev unzip pkg-config software-properties-common graphviz git curl libgeos++-dev proj-data proj-bin libgeos-dev nodejs npm build-essential gcc python3-dev libffi-dev libssl-dev python3-pip openssh-server openssh-client tk -y'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup sh -c 'apt-get update && apt-get install -y tar wget bash rsync gcc libfreetype6-dev libhdf5-serial-dev libpng-dev libzmq3-dev unzip pkg-config software-properties-common graphviz git curl libgeos++-dev proj-data proj-bin libgeos-dev nodejs npm build-essential gcc python3-dev libffi-dev libssl-dev python3-pip openssh-server openssh-client tk -y'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt sh -c 'apt-get update && apt-get install -y curl sudo ca-certificates'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt sh -c 'apt-get update && apt-get install -y curl sudo ca-certificates'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt sh -c 'apt-get update && apt-get install -y curl sudo ca-certificates'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer sh -c 'apt-get update && apt-get --no-install-recommends install -y build-essential ca-certificates curl git'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer sh -c 'apt-get update && apt-get --no-install-recommends install -y build-essential ca-certificates curl git'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer sh -c 'apt-get update && apt-get --no-install-recommends install -y build-essential ca-certificates curl git'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container sh -c 'apt-get update && apt-get install -y --no-install-recommends software-properties-common gnupg wget lsb-release ca-certificates git build-essential autotools-dev automake libtool libtiff-dev zlib1g-dev libjpeg-dev libpng-dev libleptonica-dev libjbig2dec0-dev && rm -rf /var/lib/apt/lists/*'
+ctr: container "trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker": already exists
+ctr: container "trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s": already exists
+ctr: container "trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core": already exists
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+ctr: no running task found: task trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica not found: not found
+set optimizer: completed request
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 16.745s file access traces - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: collected 16.745s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 16.744s file access traces - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: collected 16.745s file access traces - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: collected 16.745s file access traces - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: collected 16.616s file access traces - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: collected 16.745s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 16.745s file access traces - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: collected 16.745s file access traces - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: collected 16.745s file access traces - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: collected 16.745s file access traces - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: collected 16.745s file access traces - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 16.745s file access traces - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: collected 16.745s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 16.745s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 16.745s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 16.745s file access traces - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: collected 16.745s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 16.745s file access traces - okay 
+reported traces: uploaded traces
+set optimizer: completed request
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 0.000s file access traces - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: collected 0.000s file access traces - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: collected 0.000s file access traces - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: collected 0.000s file access traces - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: collected 0.000s file access traces - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 0.000s file access traces - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: collected 0.000s file access traces - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: collected 0.000s file access traces - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 0.000s file access traces - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: collected 0.000s file access traces - okay 
+reported traces: uploaded traces
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container sh -c 'apt-get update && apt-get install -y --no-install-recommends software-properties-common gnupg wget lsb-release ca-certificates git build-essential autotools-dev automake libtool libtiff-dev zlib1g-dev libjpeg-dev libpng-dev libleptonica-dev libjbig2dec0-dev && rm -rf /var/lib/apt/lists/*'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container sh -c 'apt-get update && apt-get install -y --no-install-recommends software-properties-common gnupg wget lsb-release ca-certificates git build-essential autotools-dev automake libtool libtiff-dev zlib1g-dev libjpeg-dev libpng-dev libleptonica-dev libjbig2dec0-dev && rm -rf /var/lib/apt/lists/*'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker sh -c 'apt update'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker sh -c 'apt update'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker sh -c 'apt update'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s sh -c 'apt update && apt install -y build-essential && apt install -y libnet-ldap-perl && apt install -y libpcre2-dev && apt install -y libc-ares-dev && apt install -y checkinstall && ./configure && make && checkinstall --install=no --default --pkgname=tac-plus-ng --pkgversion=1 && cp tac-plus-ng_*.deb /tac-plus-ng.deb'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s sh -c 'apt update && apt install -y build-essential && apt install -y libnet-ldap-perl && apt install -y libpcre2-dev && apt install -y libc-ares-dev && apt install -y checkinstall && ./configure && make && checkinstall --install=no --default --pkgname=tac-plus-ng --pkgversion=1 && cp tac-plus-ng_*.deb /tac-plus-ng.deb'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s sh -c 'apt update && apt install -y build-essential && apt install -y libnet-ldap-perl && apt install -y libpcre2-dev && apt install -y libc-ares-dev && apt install -y checkinstall && ./configure && make && checkinstall --install=no --default --pkgname=tac-plus-ng --pkgversion=1 && cp tac-plus-ng_*.deb /tac-plus-ng.deb'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight rm trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core sh -c 'apt-get -y update && apt-get install -y curl && dpkg -i Valkka.deb || apt-get install -fy'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core sh -c 'apt-get -y update && apt-get install -y curl && dpkg -i Valkka.deb || apt-get install -fy'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core sh -c 'apt-get -y update && apt-get install -y curl && dpkg -i Valkka.deb || apt-get install -fy'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Jocuz-docker_practica
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Jocuz-docker_practica trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica sh -c 'apt-get update'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+Command failed with exit code 1: sudo ctr task kill trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+Removing container...
+
+>> Executing: sudo ctr container rm trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+
+Processing complete:
+Successful: 3
+Failed: 16

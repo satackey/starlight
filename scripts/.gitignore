@@ -3,4 +3,3 @@
 .cache
 *.egg-info
 .coverage
-result_*

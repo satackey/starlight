@@ -1,0 +1,2079 @@
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command failed with exit code 1: sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm -f trace-node-lts-lts-starlight-ionic-team-ionic-cli

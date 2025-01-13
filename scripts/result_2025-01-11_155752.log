@@ -1,0 +1,458 @@
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container rm trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli trace-node-lts-lts-starlight-ionic-team-ionic-cli sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command timed out after 30 seconds: sudo ctr task start trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Error processing image node:lts: `TimeoutExpired` Command 'sudo ctr task start trace-node-lts-lts-starlight-ionic-team-ionic-cli' timed out after 30 seconds
+
+Processing image: node:lts-bullseye-slim
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing (quiet): sudo ctr container rm trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'
+
+>> Executing: sudo ctr task start trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+Err:1 http://deb.debian.org/debian bullseye InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:2 http://deb.debian.org/debian-security bullseye-security InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:3 http://deb.debian.org/debian bullseye-updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Reading package lists...
+W: Failed to fetch http://deb.debian.org/debian/dists/bullseye/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian-security/dists/bullseye-security/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian/dists/bullseye-updates/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+Command failed with exit code 100: sudo ctr task start trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+Error processing image node:lts-bullseye-slim: `CalledProcessError` Command 'sudo ctr task start trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas' returned non-zero exit status 100.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-sullyo-prompt2ui
+
+>> Executing (quiet): sudo ctr container rm trace-node-lts-lts-starlight-sullyo-prompt2ui
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-sullyo-prompt2ui
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-sullyo-prompt2ui
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui trace-node-lts-lts-starlight-sullyo-prompt2ui sh -c 'npm install'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-sullyo-prompt2ui
+npm error Tracker "idealTree" already exists
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_58_30_361Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-lts-starlight-sullyo-prompt2ui
+Error processing image node:lts: `CalledProcessError` Command 'sudo ctr task start trace-node-lts-lts-starlight-sullyo-prompt2ui' returned non-zero exit status 1.
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing (quiet): sudo ctr container rm trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD sh -c 'git clone https://github.com/AbhishekSuresh2/X-AsenaDuplicated/ /root/X'
+
+>> Executing: sudo ctr task start trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+Cloning into '/root/X'...
+fatal: unable to access 'https://github.com/AbhishekSuresh2/X-AsenaDuplicated/': Could not resolve host: github.com
+Command failed with exit code 128: sudo ctr task start trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+Error processing image node:lts-buster: `CalledProcessError` Command 'sudo ctr task start trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD' returned non-zero exit status 128.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing (quiet): sudo ctr container rm trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro sh -c 'npm ci'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+npm error code EUSAGE
+npm error
+npm error The `npm ci` command can only install with an existing package-lock.json or
+npm error npm-shrinkwrap.json with lockfileVersion >= 1. Run an install with npm@5 or
+npm error later to generate a package-lock.json file, then try again.
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_58_36_192Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+Error processing image node:lts: `CalledProcessError` Command 'sudo ctr task start trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro' returned non-zero exit status 1.
+
+Processing image: node:lts-slim
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing (quiet): sudo ctr container rm trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex sh -c 'echo "@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_TOKEN}" > ./.npmrc && npm ci && rm -f ./.npmrc'
+
+>> Executing: sudo ctr task start trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+npm error code EUSAGE
+npm error
+npm error The `npm ci` command can only install with an existing package-lock.json or
+npm error npm-shrinkwrap.json with lockfileVersion >= 1. Run an install with npm@5 or
+npm error later to generate a package-lock.json file, then try again.
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_58_39_609Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+Error processing image node:lts-slim: `CalledProcessError` Command 'sudo ctr task start trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever trace-node-lts-lts-starlight-Yang1998-jiale-node-sever sh -c 'mkdir -p /home/node-serve'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+ctr: no running task found: task trace-node-lts-lts-starlight-Yang1998-jiale-node-sever not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: collected 0.000s file access traces - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: collected 0.000s file access traces - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 0.000s file access traces - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: collected 0.000s file access traces - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: collected 0.000s file access traces - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: collected 0.000s file access traces - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: collected 0.000s file access traces - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: collected 0.000s file access traces - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 0.000s file access traces - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: collected 0.000s file access traces - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-aldy97-Budget-Planner
+
+>> Executing (quiet): sudo ctr container rm trace-node-lts-lts-starlight-aldy97-Budget-Planner
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-aldy97-Budget-Planner
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-aldy97-Budget-Planner
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner trace-node-lts-lts-starlight-aldy97-Budget-Planner sh -c 'npm install'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-aldy97-Budget-Planner
+npm error Tracker "idealTree" already exists
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_58_44_888Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-lts-starlight-aldy97-Budget-Planner
+Error processing image node:lts: `CalledProcessError` Command 'sudo ctr task start trace-node-lts-lts-starlight-aldy97-Budget-Planner' returned non-zero exit status 1.
+
+Processing image: node:lts-iron
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing (quiet): sudo ctr container rm trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12 trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12 sh -c 'npm install'
+
+>> Executing: sudo ctr task start trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+npm error Tracker "idealTree" already exists
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_58_48_362Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+Error processing image node:lts-iron: `CalledProcessError` Command 'sudo ctr task start trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-equinor-flowify-workflows-UI
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-equinor-flowify-workflows-UI trace-node-lts-lts-starlight-equinor-flowify-workflows-UI sh -c 'yarn install'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+yarn install v1.22.22
+warning You don't appear to have an internet connection. Try the --offline flag to use the cache for registry queries.
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+Done in 0.04s.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+ctr: no running task found: task trace-node-lts-lts-starlight-equinor-flowify-workflows-UI not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: collected 0.000s file access traces - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: collected 0.000s file access traces - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 0.000s file access traces - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: collected 0.000s file access traces - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: collected 0.000s file access traces - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: collected 0.000s file access traces - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: collected 0.000s file access traces - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 0.000s file access traces - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: collected 0.000s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 0.000s file access traces - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
+
+>> Executing (quiet): sudo ctr container rm trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
+
+>> Executing (quiet): sudo ctr container ls | grep trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh sh -c 'set -ex && apt-get update --fix-missing && apt-get install -qy --no-install-recommends ca-certificates tzdata locales procps net-tools file ocl-icd-libopencl1 clinfo && apt-get clean && rm -rf /var/lib/apt/lists/* && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 && echo "$TZ" > /etc/timezone'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
++ apt-get update --fix-missing
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
++ apt-get install -qy --no-install-recommends ca-certificates tzdata locales procps net-tools file ocl-icd-libopencl1 clinfo
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+Command failed with exit code 100: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
+Error processing image ubuntu:22.04: `CalledProcessError` Command 'sudo ctr task start trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh' returned non-zero exit status 100.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+
+>> Executing (quiet): sudo ctr container rm trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+
+>> Executing (quiet): sudo ctr container ls | grep trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup sh -c 'apt-get update && apt-get install -y tar wget bash rsync gcc libfreetype6-dev libhdf5-serial-dev libpng-dev libzmq3-dev unzip pkg-config software-properties-common graphviz git curl libgeos++-dev proj-data proj-bin libgeos-dev nodejs npm build-essential gcc python3-dev libffi-dev libssl-dev python3-pip openssh-server openssh-client tk -y'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+npm error code EAI_AGAIN
+npm error syscall getaddrinfo
+npm error errno EAI_AGAIN
+npm error request to https://registry.npmjs.org/@ionic%2fcli failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_57_55_615Z-debug-0.log
+Err:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+Command failed with exit code 100: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+Error processing image ubuntu:22.04: `CalledProcessError` Command 'sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup' returned non-zero exit status 100.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing (quiet): sudo ctr container rm trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing (quiet): sudo ctr container ls | grep trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt sh -c 'apt-get update && apt-get install -y curl sudo ca-certificates'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease

@@ -1,0 +1,827 @@
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight trace-node-lts-ionic-team-ionic-cli-starlight sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+
+>> Executing: sudo ctr task start trace-node-lts-ionic-team-ionic-cli-starlight
+Command timed out after 30 seconds: sudo ctr task start trace-node-lts-ionic-team-ionic-cli-starlight
+Command timed out.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-ionic-team-ionic-cli-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-ionic-team-ionic-cli-starlight
+time="2025-01-12T06:31:52Z" level=error msg="failed to delete container \"trace-node-lts-ionic-team-ionic-cli-starlight\"" error="cannot delete a non stopped container: {running 0 0001-01-01 00:00:00 +0000 UTC}"
+ctr: cannot delete a non stopped container: {running 0 0001-01-01 00:00:00 +0000 UTC}
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts-bullseye-slim
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-bullseye-slim/macbre-phantomas:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-bullseye-slim-macbre-phantomas-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-bullseye-slim-macbre-phantomas-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim/macbre-phantomas:starlight trace-node-lts-bullseye-slim-macbre-phantomas-starlight sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'
+
+>> Executing: sudo ctr task start trace-node-lts-bullseye-slim-macbre-phantomas-starlight
+Err:1 http://deb.debian.org/debian bullseye InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:2 http://deb.debian.org/debian-security bullseye-security InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:3 http://deb.debian.org/debian bullseye-updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Reading package lists...
+W: Failed to fetch http://deb.debian.org/debian/dists/bullseye/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian-security/dists/bullseye-security/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian/dists/bullseye-updates/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+Command failed with exit code 100: sudo ctr task start trace-node-lts-bullseye-slim-macbre-phantomas-starlight
+Command failed with exit code 100.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-bullseye-slim-macbre-phantomas-starlight
+ctr: no running task found: task trace-node-lts-bullseye-slim-macbre-phantomas-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-bullseye-slim-macbre-phantomas-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-bullseye-slim-macbre-phantomas-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/sullyo-prompt2ui:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-sullyo-prompt2ui-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-sullyo-prompt2ui-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/sullyo-prompt2ui:starlight trace-node-lts-sullyo-prompt2ui-starlight sh -c 'npm install'
+
+>> Executing: sudo ctr task start trace-node-lts-sullyo-prompt2ui-starlight
+npm error Tracker "idealTree" already exists
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-12T06_31_55_681Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-sullyo-prompt2ui-starlight
+Command failed with exit code 1.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-sullyo-prompt2ui-starlight
+ctr: no running task found: task trace-node-lts-sullyo-prompt2ui-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-sullyo-prompt2ui-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-sullyo-prompt2ui-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-buster/sachu-fx-siya-mol-md:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-buster cloud.cluster.local:5000/node-lts-buster/sachu-fx-siya-mol-md:starlight
+time="Jan 12 06:31:57.665814465" level=info msg="requested platform" platform=linux/amd64
+time="Jan 12 06:31:57.665862946" level=info msg="fetching container image" image="node:lts-buster"
+time="Jan 12 06:32:01.143845461" level=error msg="fail to convert the container image" error="failed to read image: Get \"https://index.docker.io/v2/library/node/manifests/lts-buster\": read tcp 192.168.3.2:35554->54.236.113.205:443: read: connection reset by peer"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-12T06:32:01Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-12T06:32:01Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-12T06:32:01Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-12T06:32:01Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-12T06:32:01Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts-buster/sachu-fx-siya-mol-md:starlight
+pull image failed: failed to pull image cloud.cluster.local:5000/node-lts-buster/sachu-fx-siya-mol-md:starlight: {"status":"Bad Request","code":400,"error":"requested image cloud.cluster.local:5000/node-lts-buster/sachu-fx-siya-mol-md:starlight not found"}
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-buster-sachu-fx-siya-mol-md-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-buster-sachu-fx-siya-mol-md-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster/sachu-fx-siya-mol-md:starlight trace-node-lts-buster-sachu-fx-siya-mol-md-starlight sh -c 'git clone https://github.com/AbhishekSuresh2/X-AsenaDuplicated/ /root/X'
+ctr: image "cloud.cluster.local:5000/node-lts-buster/sachu-fx-siya-mol-md:starlight": not found
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster/sachu-fx-siya-mol-md:starlight trace-node-lts-buster-sachu-fx-siya-mol-md-starlight sh -c 'git clone https://github.com/AbhishekSuresh2/X-AsenaDuplicated/ /root/X'
+Error processing image node:lts-buster: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster/sachu-fx-siya-mol-md:starlight trace-node-lts-buster-sachu-fx-siya-mol-md-starlight sh -c 'git clone https://github.com/AbhishekSuresh2/X-AsenaDuplicated/ /root/X'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/pedroh-santos-api-gerenciador-financeiro:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-pedroh-santos-api-gerenciador-financeiro-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-pedroh-santos-api-gerenciador-financeiro-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/pedroh-santos-api-gerenciador-financeiro:starlight trace-node-lts-pedroh-santos-api-gerenciador-financeiro-starlight sh -c 'npm ci'
+
+>> Executing: sudo ctr task start trace-node-lts-pedroh-santos-api-gerenciador-financeiro-starlight
+npm error code EUSAGE
+npm error
+npm error The `npm ci` command can only install with an existing package-lock.json or
+npm error npm-shrinkwrap.json with lockfileVersion >= 1. Run an install with npm@5 or
+npm error later to generate a package-lock.json file, then try again.
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-12T06_32_02_845Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-pedroh-santos-api-gerenciador-financeiro-starlight
+Command failed with exit code 1.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-pedroh-santos-api-gerenciador-financeiro-starlight
+ctr: no running task found: task trace-node-lts-pedroh-santos-api-gerenciador-financeiro-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-pedroh-santos-api-gerenciador-financeiro-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-pedroh-santos-api-gerenciador-financeiro-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 2.408s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 2.408s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 2.408s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 2.408s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 2.408s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts-slim
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-slim/swiftfiddle-swiftregex:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-slim-swiftfiddle-swiftregex-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-slim-swiftfiddle-swiftregex-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-slim/swiftfiddle-swiftregex:starlight trace-node-lts-slim-swiftfiddle-swiftregex-starlight sh -c 'echo "@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_TOKEN}" > ./.npmrc && npm ci && rm -f ./.npmrc'
+
+>> Executing: sudo ctr task start trace-node-lts-slim-swiftfiddle-swiftregex-starlight
+npm error code EUSAGE
+npm error
+npm error The `npm ci` command can only install with an existing package-lock.json or
+npm error npm-shrinkwrap.json with lockfileVersion >= 1. Run an install with npm@5 or
+npm error later to generate a package-lock.json file, then try again.
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-12T06_32_05_409Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-slim-swiftfiddle-swiftregex-starlight
+Command failed with exit code 1.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-slim-swiftfiddle-swiftregex-starlight
+ctr: no running task found: task trace-node-lts-slim-swiftfiddle-swiftregex-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-slim-swiftfiddle-swiftregex-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-slim-swiftfiddle-swiftregex-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/yang1998-jiale-node-sever:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-yang1998-jiale-node-sever-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-yang1998-jiale-node-sever-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/yang1998-jiale-node-sever:starlight trace-node-lts-yang1998-jiale-node-sever-starlight sh -c 'mkdir -p /home/node-serve'
+
+>> Executing: sudo ctr task start trace-node-lts-yang1998-jiale-node-sever-starlight
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-yang1998-jiale-node-sever-starlight
+ctr: no running task found: task trace-node-lts-yang1998-jiale-node-sever-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-yang1998-jiale-node-sever-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-yang1998-jiale-node-sever-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/aldy97-budget-planner:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-aldy97-budget-planner-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-aldy97-budget-planner-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/aldy97-budget-planner:starlight trace-node-lts-aldy97-budget-planner-starlight sh -c 'npm install'
+
+>> Executing: sudo ctr task start trace-node-lts-aldy97-budget-planner-starlight
+npm error Tracker "idealTree" already exists
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-12T06_32_09_355Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-aldy97-budget-planner-starlight
+Command failed with exit code 1.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-aldy97-budget-planner-starlight
+ctr: no running task found: task trace-node-lts-aldy97-budget-planner-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-aldy97-budget-planner-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-aldy97-budget-planner-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts-iron
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-iron/sgautam2-1-assignment12:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-iron-sgautam2-1-assignment12-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-iron-sgautam2-1-assignment12-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-iron/sgautam2-1-assignment12:starlight trace-node-lts-iron-sgautam2-1-assignment12-starlight sh -c 'npm install'
+
+>> Executing: sudo ctr task start trace-node-lts-iron-sgautam2-1-assignment12-starlight
+npm error Tracker "idealTree" already exists
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-12T06_32_11_596Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-iron-sgautam2-1-assignment12-starlight
+Command failed with exit code 1.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-iron-sgautam2-1-assignment12-starlight
+ctr: no running task found: task trace-node-lts-iron-sgautam2-1-assignment12-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-iron-sgautam2-1-assignment12-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-iron-sgautam2-1-assignment12-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/equinor-flowify-workflows-ui:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-equinor-flowify-workflows-ui-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-equinor-flowify-workflows-ui-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/equinor-flowify-workflows-ui:starlight trace-node-lts-equinor-flowify-workflows-ui-starlight sh -c 'yarn install'
+
+>> Executing: sudo ctr task start trace-node-lts-equinor-flowify-workflows-ui-starlight
+yarn install v1.22.22
+warning You don't appear to have an internet connection. Try the --offline flag to use the cache for registry queries.
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+Done in 0.03s.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-equinor-flowify-workflows-ui-starlight
+ctr: no running task found: task trace-node-lts-equinor-flowify-workflows-ui-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-equinor-flowify-workflows-ui-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-equinor-flowify-workflows-ui-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-buster/gurumd-tech-botguru:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-buster-gurumd-tech-botguru-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-buster-gurumd-tech-botguru-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster/gurumd-tech-botguru:starlight trace-node-lts-buster-gurumd-tech-botguru-starlight sh -c 'apt-get update && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && npm i pm2 -g && rm -rf /var/lib/apt/lists/*'
+
+>> Executing: sudo ctr task start trace-node-lts-buster-gurumd-tech-botguru-starlight
+Err:1 http://deb.debian.org/debian buster InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:2 http://deb.debian.org/debian-security buster/updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:3 http://deb.debian.org/debian buster-updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Reading package lists...
+W: Failed to fetch http://deb.debian.org/debian/dists/buster/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian-security/dists/buster/updates/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian/dists/buster-updates/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+Command failed with exit code 100: sudo ctr task start trace-node-lts-buster-gurumd-tech-botguru-starlight
+Command failed with exit code 100.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-buster-gurumd-tech-botguru-starlight
+ctr: no running task found: task trace-node-lts-buster-gurumd-tech-botguru-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-buster-gurumd-tech-botguru-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-buster-gurumd-tech-botguru-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-buster/vuejsprojects-nhs-ui:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-buster-vuejsprojects-nhs-ui-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-buster-vuejsprojects-nhs-ui-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster/vuejsprojects-nhs-ui:starlight trace-node-lts-buster-vuejsprojects-nhs-ui-starlight sh -c 'addgroup docker --gid=${docker_gid};'
+
+>> Executing: sudo ctr task start trace-node-lts-buster-vuejsprojects-nhs-ui-starlight
+Option gid requires an argument
+adduser [--home DIR] [--shell SHELL] [--no-create-home] [--uid ID]
+[--firstuid ID] [--lastuid ID] [--gecos GECOS] [--ingroup GROUP | --gid ID]
+[--disabled-password] [--disabled-login] [--add_extra_groups] USER
+   Add a normal user
+
+adduser --system [--home DIR] [--shell SHELL] [--no-create-home] [--uid ID]
+[--gecos GECOS] [--group | --ingroup GROUP | --gid ID] [--disabled-password]
+[--disabled-login] [--add_extra_groups] USER
+   Add a system user
+
+adduser --group [--gid ID] GROUP
+addgroup [--gid ID] GROUP
+   Add a user group
+
+addgroup --system [--gid ID] GROUP
+   Add a system group
+
+adduser USER GROUP
+   Add an existing user to an existing group
+
+general options:
+  --quiet | -q      don't give process information to stdout
+  --force-badname   allow usernames which do not match the
+                    NAME_REGEX configuration variable
+  --help | -h       usage message
+  --version | -v    version number and copyright
+  --conf | -c FILE  use FILE as configuration file
+
+Command failed with exit code 1: sudo ctr task start trace-node-lts-buster-vuejsprojects-nhs-ui-starlight
+Command failed with exit code 1.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-buster-vuejsprojects-nhs-ui-starlight
+ctr: no running task found: task trace-node-lts-buster-vuejsprojects-nhs-ui-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-buster-vuejsprojects-nhs-ui-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-buster-vuejsprojects-nhs-ui-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/seokyim8-personal_website:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-seokyim8-personal_website-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-seokyim8-personal_website-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/seokyim8-personal_website:starlight trace-node-lts-seokyim8-personal_website-starlight sh -c 'apt-get update && apt-get install -y python3-pip'
+
+>> Executing: sudo ctr task start trace-node-lts-seokyim8-personal_website-starlight
+Ign:1 http://deb.debian.org/debian bookworm InRelease
+Ign:2 http://deb.debian.org/debian bookworm-updates InRelease
+Ign:3 http://deb.debian.org/debian-security bookworm-security InRelease
+Ign:1 http://deb.debian.org/debian bookworm InRelease
+Ign:2 http://deb.debian.org/debian bookworm-updates InRelease
+Ign:3 http://deb.debian.org/debian-security bookworm-security InRelease
+Ign:1 http://deb.debian.org/debian bookworm InRelease
+Ign:2 http://deb.debian.org/debian bookworm-updates InRelease
+Ign:3 http://deb.debian.org/debian-security bookworm-security InRelease
+Err:1 http://deb.debian.org/debian bookworm InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:2 http://deb.debian.org/debian bookworm-updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:3 http://deb.debian.org/debian-security bookworm-security InRelease
+  Temporary failure resolving 'deb.debian.org'
+Reading package lists...
+W: Failed to fetch http://deb.debian.org/debian/dists/bookworm/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian/dists/bookworm-updates/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian-security/dists/bookworm-security/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+Command failed with exit code 100: sudo ctr task start trace-node-lts-seokyim8-personal_website-starlight
+Command failed with exit code 100.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-seokyim8-personal_website-starlight
+ctr: no running task found: task trace-node-lts-seokyim8-personal_website-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-seokyim8-personal_website-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-seokyim8-personal_website-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/jackson-harris-iii-staking-rewards-viewer:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-jackson-harris-iii-staking-rewards-viewer-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-jackson-harris-iii-staking-rewards-viewer-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/jackson-harris-iii-staking-rewards-viewer:starlight trace-node-lts-jackson-harris-iii-staking-rewards-viewer-starlight sh -c 'yarn install --frozen-lockfile'
+
+>> Executing: sudo ctr task start trace-node-lts-jackson-harris-iii-staking-rewards-viewer-starlight
+yarn install v1.22.22
+warning You don't appear to have an internet connection. Try the --offline flag to use the cache for registry queries.
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+Done in 0.03s.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-jackson-harris-iii-staking-rewards-viewer-starlight
+ctr: no running task found: task trace-node-lts-jackson-harris-iii-staking-rewards-viewer-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-jackson-harris-iii-staking-rewards-viewer-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-jackson-harris-iii-staking-rewards-viewer-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-buster/optimates-ase-e-commerce.frontend:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-buster-optimates-ase-e-commerce.frontend-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-buster-optimates-ase-e-commerce.frontend-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster/optimates-ase-e-commerce.frontend:starlight trace-node-lts-buster-optimates-ase-e-commerce.frontend-starlight sh -c 'npm install'
+
+>> Executing: sudo ctr task start trace-node-lts-buster-optimates-ase-e-commerce.frontend-starlight
+npm error Tracker "idealTree" already exists
+
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-12T06_32_29_808Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-buster-optimates-ase-e-commerce.frontend-starlight
+Command failed with exit code 1.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-buster-optimates-ase-e-commerce.frontend-starlight
+ctr: no running task found: task trace-node-lts-buster-optimates-ase-e-commerce.frontend-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-buster-optimates-ase-e-commerce.frontend-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-buster-optimates-ase-e-commerce.frontend-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/transportkollektiv-voorwiel:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-transportkollektiv-voorwiel-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-transportkollektiv-voorwiel-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/transportkollektiv-voorwiel:starlight trace-node-lts-transportkollektiv-voorwiel-starlight sh -c 'npm ci'
+
+>> Executing: sudo ctr task start trace-node-lts-transportkollektiv-voorwiel-starlight
+npm error code EUSAGE
+npm error
+npm error The `npm ci` command can only install with an existing package-lock.json or
+npm error npm-shrinkwrap.json with lockfileVersion >= 1. Run an install with npm@5 or
+npm error later to generate a package-lock.json file, then try again.
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-12T06_32_31_961Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-transportkollektiv-voorwiel-starlight
+Command failed with exit code 1.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-transportkollektiv-voorwiel-starlight
+ctr: no running task found: task trace-node-lts-transportkollektiv-voorwiel-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-transportkollektiv-voorwiel-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-transportkollektiv-voorwiel-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+npm error code EAI_AGAIN
+npm error syscall getaddrinfo
+npm error errno EAI_AGAIN
+npm error request to https://registry.npmjs.org/@ionic%2fcli failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-12T06_31_22_557Z-debug-0.log
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-buster/mrtrier-trier_v1:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-buster-mrtrier-trier_v1-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-buster-mrtrier-trier_v1-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster/mrtrier-trier_v1:starlight trace-node-lts-buster-mrtrier-trier_v1-starlight sh -c 'apt-get update && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && npm i pm2 -g && rm -rf /var/lib/apt/lists/*'
+
+>> Executing: sudo ctr task start trace-node-lts-buster-mrtrier-trier_v1-starlight
+Err:1 http://deb.debian.org/debian buster InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:2 http://deb.debian.org/debian-security buster/updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:3 http://deb.debian.org/debian buster-updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Reading package lists...
+W: Failed to fetch http://deb.debian.org/debian/dists/buster/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian-security/dists/buster/updates/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian/dists/buster-updates/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+Command failed with exit code 100: sudo ctr task start trace-node-lts-buster-mrtrier-trier_v1-starlight
+Command failed with exit code 100.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-buster-mrtrier-trier_v1-starlight
+ctr: no running task found: task trace-node-lts-buster-mrtrier-trier_v1-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-buster-mrtrier-trier_v1-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-buster-mrtrier-trier_v1-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/knightorknave-webadminportal:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node-lts/knightorknave-webadminportal:starlight
+time="Jan 12 06:32:35.645397907" level=info msg="requested platform" platform=linux/amd64
+time="Jan 12 06:32:35.645442941" level=info msg="fetching container image" image="node:lts"
+time="Jan 12 06:32:37.393776378" level=info msg="found platform" _skip=true digest="sha256:e8d1f058cd30c24215a1ca1c11ee4315c019cac83b1d4fe30dbb108b2c71f511" platform="&{unknown unknown  []  []}" size=842
+time="Jan 12 06:32:37.393896663" level=info msg="found platform" _skip=true digest="sha256:a265fcf8d78b8a0f13bc44b9d5872818f0b361d2e990ca8c352023ccf3fe046a" platform="&{arm linux  [] v7 []}" size=2495
+time="Jan 12 06:32:37.393915479" level=info msg="found platform" _skip=true digest="sha256:5bfc28c187b0e80c7c0952323de5597eb01ef3d1a27d94ff15e7d46b517e2ebc" platform="&{unknown unknown  []  []}" size=842
+time="Jan 12 06:32:37.393917943" level=info msg="found platform" _skip=true digest="sha256:af7698b1d80961ea58661120c0266bb72eb7501ffe5610fb0a38329cd42716ee" platform="&{arm64 linux  [] v8 []}" size=2495
+time="Jan 12 06:32:37.393921210" level=info msg="found platform" _skip=true digest="sha256:641ada186e3664ad237bfe1c9fe66b65c5a9ada962747ba07adb92381d2ad624" platform="&{unknown unknown  []  []}" size=842
+time="Jan 12 06:32:37.393923444" level=info msg="found platform" _skip=true digest="sha256:80a4ed3e25f3c080840221e1c6dd539e9f0be122727c1f67a2f32a47570c61cc" platform="&{ppc64le linux  []  []}" size=2495
+time="Jan 12 06:32:37.393923869" level=info msg="found platform" _skip=true digest="sha256:edec3c7117fe4c6a3637848ec021f76e8d719319947a7c3ca658952a20942973" platform="&{unknown unknown  []  []}" size=842
+time="Jan 12 06:32:37.393925412" level=info msg="found platform" _skip=false digest="sha256:89b322c235df769801f0fe13c42528014f77a5461d710b3c805e4590f6cb13e7" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 12 06:32:37.393925768" level=info msg="found platform" _skip=true digest="sha256:d0bf33d796b6366b925155fd442a88541cf4167425854ee5b5b3650d0912d871" platform="&{unknown unknown  []  []}" size=842
+time="Jan 12 06:32:37.393928233" level=info msg="found platform" _skip=true digest="sha256:db58ddd13d18a0a3aa1f278bf9eb746a31e84ce108d59981e99cd00c148aa2ba" platform="&{s390x linux  []  []}" size=2493

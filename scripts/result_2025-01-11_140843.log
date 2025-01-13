@@ -1,0 +1,345 @@
+cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli                             application/vnd.docker.distribution.manifest.v2+json sha256:a7d28e88685f004bb31a294f8a490d253cecec7e6c445f29aa47f96ea6f58b75 400.2 MiB linux/amd64 complete.starlight.mc256.dev=2025-01-11T10:56:00Z,metadata.starlight.mc256.dev=sha256:7a01340529ef5a05d74ec9ac819d0927df5abfd8edd8526ab529145a5fe95be4,puller.containerd.io=starlight 
+cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas     application/vnd.docker.distribution.manifest.v2+json sha256:e7f44ee177a7aec8978eff08af254a569cc919dcbe59993751ec9249cd63549f 81.5 MiB  linux/amd64 complete.starlight.mc256.dev=2025-01-11T10:56:43Z,metadata.starlight.mc256.dev=sha256:229b52e7bbc2a9c25ad5b2ab8b1a13ebdaf10e0d3f62ec2f509f29519f3ddb9b,puller.containerd.io=starlight 
+cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui                                 application/vnd.docker.distribution.manifest.v2+json sha256:cead0734d9a194e080e604149dee30d97024419640c53852a7b6c6f05254793c 400.2 MiB linux/amd64 complete.starlight.mc256.dev=2025-01-11T10:58:54Z,metadata.starlight.mc256.dev=sha256:9b7dad676ab742d9adcba01afa8ff482eeaeff601646d8bc9f6f3b91f54f416a,puller.containerd.io=starlight 
+cloud.cluster.local:5000/node-lts:lts-starlight-seokyim8-personal_website                        application/vnd.docker.distribution.manifest.v2+json sha256:c1507e37e60aa63367eb0266ae0eeb0049a21d3e374f409ec72ae7c3d1dc3cc7 400.2 MiB linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:11:12Z,metadata.starlight.mc256.dev=sha256:8b953b22047f5379243ff188b6d383ad7d6d89facd46c2f855bfc46a0f93d9fb,puller.containerd.io=starlight 
+cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12                application/vnd.docker.distribution.manifest.v2+json sha256:2f23cf648311e05afd969978e892c371776cb14d4ce323b3bea8005b719406dd 393.0 MiB linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:33:27Z,metadata.starlight.mc256.dev=sha256:a23c9ddb67b2693fa7f45fcde31aea5a0667ff53216b5872b7a6f37da68b67c4,puller.containerd.io=starlight 
+cloud.cluster.local:5000/node-lts-bookworm-slim:lts-bookworm-slim-starlight-soruly-trace.moe-api application/vnd.docker.distribution.manifest.v2+json sha256:69b20b382b3c1d4da02d60f6a39d7233278686b6ec11f5e5dd61bf97fd356fc7 79.1 MiB  linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:33:53Z,metadata.starlight.mc256.dev=sha256:650326a28f808946bb1a91c3bfddb97725e6cb1d69f6ab05c4b33a8110766f97,puller.containerd.io=starlight 
+cloud.cluster.local:5000/node-lts:lts-starlight-joheee-NetmanFrontend                            application/vnd.docker.distribution.manifest.v2+json sha256:37b4f3835ba0378d34a3c2f6d7e33fdf4270e08a754461e0c128924a19384f66 400.2 MiB linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:35:47Z,metadata.starlight.mc256.dev=sha256:28e70862689323385c2a6e5ac3e3cb2ba849937f7d3088da1aea98ecb47712b7,puller.containerd.io=starlight 
+
+Processing image: node:lts
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli trace-node-lts-lts-starlight-ionic-team-ionic-cli sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli trace-node-lts-lts-starlight-ionic-team-ionic-cli sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+Error processing image node:lts: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli trace-node-lts-lts-starlight-ionic-team-ionic-cli sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'' returned non-zero exit status 1.
+
+Processing image: node:lts-bullseye-slim
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'
+Error processing image node:lts-bullseye-slim: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-node-lts-lts-starlight-sullyo-prompt2ui
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui trace-node-lts-lts-starlight-sullyo-prompt2ui sh -c 'npm install'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui trace-node-lts-lts-starlight-sullyo-prompt2ui sh -c 'npm install'
+Error processing image node:lts: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui trace-node-lts-lts-starlight-sullyo-prompt2ui sh -c 'npm install'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-seokyim8-personal_website
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-node-lts-lts-starlight-seokyim8-personal_website
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-seokyim8-personal_website trace-node-lts-lts-starlight-seokyim8-personal_website sh -c 'apt-get update && apt-get install -y python3-pip'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-seokyim8-personal_website trace-node-lts-lts-starlight-seokyim8-personal_website sh -c 'apt-get update && apt-get install -y python3-pip'
+Error processing image node:lts: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-seokyim8-personal_website trace-node-lts-lts-starlight-seokyim8-personal_website sh -c 'apt-get update && apt-get install -y python3-pip'' returned non-zero exit status 1.
+
+Processing image: node:lts-iron
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12 trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12 sh -c 'npm install'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12 trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12 sh -c 'npm install'
+Error processing image node:lts-iron: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12 trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12 sh -c 'npm install'' returned non-zero exit status 1.
+
+Processing image: node:lts-bookworm-slim
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-bookworm-slim:lts-bookworm-slim-starlight-soruly-trace.moe-api
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-node-lts-bookworm-slim-lts-bookworm-slim-starlight-soruly-trace.moe-api
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bookworm-slim:lts-bookworm-slim-starlight-soruly-trace.moe-api trace-node-lts-bookworm-slim-lts-bookworm-slim-starlight-soruly-trace.moe-api sh -c 'chmod +x /tini'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bookworm-slim:lts-bookworm-slim-starlight-soruly-trace.moe-api trace-node-lts-bookworm-slim-lts-bookworm-slim-starlight-soruly-trace.moe-api sh -c 'chmod +x /tini'
+Error processing image node:lts-bookworm-slim: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bookworm-slim:lts-bookworm-slim-starlight-soruly-trace.moe-api trace-node-lts-bookworm-slim-lts-bookworm-slim-starlight-soruly-trace.moe-api sh -c 'chmod +x /tini'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-joheee-NetmanFrontend
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-node-lts-lts-starlight-joheee-NetmanFrontend
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-joheee-NetmanFrontend trace-node-lts-lts-starlight-joheee-NetmanFrontend sh -c 'npm install'
+cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-vuejsprojects-nhs-ui               application/vnd.docker.distribution.manifest.v2+json sha256:6e108dd5eaf55c7b6637d34a16cc9aabe602518fb36848dd3a691d2ca05f4c97 358.6 MiB linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:38:05Z,metadata.starlight.mc256.dev=sha256:86ac06531ef1765f35c4bf8865c07a917a85817129aee97bb4732c0d8158976e,puller.containerd.io=starlight 
+cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-crybapp-api                        application/vnd.docker.distribution.manifest.v2+json sha256:828f7ac21d8982fded2bf3e798bfca1820aab06c21c100f89b51eb9a3294db51 358.6 MiB linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:40:01Z,metadata.starlight.mc256.dev=sha256:5db0874cc285c536caf6f49f90e4d9cef55affaef30ddac627570e28fd9e48d1,puller.containerd.io=starlight 
+yarn install v1.22.22
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+Done in 0.03s.
+set optimizer: completed request
+	sha256:828f7ac21d8982fded2bf3e798bfca1820aab06c21c100f89b51eb9a3294db51: collected 0.000s file access traces - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: collected 0.000s file access traces - okay 
+	sha256:472a1c53c2d5614c565d86c204528e16e846bbe3b91ac06b45b4fbfbd52d583c: collected 0.000s file access traces - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: collected 0.000s file access traces - okay 
+	sha256:37b4f3835ba0378d34a3c2f6d7e33fdf4270e08a754461e0c128924a19384f66: collected 0.000s file access traces - okay 
+	sha256:69b20b382b3c1d4da02d60f6a39d7233278686b6ec11f5e5dd61bf97fd356fc7: collected 0.000s file access traces - okay 
+	sha256:cead0734d9a194e080e604149dee30d97024419640c53852a7b6c6f05254793c: collected 0.000s file access traces - okay 
+	sha256:fbad999dd97f39edd01822b92460aa47db847c309206fc3d4a9f04203065b1d7: collected 0.000s file access traces - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: collected 0.000s file access traces - okay 
+	sha256:a7d28e88685f004bb31a294f8a490d253cecec7e6c445f29aa47f96ea6f58b75: collected 0.000s file access traces - okay 
+	sha256:beca7f54606e54c7a91ba228e36773ad713599575e94e2b560c83db5c08b4409: collected 0.000s file access traces - okay 
+	sha256:2f23cf648311e05afd969978e892c371776cb14d4ce323b3bea8005b719406dd: collected 0.000s file access traces - okay 
+	sha256:c1507e37e60aa63367eb0266ae0eeb0049a21d3e374f409ec72ae7c3d1dc3cc7: collected 0.000s file access traces - okay 
+	sha256:af925e9cdd400f9945b299c73cad0925cf12226a563b8f315f33e87334150b9b: collected 0.000s file access traces - okay 
+	sha256:64b5a5286209d8096ea4f5a3b37dec0252cbc6e649e6a1c53f326f70a9d2bb7f: collected 0.000s file access traces - okay 
+	sha256:e7f44ee177a7aec8978eff08af254a569cc919dcbe59993751ec9249cd63549f: collected 0.000s file access traces - okay 
+	sha256:6e108dd5eaf55c7b6637d34a16cc9aabe602518fb36848dd3a691d2ca05f4c97: collected 0.000s file access traces - okay 
+reported traces: uploaded traces
+cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-piyh-gitlab_docker_compose                 application/vnd.docker.distribution.manifest.v2+json sha256:fbad999dd97f39edd01822b92460aa47db847c309206fc3d4a9f04203065b1d7 31.0 MiB  linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:40:19Z,metadata.starlight.mc256.dev=sha256:cc1b1ee23945e192e7c246e141a47d652e2812b1a897ae4cd621fddc32c20623,puller.containerd.io=starlight 
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+set optimizer: completed request
+	sha256:a7d28e88685f004bb31a294f8a490d253cecec7e6c445f29aa47f96ea6f58b75: collected 0.000s file access traces - okay 
+	sha256:c1507e37e60aa63367eb0266ae0eeb0049a21d3e374f409ec72ae7c3d1dc3cc7: collected 0.000s file access traces - okay 
+	sha256:69b20b382b3c1d4da02d60f6a39d7233278686b6ec11f5e5dd61bf97fd356fc7: collected 0.000s file access traces - okay 
+	sha256:cead0734d9a194e080e604149dee30d97024419640c53852a7b6c6f05254793c: collected 0.000s file access traces - okay 
+	sha256:828f7ac21d8982fded2bf3e798bfca1820aab06c21c100f89b51eb9a3294db51: collected 0.000s file access traces - okay 
+	sha256:af925e9cdd400f9945b299c73cad0925cf12226a563b8f315f33e87334150b9b: collected 0.000s file access traces - okay 
+	sha256:2f23cf648311e05afd969978e892c371776cb14d4ce323b3bea8005b719406dd: collected 0.000s file access traces - okay 
+	sha256:beca7f54606e54c7a91ba228e36773ad713599575e94e2b560c83db5c08b4409: collected 0.000s file access traces - okay 
+	sha256:37b4f3835ba0378d34a3c2f6d7e33fdf4270e08a754461e0c128924a19384f66: collected 0.000s file access traces - okay 
+	sha256:e7f44ee177a7aec8978eff08af254a569cc919dcbe59993751ec9249cd63549f: collected 0.000s file access traces - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: collected 0.000s file access traces - okay 
+	sha256:6e108dd5eaf55c7b6637d34a16cc9aabe602518fb36848dd3a691d2ca05f4c97: collected 0.000s file access traces - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: collected 0.000s file access traces - okay 
+	sha256:472a1c53c2d5614c565d86c204528e16e846bbe3b91ac06b45b4fbfbd52d583c: collected 0.000s file access traces - okay 
+	sha256:64b5a5286209d8096ea4f5a3b37dec0252cbc6e649e6a1c53f326f70a9d2bb7f: collected 0.000s file access traces - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: collected 0.000s file access traces - okay 
+	sha256:fbad999dd97f39edd01822b92460aa47db847c309206fc3d4a9f04203065b1d7: collected 0.000s file access traces - okay 
+reported traces: uploaded traces
+cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ndducnha-pqc_socrates                      application/vnd.docker.distribution.manifest.v2+json sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77 31.0 MiB  linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:40:40Z,metadata.starlight.mc256.dev=sha256:c2331ddbd3d3dd73c0b8b61a2bafe2c0f6abe41775568b046e9df0c592b50c5b,puller.containerd.io=starlight 
+cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup                         application/vnd.docker.distribution.manifest.v2+json sha256:64b5a5286209d8096ea4f5a3b37dec0252cbc6e649e6a1c53f326f70a9d2bb7f 31.0 MiB  linux/amd64 complete.starlight.mc256.dev=2025-01-11T14:05:00Z,metadata.starlight.mc256.dev=sha256:0c50497ff779770c361327117407c40fbb128076709391488aaaac6f38221118,puller.containerd.io=starlight 
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-joheee-NetmanFrontend trace-node-lts-lts-starlight-joheee-NetmanFrontend sh -c 'npm install'
+Error processing image node:lts: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-joheee-NetmanFrontend trace-node-lts-lts-starlight-joheee-NetmanFrontend sh -c 'npm install'' returned non-zero exit status 1.
+
+Processing image: node:lts As production
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/node-lts As production:lts As production-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts As production cloud.cluster.local:5000/node-lts As production:lts As production-starlight-PedroH-Santos-api-gerenciador-financeiro
+Command failed with exit code 1: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts As production cloud.cluster.local:5000/node-lts As production:lts As production-starlight-PedroH-Santos-api-gerenciador-financeiro
+Error processing image node:lts As production: Command 'sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts As production cloud.cluster.local:5000/node-lts As production:lts As production-starlight-PedroH-Santos-api-gerenciador-financeiro' returned non-zero exit status 1.
+
+Processing image: node:lts-buster
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-vuejsprojects-nhs-ui
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-node-lts-buster-lts-buster-starlight-vuejsprojects-nhs-ui
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-vuejsprojects-nhs-ui trace-node-lts-buster-lts-buster-starlight-vuejsprojects-nhs-ui sh -c 'addgroup docker --gid=${docker_gid};'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-vuejsprojects-nhs-ui trace-node-lts-buster-lts-buster-starlight-vuejsprojects-nhs-ui sh -c 'addgroup docker --gid=${docker_gid};'
+Error processing image node:lts-buster: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-vuejsprojects-nhs-ui trace-node-lts-buster-lts-buster-starlight-vuejsprojects-nhs-ui sh -c 'addgroup docker --gid=${docker_gid};'' returned non-zero exit status 1.
+
+Processing image: node:lts-buster
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-crybapp-api
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-node-lts-buster-lts-buster-starlight-crybapp-api
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-crybapp-api trace-node-lts-buster-lts-buster-starlight-crybapp-api sh -c yarn
+
+>> Executing: sudo ctr task start trace-node-lts-buster-lts-buster-starlight-crybapp-api
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-buster-lts-buster-starlight-crybapp-api
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-buster-lts-buster-starlight-crybapp-api
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-buster-lts-buster-starlight-crybapp-api
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+
+Processing image: ubuntu:22.04 AS linux
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04 AS linux:22.04 AS linux-starlight-spacemeshos-go-spacemesh
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 AS linux cloud.cluster.local:5000/ubuntu-22.04 AS linux:22.04 AS linux-starlight-spacemeshos-go-spacemesh
+Command failed with exit code 1: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 AS linux cloud.cluster.local:5000/ubuntu-22.04 AS linux:22.04 AS linux-starlight-spacemeshos-go-spacemesh
+Error processing image ubuntu:22.04 AS linux: Command 'sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 AS linux cloud.cluster.local:5000/ubuntu-22.04 AS linux:22.04 AS linux-starlight-spacemeshos-go-spacemesh' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-piyh-gitlab_docker_compose
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-piyh-gitlab_docker_compose
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-piyh-gitlab_docker_compose trace-ubuntu-22.04-22.04-starlight-piyh-gitlab_docker_compose sh -c 'apt-get update'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-piyh-gitlab_docker_compose
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-ubuntu-22.04-22.04-starlight-piyh-gitlab_docker_compose
+Command failed with exit code 1: sudo ctr task kill trace-ubuntu-22.04-22.04-starlight-piyh-gitlab_docker_compose
+Removing container...
+
+>> Executing: sudo ctr container rm trace-ubuntu-22.04-22.04-starlight-piyh-gitlab_docker_compose
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+
+Processing image: ubuntu:22.04
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ndducnha-pqc_socrates
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-ndducnha-pqc_socrates
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ndducnha-pqc_socrates trace-ubuntu-22.04-22.04-starlight-ndducnha-pqc_socrates sh -c 'wget -P /usr/src/ https://github.com/ndducnha/pqc_socrates/raw/main/server.py && wget -P /usr/src/ https://github.com/ndducnha/pqc_socrates/raw/main/client.py'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ndducnha-pqc_socrates trace-ubuntu-22.04-22.04-starlight-ndducnha-pqc_socrates sh -c 'wget -P /usr/src/ https://github.com/ndducnha/pqc_socrates/raw/main/server.py && wget -P /usr/src/ https://github.com/ndducnha/pqc_socrates/raw/main/client.py'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ndducnha-pqc_socrates trace-ubuntu-22.04-22.04-starlight-ndducnha-pqc_socrates sh -c 'wget -P /usr/src/ https://github.com/ndducnha/pqc_socrates/raw/main/server.py && wget -P /usr/src/ https://github.com/ndducnha/pqc_socrates/raw/main/client.py'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup sh -c 'apt-get update && apt-get install -y tar wget bash rsync gcc libfreetype6-dev libhdf5-serial-dev libpng-dev libzmq3-dev unzip pkg-config software-properties-common graphviz git curl libgeos++-dev proj-data proj-bin libgeos-dev nodejs npm build-essential gcc python3-dev libffi-dev libssl-dev python3-pip openssh-server openssh-client tk -y'
+cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-rust-vmm-rust-vmm-container                application/vnd.docker.distribution.manifest.v2+json sha256:472a1c53c2d5614c565d86c204528e16e846bbe3b91ac06b45b4fbfbd52d583c 31.0 MiB  linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:41:09Z,metadata.starlight.mc256.dev=sha256:1267b23a962daa4286542b6f5f8ff2ac8e356ee420f8add2c7d05779150674b2,puller.containerd.io=starlight 
+cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s                application/vnd.docker.distribution.manifest.v2+json sha256:beca7f54606e54c7a91ba228e36773ad713599575e94e2b560c83db5c08b4409 31.0 MiB  linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:41:22Z,metadata.starlight.mc256.dev=sha256:cfe93f8b3dc06099851ef621adf72c9b299c4011a1326165a44593eefc81be44,puller.containerd.io=starlight 
+cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ArjunSridharkumar-complete_ml_pipeline     application/vnd.docker.distribution.manifest.v2+json sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7 31.0 MiB  linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:41:41Z,metadata.starlight.mc256.dev=sha256:08b00739276887644f5b263ec17f8e82827ac7f7217927135d8649b7327339cb,puller.containerd.io=starlight 
+cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-GachiSlave-sofg_eng                        application/vnd.docker.distribution.manifest.v2+json sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8 31.0 MiB  linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:42:03Z,metadata.starlight.mc256.dev=sha256:f0746991a4223b7657d7b95210735d44dfb68c9a9d08c08681eb24ccffc12562,puller.containerd.io=starlight 
+cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container                       application/vnd.docker.distribution.manifest.v2+json sha256:af925e9cdd400f9945b299c73cad0925cf12226a563b8f315f33e87334150b9b 31.0 MiB  linux/amd64 complete.starlight.mc256.dev=2025-01-11T11:42:23Z,metadata.starlight.mc256.dev=sha256:04f02d92f477cce7f79422532bce93da55a8bbdbfceedbdc9ad4fd54b8d4be22,puller.containerd.io=starlight 
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup sh -c 'apt-get update && apt-get install -y tar wget bash rsync gcc libfreetype6-dev libhdf5-serial-dev libpng-dev libzmq3-dev unzip pkg-config software-properties-common graphviz git curl libgeos++-dev proj-data proj-bin libgeos-dev nodejs npm build-essential gcc python3-dev libffi-dev libssl-dev python3-pip openssh-server openssh-client tk -y'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup sh -c 'apt-get update && apt-get install -y tar wget bash rsync gcc libfreetype6-dev libhdf5-serial-dev libpng-dev libzmq3-dev unzip pkg-config software-properties-common graphviz git curl libgeos++-dev proj-data proj-bin libgeos-dev nodejs npm build-essential gcc python3-dev libffi-dev libssl-dev python3-pip openssh-server openssh-client tk -y'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-rust-vmm-rust-vmm-container
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-rust-vmm-rust-vmm-container
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-rust-vmm-rust-vmm-container trace-ubuntu-22.04-22.04-starlight-rust-vmm-rust-vmm-container sh -c /opt/src/scripts/build_container.sh
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-rust-vmm-rust-vmm-container trace-ubuntu-22.04-22.04-starlight-rust-vmm-rust-vmm-container sh -c /opt/src/scripts/build_container.sh
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-rust-vmm-rust-vmm-container trace-ubuntu-22.04-22.04-starlight-rust-vmm-rust-vmm-container sh -c /opt/src/scripts/build_container.sh' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s sh -c 'apt update && apt install -y build-essential && apt install -y libnet-ldap-perl && apt install -y libpcre2-dev && apt install -y libc-ares-dev && apt install -y checkinstall && ./configure && make && checkinstall --install=no --default --pkgname=tac-plus-ng --pkgversion=1 && cp tac-plus-ng_*.deb /tac-plus-ng.deb'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s sh -c 'apt update && apt install -y build-essential && apt install -y libnet-ldap-perl && apt install -y libpcre2-dev && apt install -y libc-ares-dev && apt install -y checkinstall && ./configure && make && checkinstall --install=no --default --pkgname=tac-plus-ng --pkgversion=1 && cp tac-plus-ng_*.deb /tac-plus-ng.deb'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s sh -c 'apt update && apt install -y build-essential && apt install -y libnet-ldap-perl && apt install -y libpcre2-dev && apt install -y libc-ares-dev && apt install -y checkinstall && ./configure && make && checkinstall --install=no --default --pkgname=tac-plus-ng --pkgversion=1 && cp tac-plus-ng_*.deb /tac-plus-ng.deb'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ArjunSridharkumar-complete_ml_pipeline
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-ArjunSridharkumar-complete_ml_pipeline
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ArjunSridharkumar-complete_ml_pipeline trace-ubuntu-22.04-22.04-starlight-ArjunSridharkumar-complete_ml_pipeline sh -c 'apt-get update && apt-get install -y --no-install-recommends python3-pip python3-dev libpq-dev curl git build-essential default-libmysqlclient-dev libssl-dev libffi-dev locales && apt-get clean && rm -rf /var/lib/apt/lists/*'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ArjunSridharkumar-complete_ml_pipeline trace-ubuntu-22.04-22.04-starlight-ArjunSridharkumar-complete_ml_pipeline sh -c 'apt-get update && apt-get install -y --no-install-recommends python3-pip python3-dev libpq-dev curl git build-essential default-libmysqlclient-dev libssl-dev libffi-dev locales && apt-get clean && rm -rf /var/lib/apt/lists/*'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ArjunSridharkumar-complete_ml_pipeline trace-ubuntu-22.04-22.04-starlight-ArjunSridharkumar-complete_ml_pipeline sh -c 'apt-get update && apt-get install -y --no-install-recommends python3-pip python3-dev libpq-dev curl git build-essential default-libmysqlclient-dev libssl-dev libffi-dev locales && apt-get clean && rm -rf /var/lib/apt/lists/*'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-GachiSlave-sofg_eng
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-GachiSlave-sofg_eng
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-GachiSlave-sofg_eng trace-ubuntu-22.04-22.04-starlight-GachiSlave-sofg_eng sh -c 'apt update && apt-get install -y git subversion make vim mc python3 python3-venv python3-pip flex gawk zip bison ffmpeg libsm6 libxext6 libgl1-mesa-glx libglib2.0-0 libsm6 libxrender1 libxext6 xvfb x11-apps'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-GachiSlave-sofg_eng trace-ubuntu-22.04-22.04-starlight-GachiSlave-sofg_eng sh -c 'apt update && apt-get install -y git subversion make vim mc python3 python3-venv python3-pip flex gawk zip bison ffmpeg libsm6 libxext6 libgl1-mesa-glx libglib2.0-0 libsm6 libxrender1 libxext6 xvfb x11-apps'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-GachiSlave-sofg_eng trace-ubuntu-22.04-22.04-starlight-GachiSlave-sofg_eng sh -c 'apt update && apt-get install -y git subversion make vim mc python3 python3-venv python3-pip flex gawk zip bison ffmpeg libsm6 libxext6 libgl1-mesa-glx libglib2.0-0 libsm6 libxrender1 libxext6 xvfb x11-apps'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing: sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container
+Creating and running container...
+
+>> Executing: sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container
+set optimizer: completed request
+	sha256:472a1c53c2d5614c565d86c204528e16e846bbe3b91ac06b45b4fbfbd52d583c: collected 0.000s file access traces - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: collected 0.000s file access traces - okay 
+	sha256:69b20b382b3c1d4da02d60f6a39d7233278686b6ec11f5e5dd61bf97fd356fc7: collected 0.000s file access traces - okay 
+	sha256:c1507e37e60aa63367eb0266ae0eeb0049a21d3e374f409ec72ae7c3d1dc3cc7: collected 0.000s file access traces - okay 
+	sha256:828f7ac21d8982fded2bf3e798bfca1820aab06c21c100f89b51eb9a3294db51: collected 0.000s file access traces - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: collected 0.000s file access traces - okay 
+	sha256:cead0734d9a194e080e604149dee30d97024419640c53852a7b6c6f05254793c: collected 0.000s file access traces - okay 
+	sha256:af925e9cdd400f9945b299c73cad0925cf12226a563b8f315f33e87334150b9b: collected 0.000s file access traces - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: collected 0.000s file access traces - okay 
+	sha256:2f23cf648311e05afd969978e892c371776cb14d4ce323b3bea8005b719406dd: collected 0.000s file access traces - okay 
+	sha256:beca7f54606e54c7a91ba228e36773ad713599575e94e2b560c83db5c08b4409: collected 0.000s file access traces - okay 
+	sha256:a7d28e88685f004bb31a294f8a490d253cecec7e6c445f29aa47f96ea6f58b75: collected 0.000s file access traces - okay 
+	sha256:6e108dd5eaf55c7b6637d34a16cc9aabe602518fb36848dd3a691d2ca05f4c97: collected 0.000s file access traces - okay 
+	sha256:64b5a5286209d8096ea4f5a3b37dec0252cbc6e649e6a1c53f326f70a9d2bb7f: collected 0.000s file access traces - okay 
+	sha256:37b4f3835ba0378d34a3c2f6d7e33fdf4270e08a754461e0c128924a19384f66: collected 0.000s file access traces - okay 
+	sha256:fbad999dd97f39edd01822b92460aa47db847c309206fc3d4a9f04203065b1d7: collected 0.000s file access traces - okay 
+	sha256:e7f44ee177a7aec8978eff08af254a569cc919dcbe59993751ec9249cd63549f: collected 0.000s file access traces - okay 
+reported traces: uploaded traces
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container sh -c 'apt-get update && apt-get install -y --no-install-recommends software-properties-common gnupg wget lsb-release ca-certificates git build-essential autotools-dev automake libtool libtiff-dev zlib1g-dev libjpeg-dev libpng-dev libleptonica-dev libjbig2dec0-dev && rm -rf /var/lib/apt/lists/*'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container sh -c 'apt-get update && apt-get install -y --no-install-recommends software-properties-common gnupg wget lsb-release ca-certificates git build-essential autotools-dev automake libtool libtiff-dev zlib1g-dev libjpeg-dev libpng-dev libleptonica-dev libjbig2dec0-dev && rm -rf /var/lib/apt/lists/*'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container sh -c 'apt-get update && apt-get install -y --no-install-recommends software-properties-common gnupg wget lsb-release ca-certificates git build-essential autotools-dev automake libtool libtiff-dev zlib1g-dev libjpeg-dev libpng-dev libleptonica-dev libjbig2dec0-dev && rm -rf /var/lib/apt/lists/*'' returned non-zero exit status 1.
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+
+Processing complete:
+Successful: 2
+Failed: 17

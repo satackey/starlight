@@ -1,0 +1,1364 @@
+time="Jan 11 15:06:10.747840724" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:06:10.747897208" level=info msg="fetching container image" image="node:lts"
+time="Jan 11 15:06:12.694569598" level=info msg="found platform" _skip=true digest="sha256:af7698b1d80961ea58661120c0266bb72eb7501ffe5610fb0a38329cd42716ee" platform="&{arm64 linux  [] v8 []}" size=2495
+time="Jan 11 15:06:12.694578073" level=info msg="found platform" _skip=true digest="sha256:edec3c7117fe4c6a3637848ec021f76e8d719319947a7c3ca658952a20942973" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:06:12.694600366" level=info msg="found platform" _skip=true digest="sha256:641ada186e3664ad237bfe1c9fe66b65c5a9ada962747ba07adb92381d2ad624" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:06:12.694602992" level=info msg="found platform" _skip=true digest="sha256:80a4ed3e25f3c080840221e1c6dd539e9f0be122727c1f67a2f32a47570c61cc" platform="&{ppc64le linux  []  []}" size=2495
+time="Jan 11 15:06:12.694605268" level=info msg="found platform" _skip=true digest="sha256:d0bf33d796b6366b925155fd442a88541cf4167425854ee5b5b3650d0912d871" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:06:12.694607563" level=info msg="found platform" _skip=true digest="sha256:db58ddd13d18a0a3aa1f278bf9eb746a31e84ce108d59981e99cd00c148aa2ba" platform="&{s390x linux  []  []}" size=2493
+time="Jan 11 15:06:12.694612575" level=info msg="found platform" _skip=true digest="sha256:e8d1f058cd30c24215a1ca1c11ee4315c019cac83b1d4fe30dbb108b2c71f511" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:06:12.694614199" level=info msg="found platform" _skip=false digest="sha256:89b322c235df769801f0fe13c42528014f77a5461d710b3c805e4590f6cb13e7" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:06:12.694617988" level=info msg="found platform" _skip=true digest="sha256:a265fcf8d78b8a0f13bc44b9d5872818f0b361d2e990ca8c352023ccf3fe046a" platform="&{arm linux  [] v7 []}" size=2495
+time="Jan 11 15:06:12.694621947" level=info msg="found platform" _skip=true digest="sha256:5bfc28c187b0e80c7c0952323de5597eb01ef3d1a27d94ff15e7d46b517e2ebc" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:07:50.521199359" level=info msg="converted platform" digest="sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:07:50.521228368" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli"
+time="Jan 11 15:07:50.842868723" level=info msg="conversion completed"
+time="Jan 11 15:07:54.014091405" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli"
+time="Jan 11 15:07:54.014439925" level=info msg="notified starlight proxy"
+set optimizer: completed request
+requested to pull image cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli in 3546ms 
+delta image 369.5MiB / original 400.2MiB (skipped: 30.7MiB = 7.68%)
+time="Jan 11 15:08:28.226031674" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:08:28.226075715" level=info msg="fetching container image" image="node:lts-bullseye-slim"
+time="Jan 11 15:08:31.169521933" level=error msg="fail to convert the container image" error="failed to read image: Get \"https://index.docker.io/v2/library/node/manifests/lts-bullseye-slim\": read tcp 192.168.3.2:45938->54.227.20.253:443: read: connection reset by peer"
+set optimizer: completed request
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:08:31Z - okay 
+requested to pull image cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas in 1058ms 
+delta image 79.1MiB / original 81.5MiB (skipped: 2.4MiB = 2.98%)
+Err:1 http://deb.debian.org/debian bullseye InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:2 http://deb.debian.org/debian-security bullseye-security InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:3 http://deb.debian.org/debian bullseye-updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Reading package lists...
+W: Failed to fetch http://deb.debian.org/debian/dists/bullseye/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian-security/dists/bullseye-security/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Failed to fetch http://deb.debian.org/debian/dists/bullseye-updates/InRelease  Temporary failure resolving 'deb.debian.org'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+time="Jan 11 15:08:35.099342882" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:08:35.099409624" level=info msg="fetching container image" image="node:lts"
+time="Jan 11 15:08:36.827210796" level=info msg="found platform" _skip=false digest="sha256:89b322c235df769801f0fe13c42528014f77a5461d710b3c805e4590f6cb13e7" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:08:36.827237459" level=info msg="found platform" _skip=true digest="sha256:edec3c7117fe4c6a3637848ec021f76e8d719319947a7c3ca658952a20942973" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:08:36.827253001" level=info msg="found platform" _skip=true digest="sha256:e8d1f058cd30c24215a1ca1c11ee4315c019cac83b1d4fe30dbb108b2c71f511" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:08:36.827257287" level=info msg="found platform" _skip=true digest="sha256:a265fcf8d78b8a0f13bc44b9d5872818f0b361d2e990ca8c352023ccf3fe046a" platform="&{arm linux  [] v7 []}" size=2495
+time="Jan 11 15:08:36.827261042" level=info msg="found platform" _skip=true digest="sha256:5bfc28c187b0e80c7c0952323de5597eb01ef3d1a27d94ff15e7d46b517e2ebc" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:08:36.827273199" level=info msg="found platform" _skip=true digest="sha256:af7698b1d80961ea58661120c0266bb72eb7501ffe5610fb0a38329cd42716ee" platform="&{arm64 linux  [] v8 []}" size=2495
+time="Jan 11 15:08:36.827276513" level=info msg="found platform" _skip=true digest="sha256:641ada186e3664ad237bfe1c9fe66b65c5a9ada962747ba07adb92381d2ad624" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:08:36.827279517" level=info msg="found platform" _skip=true digest="sha256:80a4ed3e25f3c080840221e1c6dd539e9f0be122727c1f67a2f32a47570c61cc" platform="&{ppc64le linux  []  []}" size=2495
+time="Jan 11 15:08:36.827281951" level=info msg="found platform" _skip=true digest="sha256:d0bf33d796b6366b925155fd442a88541cf4167425854ee5b5b3650d0912d871" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:08:36.827284204" level=info msg="found platform" _skip=true digest="sha256:db58ddd13d18a0a3aa1f278bf9eb746a31e84ce108d59981e99cd00c148aa2ba" platform="&{s390x linux  []  []}" size=2493
+npm error code EAI_AGAIN
+npm error syscall getaddrinfo
+npm error errno EAI_AGAIN
+npm error request to https://registry.npmjs.org/@ionic%2fcli failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_08_08_312Z-debug-0.log
+time="Jan 11 15:10:07.626226517" level=info msg="converted platform" digest="sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:10:07.626251872" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui"
+time="Jan 11 15:10:07.656733813" level=info msg="conversion completed"
+time="Jan 11 15:10:13.574175871" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui"
+time="Jan 11 15:10:13.574828649" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:10:13Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:10:13Z - okay 
+requested to pull image cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui based on cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli@sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062 in 1649ms 
+delta image 2.0MiB / original 400.2MiB (skipped: 398.2MiB = 99.49%)
+npm error Tracker "idealTree" already exists
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_10_15_797Z-debug-0.log
+time="Jan 11 15:10:16.779861100" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:10:16.780148526" level=info msg="fetching container image" image="node:lts-buster"
+time="Jan 11 15:10:18.438504940" level=info msg="found platform" _skip=true digest="sha256:837872332ac827cb8b56f293e76363d92da59774c6e69d912b1e5fbaafeb4f9f" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:10:18.438555900" level=info msg="found platform" _skip=false digest="sha256:210343259138ad1b7bad23cd3be6aa1126f764f887c639749411387c9321c2d5" platform="&{amd64 linux  []  []}" size=2496
+time="Jan 11 15:10:18.438962409" level=info msg="found platform" _skip=true digest="sha256:da3b46cbd714a98a2cbee5e316347ffaa6a2fac735a0cbc393195c0db651fa7b" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:10:18.439100084" level=info msg="found platform" _skip=true digest="sha256:c0c113f17313347af14fc655b70333c291c79d864d0e258bb75bdc4d0900ecae" platform="&{arm64 linux  [] v8 []}" size=2498
+time="Jan 11 15:11:49.212863299" level=info msg="converted platform" digest="sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e" platform="&{amd64 linux  []  []}" size=2496
+time="Jan 11 15:11:49.212889955" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD"
+time="Jan 11 15:11:49.306880686" level=info msg="conversion completed"
+time="Jan 11 15:11:56.867933319" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD"
+time="Jan 11 15:11:56.868023613" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:11:56Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:11:56Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:11:56Z - okay 
+requested to pull image cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD in 7139ms 
+delta image 325.3MiB / original 358.6MiB (skipped: 33.3MiB = 9.29%)
+Cloning into '/root/X'...
+fatal: unable to access 'https://github.com/AbhishekSuresh2/X-AsenaDuplicated/': Could not resolve host: github.com
+time="Jan 11 15:12:14.972039773" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:12:14.972091754" level=info msg="fetching container image" image="node:lts"
+time="Jan 11 15:12:16.708869606" level=info msg="found platform" _skip=true digest="sha256:5bfc28c187b0e80c7c0952323de5597eb01ef3d1a27d94ff15e7d46b517e2ebc" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:12:16.708911669" level=info msg="found platform" _skip=true digest="sha256:a265fcf8d78b8a0f13bc44b9d5872818f0b361d2e990ca8c352023ccf3fe046a" platform="&{arm linux  [] v7 []}" size=2495
+time="Jan 11 15:12:16.708874397" level=info msg="found platform" _skip=true digest="sha256:edec3c7117fe4c6a3637848ec021f76e8d719319947a7c3ca658952a20942973" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:12:16.708888156" level=info msg="found platform" _skip=true digest="sha256:af7698b1d80961ea58661120c0266bb72eb7501ffe5610fb0a38329cd42716ee" platform="&{arm64 linux  [] v8 []}" size=2495
+time="Jan 11 15:12:16.708890860" level=info msg="found platform" _skip=true digest="sha256:641ada186e3664ad237bfe1c9fe66b65c5a9ada962747ba07adb92381d2ad624" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:12:16.708893834" level=info msg="found platform" _skip=true digest="sha256:80a4ed3e25f3c080840221e1c6dd539e9f0be122727c1f67a2f32a47570c61cc" platform="&{ppc64le linux  []  []}" size=2495
+time="Jan 11 15:12:16.708897179" level=info msg="found platform" _skip=true digest="sha256:d0bf33d796b6366b925155fd442a88541cf4167425854ee5b5b3650d0912d871" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:12:16.708899482" level=info msg="found platform" _skip=true digest="sha256:db58ddd13d18a0a3aa1f278bf9eb746a31e84ce108d59981e99cd00c148aa2ba" platform="&{s390x linux  []  []}" size=2493
+time="Jan 11 15:12:16.708904038" level=info msg="found platform" _skip=true digest="sha256:e8d1f058cd30c24215a1ca1c11ee4315c019cac83b1d4fe30dbb108b2c71f511" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:12:16.708906541" level=info msg="found platform" _skip=false digest="sha256:89b322c235df769801f0fe13c42528014f77a5461d710b3c805e4590f6cb13e7" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:13:55.192067237" level=info msg="converted platform" digest="sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:13:55.192095286" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro"
+time="Jan 11 15:13:55.284359160" level=info msg="conversion completed"
+time="Jan 11 15:14:04.317279338" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro"
+time="Jan 11 15:14:04.317356204" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:14:04Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:14:04Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:14:04Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:14:04Z - okay 
+requested to pull image cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro based on cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui@sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295 in 2754ms 
+delta image 2.0MiB / original 400.2MiB (skipped: 398.2MiB = 99.49%)
+npm error code EUSAGE
+npm error
+npm error The `npm ci` command can only install with an existing package-lock.json or
+npm error npm-shrinkwrap.json with lockfileVersion >= 1. Run an install with npm@5 or
+npm error later to generate a package-lock.json file, then try again.
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_14_07_711Z-debug-0.log
+time="Jan 11 15:14:08.891335763" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:14:08.891377380" level=info msg="fetching container image" image="node:lts-slim"
+time="Jan 11 15:14:10.654940384" level=info msg="found platform" _skip=true digest="sha256:f889cd543d0b4049442eb0b2ce9f82a8b5cbea6e0598f433e37401a62cb6c8f9" platform="&{arm64 linux  [] v8 []}" size=1931
+time="Jan 11 15:14:10.654941495" level=info msg="found platform" _skip=true digest="sha256:bf856c2503d8f281c97a6679ba703133ba345d1060b26154c99fcf00546cf804" platform="&{unknown unknown  []  []}" size=841
+time="Jan 11 15:14:10.654946122" level=info msg="found platform" _skip=true digest="sha256:54b50daf004d0d1fcdbe8c6e63207105aa6a4c6281cce94e51495bbed6b4bc4c" platform="&{unknown unknown  []  []}" size=841
+time="Jan 11 15:14:10.654948926" level=info msg="found platform" _skip=true digest="sha256:7fda64d1e694f7e9d34258995b549f13e86181a51b85429cc966fb482fc4eb14" platform="&{ppc64le linux  []  []}" size=1931
+time="Jan 11 15:14:10.654951139" level=info msg="found platform" _skip=true digest="sha256:e4c9e74d636d19be543daf47282ad96fedac39434fb7490a5156384191446730" platform="&{unknown unknown  []  []}" size=841
+time="Jan 11 15:14:10.654954774" level=info msg="found platform" _skip=true digest="sha256:77ceb305d75d95ed1d0110a7ac8bb1be0f0711a4da6d892bfa789c1c69c823d3" platform="&{s390x linux  []  []}" size=1929
+time="Jan 11 15:14:10.654958359" level=info msg="found platform" _skip=true digest="sha256:53a11145bd632e13ec5d42bc6d21e9bb5a1b66cb728777ebacdd1edcf2954a42" platform="&{unknown unknown  []  []}" size=841
+time="Jan 11 15:14:10.654960832" level=info msg="found platform" _skip=false digest="sha256:c7db7281da1ab1e903f1571b54d854cae1d9c51f6c24c166a5f6d2f3e07a97ae" platform="&{amd64 linux  []  []}" size=1929
+time="Jan 11 15:14:10.654964697" level=info msg="found platform" _skip=true digest="sha256:65b8613c2130e19832f033a3e955b31472b62bc8f4c5bbb22cb21210203a4766" platform="&{arm linux  [] v7 []}" size=1931
+time="Jan 11 15:14:10.654969884" level=info msg="found platform" _skip=true digest="sha256:5b9e494d9d5592547683e3a2c7b1c27b65fb67853bb69d5e12cae118e7bd1884" platform="&{unknown unknown  []  []}" size=841
+time="Jan 11 15:14:32.017554063" level=info msg="converted platform" digest="sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc" platform="&{amd64 linux  []  []}" size=1929
+time="Jan 11 15:14:32.017583414" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex"
+time="Jan 11 15:14:32.145091413" level=info msg="conversion completed"
+time="Jan 11 15:14:34.020727833" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex"
+time="Jan 11 15:14:34.021394750" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:14:34Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:14:34Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:14:34Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:14:34Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:14:34Z - okay 
+requested to pull image cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex in 572ms 
+delta image 77.1MiB / original 79.1MiB (skipped: 2.0MiB = 2.58%)
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-ionic-team-ionic-cli
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-ionic-team-ionic-cli trace-node-lts-lts-starlight-ionic-team-ionic-cli sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Command timed out after 30 seconds: sudo ctr task start trace-node-lts-lts-starlight-ionic-team-ionic-cli
+Error processing image node:lts: Command 'sudo ctr task start trace-node-lts-lts-starlight-ionic-team-ionic-cli' timed out after 30 seconds
+
+Processing image: node:lts-bullseye-slim
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-bullseye-slim cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-bullseye-slim:lts-bullseye-slim-starlight-macbre-phantomas trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'
+
+>> Executing: sudo ctr task start trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+Command failed with exit code 100: sudo ctr task start trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas
+Error processing image node:lts-bullseye-slim: Command 'sudo ctr task start trace-node-lts-bullseye-slim-lts-bullseye-slim-starlight-macbre-phantomas' returned non-zero exit status 100.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-sullyo-prompt2ui
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-sullyo-prompt2ui
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-sullyo-prompt2ui trace-node-lts-lts-starlight-sullyo-prompt2ui sh -c 'npm install'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-sullyo-prompt2ui
+Command failed with exit code 1: sudo ctr task start trace-node-lts-lts-starlight-sullyo-prompt2ui
+Error processing image node:lts: Command 'sudo ctr task start trace-node-lts-lts-starlight-sullyo-prompt2ui' returned non-zero exit status 1.
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-buster cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-buster:lts-buster-starlight-Sachu-fx-Siya-Mol-MD trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD sh -c 'git clone https://github.com/AbhishekSuresh2/X-AsenaDuplicated/ /root/X'
+
+>> Executing: sudo ctr task start trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+Command failed with exit code 128: sudo ctr task start trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD
+Error processing image node:lts-buster: Command 'sudo ctr task start trace-node-lts-buster-lts-buster-starlight-Sachu-fx-Siya-Mol-MD' returned non-zero exit status 128.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro sh -c 'npm ci'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+Command failed with exit code 1: sudo ctr task start trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro
+Error processing image node:lts: Command 'sudo ctr task start trace-node-lts-lts-starlight-PedroH-Santos-api-gerenciador-financeiro' returned non-zero exit status 1.
+
+Processing image: node:lts-slim
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-slim cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex
+Creating and running container...
+npm error code EUSAGE
+npm error
+npm error The `npm ci` command can only install with an existing package-lock.json or
+npm error npm-shrinkwrap.json with lockfileVersion >= 1. Run an install with npm@5 or
+npm error later to generate a package-lock.json file, then try again.
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_14_37_353Z-debug-0.log
+time="Jan 11 15:14:38.349472141" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:14:38.349780145" level=info msg="fetching container image" image="node:lts"
+time="Jan 11 15:14:39.913300437" level=info msg="found platform" _skip=true digest="sha256:edec3c7117fe4c6a3637848ec021f76e8d719319947a7c3ca658952a20942973" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:14:39.913302055" level=info msg="found platform" _skip=true digest="sha256:af7698b1d80961ea58661120c0266bb72eb7501ffe5610fb0a38329cd42716ee" platform="&{arm64 linux  [] v8 []}" size=2495
+time="Jan 11 15:14:39.913328691" level=info msg="found platform" _skip=false digest="sha256:89b322c235df769801f0fe13c42528014f77a5461d710b3c805e4590f6cb13e7" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:14:39.913332737" level=info msg="found platform" _skip=true digest="sha256:e8d1f058cd30c24215a1ca1c11ee4315c019cac83b1d4fe30dbb108b2c71f511" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:14:39.913336702" level=info msg="found platform" _skip=true digest="sha256:a265fcf8d78b8a0f13bc44b9d5872818f0b361d2e990ca8c352023ccf3fe046a" platform="&{arm linux  [] v7 []}" size=2495
+time="Jan 11 15:14:39.913342430" level=info msg="found platform" _skip=true digest="sha256:5bfc28c187b0e80c7c0952323de5597eb01ef3d1a27d94ff15e7d46b517e2ebc" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:14:39.913348549" level=info msg="found platform" _skip=true digest="sha256:80a4ed3e25f3c080840221e1c6dd539e9f0be122727c1f67a2f32a47570c61cc" platform="&{ppc64le linux  []  []}" size=2495
+time="Jan 11 15:14:39.913351302" level=info msg="found platform" _skip=true digest="sha256:641ada186e3664ad237bfe1c9fe66b65c5a9ada962747ba07adb92381d2ad624" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:14:39.913356600" level=info msg="found platform" _skip=true digest="sha256:d0bf33d796b6366b925155fd442a88541cf4167425854ee5b5b3650d0912d871" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:14:39.913361777" level=info msg="found platform" _skip=true digest="sha256:db58ddd13d18a0a3aa1f278bf9eb746a31e84ce108d59981e99cd00c148aa2ba" platform="&{s390x linux  []  []}" size=2493
+time="Jan 11 15:16:21.810327093" level=info msg="converted platform" digest="sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:16:21.810358857" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever"
+time="Jan 11 15:16:21.872527486" level=info msg="conversion completed"
+time="Jan 11 15:16:27.449017860" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever"
+time="Jan 11 15:16:27.449117527" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:16:27Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:16:27Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:16:27Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:16:27Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:16:27Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:16:27Z - okay 
+requested to pull image cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever based on cloud.cluster.local:5000/node-lts:lts-starlight-PedroH-Santos-api-gerenciador-financeiro@sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a in 2312ms 
+delta image 2.0MiB / original 400.2MiB (skipped: 398.2MiB = 99.49%)
+ctr: no running task found: task trace-node-lts-lts-starlight-Yang1998-jiale-node-sever not found: not found
+set optimizer: completed request
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 0.486s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 512.961s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 478.351s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 375.190s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 266.555s file access traces - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 143.425s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 115.894s file access traces - okay 
+reported traces: uploaded traces
+time="Jan 11 15:16:31.426742792" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:16:31.427095397" level=info msg="fetching container image" image="node:lts"
+time="Jan 11 15:16:33.552658645" level=info msg="found platform" _skip=true digest="sha256:a265fcf8d78b8a0f13bc44b9d5872818f0b361d2e990ca8c352023ccf3fe046a" platform="&{arm linux  [] v7 []}" size=2495
+time="Jan 11 15:16:33.552720270" level=info msg="found platform" _skip=true digest="sha256:db58ddd13d18a0a3aa1f278bf9eb746a31e84ce108d59981e99cd00c148aa2ba" platform="&{s390x linux  []  []}" size=2493
+time="Jan 11 15:16:33.552728601" level=info msg="found platform" _skip=false digest="sha256:89b322c235df769801f0fe13c42528014f77a5461d710b3c805e4590f6cb13e7" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:16:33.552661950" level=info msg="found platform" _skip=true digest="sha256:edec3c7117fe4c6a3637848ec021f76e8d719319947a7c3ca658952a20942973" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:16:33.552670221" level=info msg="found platform" _skip=true digest="sha256:af7698b1d80961ea58661120c0266bb72eb7501ffe5610fb0a38329cd42716ee" platform="&{arm64 linux  [] v8 []}" size=2495
+time="Jan 11 15:16:33.552673776" level=info msg="found platform" _skip=true digest="sha256:641ada186e3664ad237bfe1c9fe66b65c5a9ada962747ba07adb92381d2ad624" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:16:33.552681777" level=info msg="found platform" _skip=true digest="sha256:80a4ed3e25f3c080840221e1c6dd539e9f0be122727c1f67a2f32a47570c61cc" platform="&{ppc64le linux  []  []}" size=2495
+time="Jan 11 15:16:33.552684611" level=info msg="found platform" _skip=true digest="sha256:d0bf33d796b6366b925155fd442a88541cf4167425854ee5b5b3650d0912d871" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:16:33.552732847" level=info msg="found platform" _skip=true digest="sha256:e8d1f058cd30c24215a1ca1c11ee4315c019cac83b1d4fe30dbb108b2c71f511" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:16:33.552666126" level=info msg="found platform" _skip=true digest="sha256:5bfc28c187b0e80c7c0952323de5597eb01ef3d1a27d94ff15e7d46b517e2ebc" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:18:11.414042141" level=info msg="converted platform" digest="sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:18:11.414069159" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner"
+time="Jan 11 15:18:11.539533283" level=info msg="conversion completed"
+time="Jan 11 15:18:20.971117456" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner"
+time="Jan 11 15:18:20.971370214" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:18:21Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:18:21Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:18:21Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:18:21Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:18:21Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:18:21Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:18:21Z - okay 
+requested to pull image cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner based on cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever@sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27 in 1851ms 
+delta image 2.0MiB / original 400.2MiB (skipped: 398.2MiB = 99.49%)
+npm error Tracker "idealTree" already exists
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_18_23_583Z-debug-0.log
+time="Jan 11 15:18:24.515085309" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:18:24.515422493" level=info msg="fetching container image" image="node:lts-iron"
+time="Jan 11 15:18:26.191521725" level=info msg="found platform" _skip=true digest="sha256:044bdd188491093006814aab8c893ea97585294da4104c0162826a06f5581aa9" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:18:26.191534532" level=info msg="found platform" _skip=true digest="sha256:bd35ad381a72b8e86be94d1eb8db22d595f77c25b52950ae180894b145fe669f" platform="&{arm64 linux  [] v8 []}" size=2495
+time="Jan 11 15:18:26.191561318" level=info msg="found platform" _skip=false digest="sha256:a37862633d0359b2392fbc565b3c81e4bbbf7d372597335aab11bef9553493f2" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:18:26.191564783" level=info msg="found platform" _skip=true digest="sha256:f46b78f7b667de5cae09828da822f7c7c53fc66a13ccb06a7855732b522a4cc5" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:18:26.191583459" level=info msg="found platform" _skip=true digest="sha256:be69869c87c7fc11d3b428ab097b68b418ba34afc1058cdb2c8f4da25d42812f" platform="&{arm linux  [] v7 []}" size=2495
+time="Jan 11 15:18:26.191589717" level=info msg="found platform" _skip=true digest="sha256:f80df544fd346b1840ec8cd3168e60b10252b9dcc5c5db305f58fb7a10b01fd1" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:18:26.191596747" level=info msg="found platform" _skip=true digest="sha256:8bde0d66117fa6c12a78881adbac573397b1360ccdab8cb87feaae7d04db2911" platform="&{ppc64le linux  []  []}" size=2495
+time="Jan 11 15:18:26.191599811" level=info msg="found platform" _skip=true digest="sha256:f031a4975ae02a90c4941d1a30c328c7b576733bbae85e94ac7d40793bd4c48e" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:18:26.191605659" level=info msg="found platform" _skip=true digest="sha256:1500f8394b957b8fcb209a926e0c060c61ad015c49ade71a44c2e36fa197b9b7" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:18:26.191612258" level=info msg="found platform" _skip=true digest="sha256:2e3422651cea7b1c22603ac5d9a1436d42a05c97a730a4e91acc30d6cc5c1ebc" platform="&{s390x linux  []  []}" size=2493
+time="Jan 11 15:20:03.018544235" level=info msg="converted platform" digest="sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:20:03.018570041" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12"
+time="Jan 11 15:20:03.211665900" level=info msg="conversion completed"
+time="Jan 11 15:20:10.292933338" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12"
+time="Jan 11 15:20:10.293093618" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:20:10Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:20:10Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:20:10Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:20:10Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:20:10Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:20:10Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:20:10Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:20:10Z - okay 
+requested to pull image cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12 in 6520ms 
+delta image 362.5MiB / original 392.9MiB (skipped: 30.5MiB = 7.75%)
+npm error Tracker "idealTree" already exists
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T15_20_27_454Z-debug-0.log
+time="Jan 11 15:20:28.541511253" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:20:28.541564576" level=info msg="fetching container image" image="node:lts"
+time="Jan 11 15:20:30.523684016" level=info msg="found platform" _skip=true digest="sha256:edec3c7117fe4c6a3637848ec021f76e8d719319947a7c3ca658952a20942973" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:20:30.523736298" level=info msg="found platform" _skip=true digest="sha256:641ada186e3664ad237bfe1c9fe66b65c5a9ada962747ba07adb92381d2ad624" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:20:30.523684657" level=info msg="found platform" _skip=true digest="sha256:af7698b1d80961ea58661120c0266bb72eb7501ffe5610fb0a38329cd42716ee" platform="&{arm64 linux  [] v8 []}" size=2495
+time="Jan 11 15:20:30.523721248" level=info msg="found platform" _skip=true digest="sha256:e8d1f058cd30c24215a1ca1c11ee4315c019cac83b1d4fe30dbb108b2c71f511" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:20:30.523724132" level=info msg="found platform" _skip=true digest="sha256:a265fcf8d78b8a0f13bc44b9d5872818f0b361d2e990ca8c352023ccf3fe046a" platform="&{arm linux  [] v7 []}" size=2495
+time="Jan 11 15:20:30.523729068" level=info msg="found platform" _skip=true digest="sha256:5bfc28c187b0e80c7c0952323de5597eb01ef3d1a27d94ff15e7d46b517e2ebc" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:20:30.523733815" level=info msg="found platform" _skip=true digest="sha256:80a4ed3e25f3c080840221e1c6dd539e9f0be122727c1f67a2f32a47570c61cc" platform="&{ppc64le linux  []  []}" size=2495
+time="Jan 11 15:20:30.523744589" level=info msg="found platform" _skip=true digest="sha256:d0bf33d796b6366b925155fd442a88541cf4167425854ee5b5b3650d0912d871" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 15:20:30.523747713" level=info msg="found platform" _skip=true digest="sha256:db58ddd13d18a0a3aa1f278bf9eb746a31e84ce108d59981e99cd00c148aa2ba" platform="&{s390x linux  []  []}" size=2493
+time="Jan 11 15:20:30.523718454" level=info msg="found platform" _skip=false digest="sha256:89b322c235df769801f0fe13c42528014f77a5461d710b3c805e4590f6cb13e7" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:22:11.188899680" level=info msg="converted platform" digest="sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 15:22:11.188926837" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node-lts:lts-starlight-equinor-flowify-workflows-UI"
+time="Jan 11 15:22:11.334801322" level=info msg="conversion completed"
+time="Jan 11 15:22:19.677307602" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node-lts:lts-starlight-equinor-flowify-workflows-UI"
+time="Jan 11 15:22:19.677754187" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T15:22:19Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:22:19Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:22:19Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:22:19Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:22:19Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:22:19Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:22:19Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:22:19Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:22:19Z - okay 
+requested to pull image cloud.cluster.local:5000/node-lts:lts-starlight-equinor-flowify-workflows-UI based on cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner@sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b in 3941ms 
+delta image 2.0MiB / original 400.2MiB (skipped: 398.2MiB = 99.49%)
+yarn install v1.22.22
+warning You don't appear to have an internet connection. Try the --offline flag to use the cache for registry queries.
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+Done in 0.04s.
+ctr: no running task found: task trace-node-lts-lts-starlight-equinor-flowify-workflows-UI not found: not found
+set optimizer: completed request
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: collected 241.648s file access traces - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: collected 0.976s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 243.516s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 127.831s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 243.517s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 243.516s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 243.516s file access traces - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 243.516s file access traces - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 243.517s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 243.514s file access traces - okay 
+reported traces: uploaded traces
+time="Jan 11 15:22:25.602793197" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:22:25.602829317" level=info msg="fetching container image" image="ubuntu:22.04"
+time="Jan 11 15:22:27.269397463" level=info msg="found platform" _skip=true digest="sha256:a5e64271c378f07afca9473a3cf82db16c7b4eabe8111835d48c9e165230f20d" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:27.269450090" level=info msg="found platform" _skip=true digest="sha256:e04b34e48954230514d2d2178f4eb0f9629caa21700c263680fc8cc1e0b87b71" platform="&{riscv64 linux  []  []}" size=424
+time="Jan 11 15:22:27.269403236" level=info msg="found platform" _skip=true digest="sha256:e5759e2b46d96e97d8b55718bfa25ff0ab94afc675bcbdcc75ece806e75eb0ef" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:27.269429943" level=info msg="found platform" _skip=false digest="sha256:3d1556a8a18cf5307b121e0a98e93f1ddf1f3f8e092f1fddfd941254785b95d7" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:22:27.269491342" level=info msg="found platform" _skip=true digest="sha256:15abdf6cd20e250f2cd5796047ca8370c45c70a2a1279fe0c37c061116d9a525" platform="&{ppc64le linux  []  []}" size=424
+time="Jan 11 15:22:27.269522065" level=info msg="found platform" _skip=true digest="sha256:9727e060ae8adf67b5180ef47749720b6e88503e50167da84eab32faf47cc12f" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:27.269433748" level=info msg="found platform" _skip=true digest="sha256:fbbbc3b83f7fb5d64c8ad86a44765c8eb4ceced4a43b00c58b2f625d2ed61676" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:27.269438484" level=info msg="found platform" _skip=true digest="sha256:17d75c44d078810c2264962f31c2c3c8a5889ec05edd4e2a00e273a5e1219ebf" platform="&{arm linux  [] v7 []}" size=424
+time="Jan 11 15:22:27.269441709" level=info msg="found platform" _skip=true digest="sha256:4e626f9c1a3cda3c405b8907ac8117f502446f2004a8688fcade23acbb31195b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:27.269444573" level=info msg="found platform" _skip=true digest="sha256:7c75ab2b0567edbb9d4834a2c51e462ebd709740d1f2c40bcd23c56e974fe2a8" platform="&{arm64 linux  [] v8 []}" size=424
+time="Jan 11 15:22:27.269456715" level=info msg="found platform" _skip=true digest="sha256:b1a48753c24aeb7c76f5691efb6a38bd59870130eb06e57687181356545e975b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:27.269461531" level=info msg="found platform" _skip=true digest="sha256:af903bc2047b8dd70bb96aaf5a35df3b722966b7c6659cb37001535f0d643d9c" platform="&{s390x linux  []  []}" size=424
+time="Jan 11 15:22:37.324613797" level=info msg="converted platform" digest="sha256:38777ed2c6cec325a37b974d43bbf734e493a5911888e2b19b268a5516fc55b7" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:22:37.324638611" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh"
+time="Jan 11 15:22:37.430982692" level=info msg="conversion completed"
+time="Jan 11 15:22:40.037389090" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh"
+time="Jan 11 15:22:40.037563149" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T15:22:40Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:22:40Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:22:40Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:22:40Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T15:22:40Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:22:40Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:22:40Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:22:40Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:22:40Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:22:40Z - okay 
+pull image failed: failed to pull image cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh: Get "http://cloud.cluster.local:8090/starlight/delta?from=&platform=linux%2Famd64&to=cloud.cluster.local%3A5000%2Fubuntu-22.04%3A22.04-starlight-spacemeshos-go-spacemesh": dial tcp 192.168.3.63:8090: connect: connection refused
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-slim:lts-slim-starlight-SwiftFiddle-swiftregex trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex sh -c 'echo "@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_TOKEN}" > ./.npmrc && npm ci && rm -f ./.npmrc'
+
+>> Executing: sudo ctr task start trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+Command failed with exit code 1: sudo ctr task start trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex
+Error processing image node:lts-slim: Command 'sudo ctr task start trace-node-lts-slim-lts-slim-starlight-SwiftFiddle-swiftregex' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-Yang1998-jiale-node-sever trace-node-lts-lts-starlight-Yang1998-jiale-node-sever sh -c 'mkdir -p /home/node-serve'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-lts-starlight-Yang1998-jiale-node-sever
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-aldy97-Budget-Planner
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-aldy97-Budget-Planner
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-aldy97-Budget-Planner trace-node-lts-lts-starlight-aldy97-Budget-Planner sh -c 'npm install'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-aldy97-Budget-Planner
+Command failed with exit code 1: sudo ctr task start trace-node-lts-lts-starlight-aldy97-Budget-Planner
+Error processing image node:lts: Command 'sudo ctr task start trace-node-lts-lts-starlight-aldy97-Budget-Planner' returned non-zero exit status 1.
+
+Processing image: node:lts-iron
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-iron cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts-iron:lts-iron-starlight-sgautam2-1-Assignment12 trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12 sh -c 'npm install'
+
+>> Executing: sudo ctr task start trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+Command failed with exit code 1: sudo ctr task start trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12
+Error processing image node:lts-iron: Command 'sudo ctr task start trace-node-lts-iron-lts-iron-starlight-sgautam2-1-Assignment12' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts:lts-starlight-equinor-flowify-workflows-UI
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node-lts:lts-starlight-equinor-flowify-workflows-UI
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts:lts-starlight-equinor-flowify-workflows-UI
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts:lts-starlight-equinor-flowify-workflows-UI trace-node-lts-lts-starlight-equinor-flowify-workflows-UI sh -c 'yarn install'
+
+>> Executing: sudo ctr task start trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-lts-starlight-equinor-flowify-workflows-UI
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh
+ctr: image "cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh": not found
+time="Jan 11 15:22:41.938105985" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:22:41.938153310" level=info msg="fetching container image" image="ubuntu:22.04"
+time="Jan 11 15:22:43.453416934" level=info msg="found platform" _skip=true digest="sha256:a5e64271c378f07afca9473a3cf82db16c7b4eabe8111835d48c9e165230f20d" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:43.453499179" level=info msg="found platform" _skip=true digest="sha256:7c75ab2b0567edbb9d4834a2c51e462ebd709740d1f2c40bcd23c56e974fe2a8" platform="&{arm64 linux  [] v8 []}" size=424
+time="Jan 11 15:22:43.453522569" level=info msg="found platform" _skip=true digest="sha256:af903bc2047b8dd70bb96aaf5a35df3b722966b7c6659cb37001535f0d643d9c" platform="&{s390x linux  []  []}" size=424
+time="Jan 11 15:22:43.453422653" level=info msg="found platform" _skip=true digest="sha256:e5759e2b46d96e97d8b55718bfa25ff0ab94afc675bcbdcc75ece806e75eb0ef" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:43.453446286" level=info msg="found platform" _skip=false digest="sha256:3d1556a8a18cf5307b121e0a98e93f1ddf1f3f8e092f1fddfd941254785b95d7" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:22:43.453448729" level=info msg="found platform" _skip=true digest="sha256:fbbbc3b83f7fb5d64c8ad86a44765c8eb4ceced4a43b00c58b2f625d2ed61676" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:43.453452825" level=info msg="found platform" _skip=true digest="sha256:17d75c44d078810c2264962f31c2c3c8a5889ec05edd4e2a00e273a5e1219ebf" platform="&{arm linux  [] v7 []}" size=424
+time="Jan 11 15:22:43.453458293" level=info msg="found platform" _skip=true digest="sha256:4e626f9c1a3cda3c405b8907ac8117f502446f2004a8688fcade23acbb31195b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:43.453510262" level=info msg="found platform" _skip=true digest="sha256:15abdf6cd20e250f2cd5796047ca8370c45c70a2a1279fe0c37c061116d9a525" platform="&{ppc64le linux  []  []}" size=424
+time="Jan 11 15:22:43.453513697" level=info msg="found platform" _skip=true digest="sha256:9727e060ae8adf67b5180ef47749720b6e88503e50167da84eab32faf47cc12f" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:43.453516581" level=info msg="found platform" _skip=true digest="sha256:e04b34e48954230514d2d2178f4eb0f9629caa21700c263680fc8cc1e0b87b71" platform="&{riscv64 linux  []  []}" size=424
+time="Jan 11 15:22:43.453519235" level=info msg="found platform" _skip=true digest="sha256:b1a48753c24aeb7c76f5691efb6a38bd59870130eb06e57687181356545e975b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:22:53.283842287" level=info msg="converted platform" digest="sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:22:53.283867431" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup"
+time="Jan 11 15:22:53.329632530" level=info msg="conversion completed"
+time="Jan 11 15:22:53.753177117" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup"
+time="Jan 11 15:22:53.753360664" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:22:53Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:22:53Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:22:53Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T15:22:53Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:22:53Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:22:53Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:22:53Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:22:53Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T15:22:53Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:22:53Z - okay 
+requested to pull image cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup in 252ms 
+delta image 30.7MiB / original 31.0MiB (skipped: 289.6KiB = 0.91%)
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+time="Jan 11 15:23:02.259918934" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:23:02.259953041" level=info msg="fetching container image" image="ubuntu:22.04"
+time="Jan 11 15:23:03.850755231" level=info msg="found platform" _skip=true digest="sha256:e5759e2b46d96e97d8b55718bfa25ff0ab94afc675bcbdcc75ece806e75eb0ef" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:03.850793939" level=info msg="found platform" _skip=true digest="sha256:a5e64271c378f07afca9473a3cf82db16c7b4eabe8111835d48c9e165230f20d" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:03.850829328" level=info msg="found platform" _skip=true digest="sha256:15abdf6cd20e250f2cd5796047ca8370c45c70a2a1279fe0c37c061116d9a525" platform="&{ppc64le linux  []  []}" size=424
+time="Jan 11 15:23:03.850834295" level=info msg="found platform" _skip=true digest="sha256:9727e060ae8adf67b5180ef47749720b6e88503e50167da84eab32faf47cc12f" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:03.850837819" level=info msg="found platform" _skip=true digest="sha256:e04b34e48954230514d2d2178f4eb0f9629caa21700c263680fc8cc1e0b87b71" platform="&{riscv64 linux  []  []}" size=424
+time="Jan 11 15:23:03.850844298" level=info msg="found platform" _skip=true digest="sha256:b1a48753c24aeb7c76f5691efb6a38bd59870130eb06e57687181356545e975b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:03.850847403" level=info msg="found platform" _skip=true digest="sha256:af903bc2047b8dd70bb96aaf5a35df3b722966b7c6659cb37001535f0d643d9c" platform="&{s390x linux  []  []}" size=424
+time="Jan 11 15:23:03.850852840" level=info msg="found platform" _skip=true digest="sha256:17d75c44d078810c2264962f31c2c3c8a5889ec05edd4e2a00e273a5e1219ebf" platform="&{arm linux  [] v7 []}" size=424
+time="Jan 11 15:23:03.850855023" level=info msg="found platform" _skip=false digest="sha256:3d1556a8a18cf5307b121e0a98e93f1ddf1f3f8e092f1fddfd941254785b95d7" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:23:03.850856705" level=info msg="found platform" _skip=true digest="sha256:fbbbc3b83f7fb5d64c8ad86a44765c8eb4ceced4a43b00c58b2f625d2ed61676" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:03.850861182" level=info msg="found platform" _skip=true digest="sha256:4e626f9c1a3cda3c405b8907ac8117f502446f2004a8688fcade23acbb31195b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:03.850865497" level=info msg="found platform" _skip=true digest="sha256:7c75ab2b0567edbb9d4834a2c51e462ebd709740d1f2c40bcd23c56e974fe2a8" platform="&{arm64 linux  [] v8 []}" size=424
+time="Jan 11 15:23:13.839198679" level=info msg="converted platform" digest="sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:23:13.839224665" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt"
+time="Jan 11 15:23:13.855332128" level=info msg="conversion completed"
+time="Jan 11 15:23:14.185395141" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt"
+time="Jan 11 15:23:14.185538247" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:23:14Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T15:23:14Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:23:14Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:23:14Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:23:14Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:23:14Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:23:14Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T15:23:14Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T15:23:14Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:23:14Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:23:14Z - okay 
+requested to pull image cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt based on cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup@sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530 in 110ms 
+delta image 198.0KiB / original 31.0MiB (skipped: 30.8MiB = 99.38%)
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+time="Jan 11 15:23:21.882735204" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:23:21.882772335" level=info msg="fetching container image" image="ubuntu:22.04"
+time="Jan 11 15:23:23.403074097" level=info msg="found platform" _skip=true digest="sha256:a5e64271c378f07afca9473a3cf82db16c7b4eabe8111835d48c9e165230f20d" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:23.403077141" level=info msg="found platform" _skip=true digest="sha256:e5759e2b46d96e97d8b55718bfa25ff0ab94afc675bcbdcc75ece806e75eb0ef" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:23.403119029" level=info msg="found platform" _skip=false digest="sha256:3d1556a8a18cf5307b121e0a98e93f1ddf1f3f8e092f1fddfd941254785b95d7" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:23:23.403121312" level=info msg="found platform" _skip=true digest="sha256:fbbbc3b83f7fb5d64c8ad86a44765c8eb4ceced4a43b00c58b2f625d2ed61676" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:23.403123365" level=info msg="found platform" _skip=true digest="sha256:17d75c44d078810c2264962f31c2c3c8a5889ec05edd4e2a00e273a5e1219ebf" platform="&{arm linux  [] v7 []}" size=424
+time="Jan 11 15:23:23.403128021" level=info msg="found platform" _skip=true digest="sha256:4e626f9c1a3cda3c405b8907ac8117f502446f2004a8688fcade23acbb31195b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:23.403131596" level=info msg="found platform" _skip=true digest="sha256:7c75ab2b0567edbb9d4834a2c51e462ebd709740d1f2c40bcd23c56e974fe2a8" platform="&{arm64 linux  [] v8 []}" size=424
+time="Jan 11 15:23:23.403137594" level=info msg="found platform" _skip=true digest="sha256:e04b34e48954230514d2d2178f4eb0f9629caa21700c263680fc8cc1e0b87b71" platform="&{riscv64 linux  []  []}" size=424
+time="Jan 11 15:23:23.403143042" level=info msg="found platform" _skip=true digest="sha256:15abdf6cd20e250f2cd5796047ca8370c45c70a2a1279fe0c37c061116d9a525" platform="&{ppc64le linux  []  []}" size=424
+time="Jan 11 15:23:23.403154197" level=info msg="found platform" _skip=true digest="sha256:9727e060ae8adf67b5180ef47749720b6e88503e50167da84eab32faf47cc12f" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:23.403159735" level=info msg="found platform" _skip=true digest="sha256:b1a48753c24aeb7c76f5691efb6a38bd59870130eb06e57687181356545e975b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:23.403164932" level=info msg="found platform" _skip=true digest="sha256:af903bc2047b8dd70bb96aaf5a35df3b722966b7c6659cb37001535f0d643d9c" platform="&{s390x linux  []  []}" size=424
+time="Jan 11 15:23:33.461782047" level=info msg="converted platform" digest="sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:23:33.461806640" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer"
+time="Jan 11 15:23:33.484701486" level=info msg="conversion completed"
+time="Jan 11 15:23:33.821514847" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer"
+time="Jan 11 15:23:33.821585484" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:23:33Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:23:33Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T15:23:33Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:23:33Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:23:33Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T15:23:33Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:23:33Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T15:23:33Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:23:33Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:23:33Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:23:33Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T15:23:33Z - okay 
+requested to pull image cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer based on cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt@sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47 in 111ms 
+delta image 198.5KiB / original 31.0MiB (skipped: 30.8MiB = 99.37%)
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+time="Jan 11 15:23:41.460085195" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:23:41.460123738" level=info msg="fetching container image" image="ubuntu:22.04"
+time="Jan 11 15:23:43.057181103" level=info msg="found platform" _skip=true digest="sha256:9727e060ae8adf67b5180ef47749720b6e88503e50167da84eab32faf47cc12f" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:43.057155278" level=info msg="found platform" _skip=true digest="sha256:e5759e2b46d96e97d8b55718bfa25ff0ab94afc675bcbdcc75ece806e75eb0ef" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:43.057161026" level=info msg="found platform" _skip=true digest="sha256:15abdf6cd20e250f2cd5796047ca8370c45c70a2a1279fe0c37c061116d9a525" platform="&{ppc64le linux  []  []}" size=424
+time="Jan 11 15:23:43.057155128" level=info msg="found platform" _skip=true digest="sha256:a5e64271c378f07afca9473a3cf82db16c7b4eabe8111835d48c9e165230f20d" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:43.057193831" level=info msg="found platform" _skip=false digest="sha256:3d1556a8a18cf5307b121e0a98e93f1ddf1f3f8e092f1fddfd941254785b95d7" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:23:43.057418850" level=info msg="found platform" _skip=true digest="sha256:af903bc2047b8dd70bb96aaf5a35df3b722966b7c6659cb37001535f0d643d9c" platform="&{s390x linux  []  []}" size=424
+time="Jan 11 15:23:43.057196454" level=info msg="found platform" _skip=true digest="sha256:fbbbc3b83f7fb5d64c8ad86a44765c8eb4ceced4a43b00c58b2f625d2ed61676" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:43.057202052" level=info msg="found platform" _skip=true digest="sha256:17d75c44d078810c2264962f31c2c3c8a5889ec05edd4e2a00e273a5e1219ebf" platform="&{arm linux  [] v7 []}" size=424
+time="Jan 11 15:23:43.057206378" level=info msg="found platform" _skip=true digest="sha256:4e626f9c1a3cda3c405b8907ac8117f502446f2004a8688fcade23acbb31195b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:43.057209502" level=info msg="found platform" _skip=true digest="sha256:7c75ab2b0567edbb9d4834a2c51e462ebd709740d1f2c40bcd23c56e974fe2a8" platform="&{arm64 linux  [] v8 []}" size=424
+time="Jan 11 15:23:43.057252341" level=info msg="found platform" _skip=true digest="sha256:b1a48753c24aeb7c76f5691efb6a38bd59870130eb06e57687181356545e975b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:23:43.057256136" level=info msg="found platform" _skip=true digest="sha256:e04b34e48954230514d2d2178f4eb0f9629caa21700c263680fc8cc1e0b87b71" platform="&{riscv64 linux  []  []}" size=424
+time="Jan 11 15:23:59.780490984" level=info msg="converted platform" digest="sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:23:59.780514636" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container"
+time="Jan 11 15:24:00.112754767" level=info msg="conversion completed"
+time="Jan 11 15:24:00.449220760" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container"
+time="Jan 11 15:24:00.449350358" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T15:24:00Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T15:24:00Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T15:24:00Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:24:00Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:24:00Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T15:24:00Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:24:00Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:24:00Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:24:00Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:24:00Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T15:24:00Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:24:00Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:24:00Z - okay 
+requested to pull image cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container based on cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer@sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207 in 104ms 
+delta image 197.7KiB / original 31.0MiB (skipped: 30.8MiB = 99.38%)
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh sh -c 'set -ex && apt-get update --fix-missing && apt-get install -qy --no-install-recommends ca-certificates tzdata locales procps net-tools file ocl-icd-libopencl1 clinfo && apt-get clean && rm -rf /var/lib/apt/lists/* && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 && echo "$TZ" > /etc/timezone'
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh sh -c 'set -ex && apt-get update --fix-missing && apt-get install -qy --no-install-recommends ca-certificates tzdata locales procps net-tools file ocl-icd-libopencl1 clinfo && apt-get clean && rm -rf /var/lib/apt/lists/* && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 && echo "$TZ" > /etc/timezone'
+Error processing image ubuntu:22.04: Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-spacemeshos-go-spacemesh trace-ubuntu-22.04-22.04-starlight-spacemeshos-go-spacemesh sh -c 'set -ex && apt-get update --fix-missing && apt-get install -qy --no-install-recommends ca-certificates tzdata locales procps net-tools file ocl-icd-libopencl1 clinfo && apt-get clean && rm -rf /var/lib/apt/lists/* && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 && echo "$TZ" > /etc/timezone'' returned non-zero exit status 1.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Chrisebell24-setup trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup sh -c 'apt-get update && apt-get install -y tar wget bash rsync gcc libfreetype6-dev libhdf5-serial-dev libpng-dev libzmq3-dev unzip pkg-config software-properties-common graphviz git curl libgeos++-dev proj-data proj-bin libgeos-dev nodejs npm build-essential gcc python3-dev libffi-dev libssl-dev python3-pip openssh-server openssh-client tk -y'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+Command failed with exit code 100: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup
+Error processing image ubuntu:22.04: Command 'sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Chrisebell24-setup' returned non-zero exit status 100.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Domali4ever-Domali_Mt trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt sh -c 'apt-get update && apt-get install -y curl sudo ca-certificates'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+Command failed with exit code 100: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt
+Error processing image ubuntu:22.04: Command 'sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Domali4ever-Domali_Mt' returned non-zero exit status 100.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DataDog-datadog-static-analyzer trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer sh -c 'apt-get update && apt-get --no-install-recommends install -y build-essential ca-certificates curl git'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer
+Command failed with exit code 100: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer
+Error processing image ubuntu:22.04: Command 'sudo ctr task start trace-ubuntu-22.04-22.04-starlight-DataDog-datadog-static-analyzer' returned non-zero exit status 100.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container sh -c 'apt-get update && apt-get install -y --no-install-recommends software-properties-common gnupg wget lsb-release ca-certificates git build-essential autotools-dev automake libtool libtiff-dev zlib1g-dev libjpeg-dev libpng-dev libleptonica-dev libjbig2dec0-dev && rm -rf /var/lib/apt/lists/*'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container
+Command failed with exit code 100: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container
+Error processing image ubuntu:22.04: Command 'sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Artyum-OCR-Container' returned non-zero exit status 100.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker
+time="Jan 11 15:24:08.082793684" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:24:08.082838846" level=info msg="fetching container image" image="ubuntu:22.04"
+time="Jan 11 15:24:09.606957363" level=info msg="found platform" _skip=true digest="sha256:a5e64271c378f07afca9473a3cf82db16c7b4eabe8111835d48c9e165230f20d" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:09.607020203" level=info msg="found platform" _skip=true digest="sha256:e5759e2b46d96e97d8b55718bfa25ff0ab94afc675bcbdcc75ece806e75eb0ef" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:09.607033852" level=info msg="found platform" _skip=false digest="sha256:3d1556a8a18cf5307b121e0a98e93f1ddf1f3f8e092f1fddfd941254785b95d7" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:24:09.607035794" level=info msg="found platform" _skip=true digest="sha256:fbbbc3b83f7fb5d64c8ad86a44765c8eb4ceced4a43b00c58b2f625d2ed61676" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:09.607038919" level=info msg="found platform" _skip=true digest="sha256:17d75c44d078810c2264962f31c2c3c8a5889ec05edd4e2a00e273a5e1219ebf" platform="&{arm linux  [] v7 []}" size=424
+time="Jan 11 15:24:09.607042023" level=info msg="found platform" _skip=true digest="sha256:4e626f9c1a3cda3c405b8907ac8117f502446f2004a8688fcade23acbb31195b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:09.607045017" level=info msg="found platform" _skip=true digest="sha256:7c75ab2b0567edbb9d4834a2c51e462ebd709740d1f2c40bcd23c56e974fe2a8" platform="&{arm64 linux  [] v8 []}" size=424
+time="Jan 11 15:24:09.607052497" level=info msg="found platform" _skip=true digest="sha256:e04b34e48954230514d2d2178f4eb0f9629caa21700c263680fc8cc1e0b87b71" platform="&{riscv64 linux  []  []}" size=424
+time="Jan 11 15:24:09.607055021" level=info msg="found platform" _skip=true digest="sha256:15abdf6cd20e250f2cd5796047ca8370c45c70a2a1279fe0c37c061116d9a525" platform="&{ppc64le linux  []  []}" size=424
+time="Jan 11 15:24:09.607057314" level=info msg="found platform" _skip=true digest="sha256:9727e060ae8adf67b5180ef47749720b6e88503e50167da84eab32faf47cc12f" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:09.607062661" level=info msg="found platform" _skip=true digest="sha256:b1a48753c24aeb7c76f5691efb6a38bd59870130eb06e57687181356545e975b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:09.607073566" level=info msg="found platform" _skip=true digest="sha256:af903bc2047b8dd70bb96aaf5a35df3b722966b7c6659cb37001535f0d643d9c" platform="&{s390x linux  []  []}" size=424
+time="Jan 11 15:24:19.735862868" level=info msg="converted platform" digest="sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:24:19.735886530" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker"
+time="Jan 11 15:24:19.879694600" level=info msg="conversion completed"
+time="Jan 11 15:24:20.194423741" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker"
+time="Jan 11 15:24:20.194764848" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:24:20Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T15:24:20Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T15:24:20Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T15:24:20Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:24:20Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T15:24:20Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:24:20Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:24:20Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:24:20Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T15:24:20Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:24:20Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:24:20Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:24:20Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T15:24:20Z - okay 
+requested to pull image cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker based on cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Artyum-OCR-Container@sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716 in 112ms 
+delta image 198.6KiB / original 31.0MiB (skipped: 30.8MiB = 99.37%)
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+Building dependency tree...
+Reading state information...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open file /var/lib/apt/extended_states - open (2: No such file or directory)
+time="Jan 11 15:24:27.895803840" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:24:27.895853388" level=info msg="fetching container image" image="ubuntu:22.04"
+time="Jan 11 15:24:29.617563490" level=info msg="found platform" _skip=true digest="sha256:a5e64271c378f07afca9473a3cf82db16c7b4eabe8111835d48c9e165230f20d" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:29.617609343" level=info msg="found platform" _skip=false digest="sha256:3d1556a8a18cf5307b121e0a98e93f1ddf1f3f8e092f1fddfd941254785b95d7" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:24:29.617860829" level=info msg="found platform" _skip=true digest="sha256:fbbbc3b83f7fb5d64c8ad86a44765c8eb4ceced4a43b00c58b2f625d2ed61676" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:29.617913902" level=info msg="found platform" _skip=true digest="sha256:15abdf6cd20e250f2cd5796047ca8370c45c70a2a1279fe0c37c061116d9a525" platform="&{ppc64le linux  []  []}" size=424
+time="Jan 11 15:24:29.617917337" level=info msg="found platform" _skip=true digest="sha256:17d75c44d078810c2264962f31c2c3c8a5889ec05edd4e2a00e273a5e1219ebf" platform="&{arm linux  [] v7 []}" size=424
+time="Jan 11 15:24:29.617920271" level=info msg="found platform" _skip=true digest="sha256:4e626f9c1a3cda3c405b8907ac8117f502446f2004a8688fcade23acbb31195b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:29.617928392" level=info msg="found platform" _skip=true digest="sha256:7c75ab2b0567edbb9d4834a2c51e462ebd709740d1f2c40bcd23c56e974fe2a8" platform="&{arm64 linux  [] v8 []}" size=424
+time="Jan 11 15:24:29.617930304" level=info msg="found platform" _skip=true digest="sha256:e5759e2b46d96e97d8b55718bfa25ff0ab94afc675bcbdcc75ece806e75eb0ef" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:29.617934751" level=info msg="found platform" _skip=true digest="sha256:e04b34e48954230514d2d2178f4eb0f9629caa21700c263680fc8cc1e0b87b71" platform="&{riscv64 linux  []  []}" size=424
+time="Jan 11 15:24:29.617938346" level=info msg="found platform" _skip=true digest="sha256:9727e060ae8adf67b5180ef47749720b6e88503e50167da84eab32faf47cc12f" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:29.617943252" level=info msg="found platform" _skip=true digest="sha256:b1a48753c24aeb7c76f5691efb6a38bd59870130eb06e57687181356545e975b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:29.617947318" level=info msg="found platform" _skip=true digest="sha256:af903bc2047b8dd70bb96aaf5a35df3b722966b7c6659cb37001535f0d643d9c" platform="&{s390x linux  []  []}" size=424
+time="Jan 11 15:24:39.737639269" level=info msg="converted platform" digest="sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:24:39.737663092" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s"
+time="Jan 11 15:24:39.780987027" level=info msg="conversion completed"
+time="Jan 11 15:24:40.095887592" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s"
+time="Jan 11 15:24:40.096095168" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:24:40Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:24:40Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T15:24:40Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T15:24:40Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T15:24:40Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T15:24:40Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:24:40Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:24:40Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:24:40Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T15:24:40Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:24:40Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T15:24:40Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:24:40Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:24:40Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T15:24:40Z - okay 
+requested to pull image cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s based on cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker@sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf in 105ms 
+delta image 198.2KiB / original 31.0MiB (skipped: 30.8MiB = 99.38%)
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+Building dependency tree...
+Reading state information...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open file /var/lib/apt/extended_states - open (2: No such file or directory)
+time="Jan 11 15:24:47.809744977" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:24:47.809913519" level=info msg="fetching container image" image="ubuntu:22.04"
+time="Jan 11 15:24:50.107828044" level=info msg="found platform" _skip=false digest="sha256:3d1556a8a18cf5307b121e0a98e93f1ddf1f3f8e092f1fddfd941254785b95d7" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:24:50.108437362" level=info msg="found platform" _skip=true digest="sha256:a5e64271c378f07afca9473a3cf82db16c7b4eabe8111835d48c9e165230f20d" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:50.108543451" level=info msg="found platform" _skip=true digest="sha256:b1a48753c24aeb7c76f5691efb6a38bd59870130eb06e57687181356545e975b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:50.108551159" level=info msg="found platform" _skip=true digest="sha256:af903bc2047b8dd70bb96aaf5a35df3b722966b7c6659cb37001535f0d643d9c" platform="&{s390x linux  []  []}" size=424
+time="Jan 11 15:24:50.108513670" level=info msg="found platform" _skip=true digest="sha256:fbbbc3b83f7fb5d64c8ad86a44765c8eb4ceced4a43b00c58b2f625d2ed61676" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:50.108519248" level=info msg="found platform" _skip=true digest="sha256:17d75c44d078810c2264962f31c2c3c8a5889ec05edd4e2a00e273a5e1219ebf" platform="&{arm linux  [] v7 []}" size=424
+time="Jan 11 15:24:50.108523194" level=info msg="found platform" _skip=true digest="sha256:4e626f9c1a3cda3c405b8907ac8117f502446f2004a8688fcade23acbb31195b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:50.108527069" level=info msg="found platform" _skip=true digest="sha256:7c75ab2b0567edbb9d4834a2c51e462ebd709740d1f2c40bcd23c56e974fe2a8" platform="&{arm64 linux  [] v8 []}" size=424
+time="Jan 11 15:24:50.108532657" level=info msg="found platform" _skip=true digest="sha256:e04b34e48954230514d2d2178f4eb0f9629caa21700c263680fc8cc1e0b87b71" platform="&{riscv64 linux  []  []}" size=424
+time="Jan 11 15:24:50.108535220" level=info msg="found platform" _skip=true digest="sha256:15abdf6cd20e250f2cd5796047ca8370c45c70a2a1279fe0c37c061116d9a525" platform="&{ppc64le linux  []  []}" size=424
+time="Jan 11 15:24:50.108538995" level=info msg="found platform" _skip=true digest="sha256:9727e060ae8adf67b5180ef47749720b6e88503e50167da84eab32faf47cc12f" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:24:50.108462630" level=info msg="found platform" _skip=true digest="sha256:e5759e2b46d96e97d8b55718bfa25ff0ab94afc675bcbdcc75ece806e75eb0ef" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:25:00.609752550" level=info msg="converted platform" digest="sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:25:00.609779047" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core"
+time="Jan 11 15:25:00.906911329" level=info msg="conversion completed"
+time="Jan 11 15:25:01.248044488" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core"
+time="Jan 11 15:25:01.248291167" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T15:25:01Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T15:25:01Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T15:25:01Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:25:01Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T15:25:01Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:25:01Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T15:25:01Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:25:01Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:25:01Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:25:01Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:25:01Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T15:25:01Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T15:25:01Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T15:25:01Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:25:01Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:25:01Z - okay 
+requested to pull image cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core based on cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s@sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5 in 99ms 
+delta image 198.2KiB / original 31.0MiB (skipped: 30.8MiB = 99.38%)
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (2: No such file or directory)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+time="Jan 11 15:25:08.859108617" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 15:25:08.859167678" level=info msg="fetching container image" image="ubuntu:22.04"
+time="Jan 11 15:25:10.423091295" level=info msg="found platform" _skip=true digest="sha256:a5e64271c378f07afca9473a3cf82db16c7b4eabe8111835d48c9e165230f20d" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:25:10.423148929" level=info msg="found platform" _skip=true digest="sha256:7c75ab2b0567edbb9d4834a2c51e462ebd709740d1f2c40bcd23c56e974fe2a8" platform="&{arm64 linux  [] v8 []}" size=424
+time="Jan 11 15:25:10.423098300" level=info msg="found platform" _skip=true digest="sha256:e5759e2b46d96e97d8b55718bfa25ff0ab94afc675bcbdcc75ece806e75eb0ef" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:25:10.423132206" level=info msg="found platform" _skip=false digest="sha256:3d1556a8a18cf5307b121e0a98e93f1ddf1f3f8e092f1fddfd941254785b95d7" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:25:10.423136662" level=info msg="found platform" _skip=true digest="sha256:fbbbc3b83f7fb5d64c8ad86a44765c8eb4ceced4a43b00c58b2f625d2ed61676" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:25:10.423139927" level=info msg="found platform" _skip=true digest="sha256:17d75c44d078810c2264962f31c2c3c8a5889ec05edd4e2a00e273a5e1219ebf" platform="&{arm linux  [] v7 []}" size=424
+time="Jan 11 15:25:10.423142781" level=info msg="found platform" _skip=true digest="sha256:4e626f9c1a3cda3c405b8907ac8117f502446f2004a8688fcade23acbb31195b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:25:10.423155874" level=info msg="found platform" _skip=true digest="sha256:15abdf6cd20e250f2cd5796047ca8370c45c70a2a1279fe0c37c061116d9a525" platform="&{ppc64le linux  []  []}" size=424
+time="Jan 11 15:25:10.423159138" level=info msg="found platform" _skip=true digest="sha256:9727e060ae8adf67b5180ef47749720b6e88503e50167da84eab32faf47cc12f" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:25:10.423162593" level=info msg="found platform" _skip=true digest="sha256:e04b34e48954230514d2d2178f4eb0f9629caa21700c263680fc8cc1e0b87b71" platform="&{riscv64 linux  []  []}" size=424
+time="Jan 11 15:25:10.423165787" level=info msg="found platform" _skip=true digest="sha256:b1a48753c24aeb7c76f5691efb6a38bd59870130eb06e57687181356545e975b" platform="&{unknown unknown  []  []}" size=562
+time="Jan 11 15:25:10.423168471" level=info msg="found platform" _skip=true digest="sha256:af903bc2047b8dd70bb96aaf5a35df3b722966b7c6659cb37001535f0d643d9c" platform="&{s390x linux  []  []}" size=424
+time="Jan 11 15:25:21.558935086" level=info msg="converted platform" digest="sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37" platform="&{amd64 linux  []  []}" size=424
+time="Jan 11 15:25:21.558960942" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Jocuz-docker_practica"
+time="Jan 11 15:25:21.577956566" level=info msg="conversion completed"
+time="Jan 11 15:25:21.964791669" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Jocuz-docker_practica"
+time="Jan 11 15:25:21.965134531" level=info msg="notified starlight proxy"
+set optimizer: completed request
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T15:25:22Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T15:25:22Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T15:25:22Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T15:25:22Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T15:25:22Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T15:25:22Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T15:25:22Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T15:25:22Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T15:25:22Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T15:25:22Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T15:25:22Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T15:25:22Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T15:25:22Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T15:25:22Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T15:25:22Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T15:25:22Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T15:25:22Z - okay 
+requested to pull image cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Jocuz-docker_practica based on cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core@sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f in 109ms 
+delta image 198.1KiB / original 31.0MiB (skipped: 30.8MiB = 99.38%)
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Ign:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Ign:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Ign:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Ign:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Err:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Temporary failure resolving 'security.ubuntu.com'
+Err:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Err:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Temporary failure resolving 'archive.ubuntu.com'
+Reading package lists...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Temporary failure resolving 'archive.ubuntu.com'
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Temporary failure resolving 'security.ubuntu.com'
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+ctr: no running task found: task trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica not found: not found
+set optimizer: completed request
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 169.513s file access traces - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: collected 169.513s file access traces - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: collected 49.296s file access traces - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: collected 7.464s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 169.513s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 169.513s file access traces - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: collected 115.579s file access traces - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: collected 155.535s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 169.513s file access traces - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 169.513s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 169.513s file access traces - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: collected 88.965s file access traces - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: collected 69.217s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 169.513s file access traces - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: collected 169.513s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 169.513s file access traces - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: collected 135.212s file access traces - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: collected 28.182s file access traces - okay 
+reported traces: uploaded traces
+set optimizer: completed request
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: collected 0.000s file access traces - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: collected 0.000s file access traces - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: collected 0.000s file access traces - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: collected 0.000s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 0.000s file access traces - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: collected 0.000s file access traces - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: collected 0.000s file access traces - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 0.000s file access traces - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: collected 0.000s file access traces - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 0.000s file access traces - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: collected 0.000s file access traces - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: collected 0.000s file access traces - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: collected 0.000s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 0.000s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 0.000s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 0.000s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 0.000s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 0.000s file access traces - okay 
+reported traces: uploaded traces
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-ubongpr7-vlc_maker trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker sh -c 'apt update'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker
+Command failed with exit code 100: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker
+Error processing image ubuntu:22.04: Command 'sudo ctr task start trace-ubuntu-22.04-22.04-starlight-ubongpr7-vlc_maker' returned non-zero exit status 100.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-DubrovskyEI-tac_plus-ng-k8s trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s sh -c 'apt update && apt install -y build-essential && apt install -y libnet-ldap-perl && apt install -y libpcre2-dev && apt install -y libc-ares-dev && apt install -y checkinstall && ./configure && make && checkinstall --install=no --default --pkgname=tac-plus-ng --pkgversion=1 && cp tac-plus-ng_*.deb /tac-plus-ng.deb'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+Command failed with exit code 100: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s
+Error processing image ubuntu:22.04: Command 'sudo ctr task start trace-ubuntu-22.04-22.04-starlight-DubrovskyEI-tac_plus-ng-k8s' returned non-zero exit status 100.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-elsampsa-valkka-core trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core sh -c 'apt-get -y update && apt-get install -y curl && dpkg -i Valkka.deb || apt-get install -fy'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core
+Command failed with exit code 100: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core
+Error processing image ubuntu:22.04: Command 'sudo ctr task start trace-ubuntu-22.04-22.04-starlight-elsampsa-valkka-core' returned non-zero exit status 100.
+
+Processing image: ubuntu:22.04
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Jocuz-docker_practica
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 ubuntu:22.04 cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Jocuz-docker_practica
+
+>> Executing: sudo ctr-starlight optimizer on
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Jocuz-docker_practica
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ps trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/ubuntu-22.04:22.04-starlight-Jocuz-docker_practica trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica sh -c 'apt-get update'
+
+>> Executing: sudo ctr task start trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+Command failed with exit code 1: sudo ctr task kill trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+Removing container...
+
+>> Executing: sudo ctr container rm trace-ubuntu-22.04-22.04-starlight-Jocuz-docker_practica
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+
+Processing complete:
+Successful: 3
+Failed: 16

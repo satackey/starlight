@@ -1,0 +1,1349 @@
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts/ionic-team/ionic-cli:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node/lts/ionic-team/ionic-cli:starlight
+time="Jan 11 19:35:14.810637110" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 19:35:14.810684192" level=info msg="fetching container image" image="node:lts"
+time="Jan 11 19:35:16.611417476" level=info msg="found platform" _skip=true digest="sha256:5bfc28c187b0e80c7c0952323de5597eb01ef3d1a27d94ff15e7d46b517e2ebc" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:35:16.611422845" level=info msg="found platform" _skip=true digest="sha256:edec3c7117fe4c6a3637848ec021f76e8d719319947a7c3ca658952a20942973" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:35:16.611439134" level=info msg="found platform" _skip=true digest="sha256:af7698b1d80961ea58661120c0266bb72eb7501ffe5610fb0a38329cd42716ee" platform="&{arm64 linux  [] v8 []}" size=2495
+time="Jan 11 19:35:16.611442472" level=info msg="found platform" _skip=true digest="sha256:641ada186e3664ad237bfe1c9fe66b65c5a9ada962747ba07adb92381d2ad624" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:35:16.611445439" level=info msg="found platform" _skip=true digest="sha256:80a4ed3e25f3c080840221e1c6dd539e9f0be122727c1f67a2f32a47570c61cc" platform="&{ppc64le linux  []  []}" size=2495
+time="Jan 11 19:35:16.611449589" level=info msg="found platform" _skip=true digest="sha256:d0bf33d796b6366b925155fd442a88541cf4167425854ee5b5b3650d0912d871" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:35:16.611453919" level=info msg="found platform" _skip=true digest="sha256:db58ddd13d18a0a3aa1f278bf9eb746a31e84ce108d59981e99cd00c148aa2ba" platform="&{s390x linux  []  []}" size=2493
+time="Jan 11 19:35:16.611459452" level=info msg="found platform" _skip=true digest="sha256:e8d1f058cd30c24215a1ca1c11ee4315c019cac83b1d4fe30dbb108b2c71f511" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:35:16.611462670" level=info msg="found platform" _skip=false digest="sha256:89b322c235df769801f0fe13c42528014f77a5461d710b3c805e4590f6cb13e7" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 19:35:16.611481214" level=info msg="found platform" _skip=true digest="sha256:a265fcf8d78b8a0f13bc44b9d5872818f0b361d2e990ca8c352023ccf3fe046a" platform="&{arm linux  [] v7 []}" size=2495
+time="Jan 11 19:36:46.247113081" level=info msg="converted platform" digest="sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 19:36:46.247365369" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node/lts/ionic-team/ionic-cli:starlight"
+time="Jan 11 19:36:49.196561928" level=info msg="conversion completed"
+time="Jan 11 19:36:53.008228455" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node/lts/ionic-team/ionic-cli:starlight"
+time="Jan 11 19:36:53.008631521" level=info msg="notified starlight proxy"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:36:53Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:36:53Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:36:53Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:36:53Z - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:36:53Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:36:53Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:36:53Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:36:53Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:36:53Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:36:53Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:36:53Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:36:53Z - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:36:53Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:36:53Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:36:53Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:36:53Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:36:53Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:36:53Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:36:53Z - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:36:53Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:36:53Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:36:53Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:36:53Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:36:53Z - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:36:53Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:36:53Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:36:53Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:36:53Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:36:53Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:36:53Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:36:53Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:36:53Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:36:53Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:36:53Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:36:53Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:36:53Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:36:53Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:36:53Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:36:53Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:36:53Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:36:53Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:36:53Z - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:36:53Z - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:36:53Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:36:53Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:36:53Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:36:53Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:36:53Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:36:53Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:36:53Z - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:36:53Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:36:53Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:36:53Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:36:53Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:36:53Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:36:53Z - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:36:53Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:36:53Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:36:53Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:36:53Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:36:53Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:36:53Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:36:53Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:36:53Z - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:36:53Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:36:53Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:36:53Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:36:53Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:36:53Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts/ionic-team/ionic-cli:starlight
+requested to pull image cloud.cluster.local:5000/node/lts/ionic-team/ionic-cli:starlight in 4067ms 
+delta image 369.5MiB / original 400.2MiB (skipped: 30.7MiB = 7.68%)
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/ionic-team/ionic-cli:starlight trace-node-lts-ionic-team-ionic-cli-starlight sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+
+>> Executing: sudo ctr task start trace-node-lts-ionic-team-ionic-cli-starlight
+Command timed out after 30 seconds: sudo ctr task start trace-node-lts-ionic-team-ionic-cli-starlight
+Command timed out.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-ionic-team-ionic-cli-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-ionic-team-ionic-cli-starlight
+time="2025-01-11T19:37:27Z" level=error msg="failed to delete container \"trace-node-lts-ionic-team-ionic-cli-starlight\"" error="cannot delete a non stopped container: {running 0 0001-01-01 00:00:00 +0000 UTC}"
+ctr: cannot delete a non stopped container: {running 0 0001-01-01 00:00:00 +0000 UTC}
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 330.653s file access traces - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: collected 330.649s file access traces - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: collected 330.649s file access traces - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: collected 330.686s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 330.687s file access traces - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: collected 330.680s file access traces - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: collected 330.636s file access traces - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: collected 330.634s file access traces - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: collected 330.632s file access traces - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: collected 330.677s file access traces - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: collected 330.675s file access traces - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: collected 330.637s file access traces - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: collected 330.633s file access traces - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: collected 330.633s file access traces - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: collected 330.633s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 330.684s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 330.654s file access traces - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: collected 330.682s file access traces - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: collected 330.681s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 330.685s file access traces - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: collected 330.683s file access traces - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: collected 330.687s file access traces - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: collected 330.684s file access traces - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: collected 330.633s file access traces - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: collected 330.632s file access traces - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: collected 330.655s file access traces - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: collected 330.655s file access traces - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: collected 330.689s file access traces - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: collected 330.674s file access traces - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: collected 330.680s file access traces - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: collected 330.639s file access traces - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: collected 330.652s file access traces - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: collected 330.633s file access traces - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: collected 330.684s file access traces - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: collected 330.686s file access traces - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: collected 330.687s file access traces - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: collected 330.634s file access traces - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: collected 330.652s file access traces - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: collected 330.642s file access traces - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: collected 330.677s file access traces - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: collected 330.689s file access traces - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: collected 330.637s file access traces - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: collected 330.688s file access traces - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: collected 330.674s file access traces - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: collected 330.685s file access traces - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: collected 330.655s file access traces - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: collected 330.633s file access traces - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: collected 330.635s file access traces - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: collected 330.641s file access traces - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: collected 330.647s file access traces - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: collected 330.685s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 330.639s file access traces - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: collected 330.691s file access traces - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: collected 330.653s file access traces - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: collected 330.654s file access traces - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: collected 330.633s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 330.686s file access traces - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 330.648s file access traces - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: collected 330.685s file access traces - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: collected 30.790s file access traces - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: collected 330.637s file access traces - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: collected 330.633s file access traces - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: collected 330.635s file access traces - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: collected 330.643s file access traces - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: collected 330.678s file access traces - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: collected 330.682s file access traces - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: collected 330.634s file access traces - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: collected 330.632s file access traces - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: collected 330.686s file access traces - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: collected 330.676s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts-bullseye-slim
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts-bullseye-slim/macbre/phantomas:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-bullseye-slim cloud.cluster.local:5000/node/lts-bullseye-slim/macbre/phantomas:starlight
+time="Jan 11 19:37:29.978114147" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 19:37:29.978146872" level=info msg="fetching container image" image="node:lts-bullseye-slim"
+time="Jan 11 19:37:31.744351600" level=info msg="found platform" _skip=true digest="sha256:7c116e8d69643b39080bb0c5c0abbb1ccd86f44b596f34ab62255315043d6868" platform="&{arm linux  [] v7 []}" size=1931
+time="Jan 11 19:37:31.744356884" level=info msg="found platform" _skip=true digest="sha256:56314b855922da1799071def48cc18b09a11fed24c87698c8bcf8afc45e3d496" platform="&{unknown unknown  []  []}" size=841
+time="Jan 11 19:37:31.744361580" level=info msg="found platform" _skip=true digest="sha256:7ebe2b9f96f2585cd446d555fec79aa8142efbf5df30eda63138fe372a36e200" platform="&{unknown unknown  []  []}" size=841
+time="Jan 11 19:37:31.744365326" level=info msg="found platform" _skip=true digest="sha256:4daf191655c59a8af813ed1078f74ae7b89c91a51c6f5de98d539bb8b7b6e691" platform="&{arm64 linux  [] v8 []}" size=1931
+time="Jan 11 19:37:31.744370773" level=info msg="found platform" _skip=false digest="sha256:d1e3ed48ef09e5e3dc7979b12fb779c7fe7df12397fad50e2249a677a74c28a9" platform="&{amd64 linux  []  []}" size=1929
+time="Jan 11 19:37:31.744375089" level=info msg="found platform" _skip=true digest="sha256:0b6af00c0cfca1cab01da78bbce9206a02a1d02b7138ae6e6f716960c9af5ebe" platform="&{unknown unknown  []  []}" size=841
+time="Jan 11 19:37:46.777630433" level=error msg="fail to convert the container image" error="failed to convert the OCI image to Starlight format: failed to convert image format: failed to convert the image to Starlight format: error copying \"usr/local/bin/node\": read tcp 192.168.3.2:48524->104.16.101.215:443: read: connection reset by peer"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:37:46Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:37:46Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:37:46Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:37:46Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:37:46Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:37:46Z - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:37:46Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:37:46Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:37:46Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:37:46Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:37:46Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:37:46Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:37:46Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:37:46Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:37:46Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:37:46Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:37:46Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:37:46Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:37:46Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:37:46Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:37:46Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:37:46Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:37:46Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:37:46Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:37:46Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:37:46Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:37:46Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:37:46Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:37:46Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:37:46Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:37:46Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:37:46Z - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:37:46Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:37:46Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:37:46Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:37:46Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:37:46Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:37:46Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:37:46Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:37:46Z - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:37:46Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:37:46Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:37:46Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:37:46Z - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:37:46Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:37:46Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:37:46Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:37:46Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:37:46Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:37:46Z - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:37:46Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:37:46Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:37:46Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:37:46Z - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:37:46Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:37:46Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:37:46Z - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:37:46Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:37:46Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:37:46Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:37:46Z - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:37:46Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:37:46Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:37:46Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:37:46Z - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:37:46Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:37:46Z - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: 2025-01-11T19:37:46Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:37:46Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:37:46Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts-bullseye-slim/macbre/phantomas:starlight
+pull image failed: failed to pull image cloud.cluster.local:5000/node/lts-bullseye-slim/macbre/phantomas:starlight: {"status":"Bad Request","code":400,"error":"requested image cloud.cluster.local:5000/node/lts-bullseye-slim/macbre/phantomas:starlight not found"}
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-bullseye-slim-macbre-phantomas-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-bullseye-slim-macbre-phantomas-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-bullseye-slim/macbre/phantomas:starlight trace-node-lts-bullseye-slim-macbre-phantomas-starlight sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'
+ctr: image "cloud.cluster.local:5000/node/lts-bullseye-slim/macbre/phantomas:starlight": not found
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-bullseye-slim/macbre/phantomas:starlight trace-node-lts-bullseye-slim-macbre-phantomas-starlight sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'
+Error processing image node:lts-bullseye-slim: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-bullseye-slim/macbre/phantomas:starlight trace-node-lts-bullseye-slim-macbre-phantomas-starlight sh -c 'apt-get update && apt-get install -y --no-install-recommends fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libfreetype6 libgbm1 libharfbuzz0b libnss3 libpango-1.0-0 libx11-6 libxext6 libxkbcommon0 x11-utils xdg-utils zlib1g && rm -rf /var/lib/apt/lists/*'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts/sullyo/prompt2ui:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node/lts/sullyo/prompt2ui:starlight
+time="Jan 11 19:37:48.313602068" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 19:37:48.313647060" level=info msg="fetching container image" image="node:lts"
+time="Jan 11 19:37:49.824935111" level=info msg="found platform" _skip=true digest="sha256:edec3c7117fe4c6a3637848ec021f76e8d719319947a7c3ca658952a20942973" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:37:49.825018586" level=info msg="found platform" _skip=false digest="sha256:89b322c235df769801f0fe13c42528014f77a5461d710b3c805e4590f6cb13e7" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 19:37:49.825271725" level=info msg="found platform" _skip=true digest="sha256:e8d1f058cd30c24215a1ca1c11ee4315c019cac83b1d4fe30dbb108b2c71f511" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:37:49.825294256" level=info msg="found platform" _skip=true digest="sha256:a265fcf8d78b8a0f13bc44b9d5872818f0b361d2e990ca8c352023ccf3fe046a" platform="&{arm linux  [] v7 []}" size=2495
+time="Jan 11 19:37:49.825306402" level=info msg="found platform" _skip=true digest="sha256:5bfc28c187b0e80c7c0952323de5597eb01ef3d1a27d94ff15e7d46b517e2ebc" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:37:49.825335913" level=info msg="found platform" _skip=true digest="sha256:af7698b1d80961ea58661120c0266bb72eb7501ffe5610fb0a38329cd42716ee" platform="&{arm64 linux  [] v8 []}" size=2495
+time="Jan 11 19:37:49.825347309" level=info msg="found platform" _skip=true digest="sha256:641ada186e3664ad237bfe1c9fe66b65c5a9ada962747ba07adb92381d2ad624" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:37:49.825357483" level=info msg="found platform" _skip=true digest="sha256:80a4ed3e25f3c080840221e1c6dd539e9f0be122727c1f67a2f32a47570c61cc" platform="&{ppc64le linux  []  []}" size=2495
+time="Jan 11 19:37:49.825367637" level=info msg="found platform" _skip=true digest="sha256:d0bf33d796b6366b925155fd442a88541cf4167425854ee5b5b3650d0912d871" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:37:49.825377140" level=info msg="found platform" _skip=true digest="sha256:db58ddd13d18a0a3aa1f278bf9eb746a31e84ce108d59981e99cd00c148aa2ba" platform="&{s390x linux  []  []}" size=2493
+npm error code EAI_AGAIN
+npm error syscall getaddrinfo
+npm error errno EAI_AGAIN
+npm error request to https://registry.npmjs.org/@ionic%2fcli failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T19_36_59_067Z-debug-0.log
+time="Jan 11 19:39:26.152468762" level=info msg="converted platform" digest="sha256:df017390a43b5d0018eb11b928819cbfa81463aed791e7d3759524789f6bc80a" platform="&{amd64 linux  []  []}" size=2493
+time="Jan 11 19:39:26.153199808" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node/lts/sullyo/prompt2ui:starlight"
+time="Jan 11 19:39:28.730915656" level=info msg="conversion completed"
+time="Jan 11 19:39:33.588830962" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node/lts/sullyo/prompt2ui:starlight"
+time="Jan 11 19:39:33.589243882" level=info msg="notified starlight proxy"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:39:33Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:39:33Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:39:33Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:39:33Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:39:33Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:39:33Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:39:33Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:39:33Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:39:33Z - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:39:33Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:39:33Z - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: 2025-01-11T19:39:33Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:39:33Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:39:33Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:39:33Z - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:39:33Z - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:39:33Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:39:33Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:39:33Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:39:33Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:39:33Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:39:33Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:39:33Z - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:39:33Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:39:33Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:39:33Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:39:33Z - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:39:33Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:39:33Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:39:33Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:39:33Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:39:33Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:39:33Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:39:33Z - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:39:33Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:39:33Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:39:33Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:39:33Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:39:33Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:39:33Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:39:33Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:39:33Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:39:33Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:39:33Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:39:33Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:39:33Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:39:33Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:39:33Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:39:33Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:39:33Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:39:33Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:39:33Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:39:33Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:39:33Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:39:33Z - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:39:33Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:39:33Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:39:33Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:39:33Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:39:33Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:39:33Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:39:33Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:39:33Z - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:39:33Z - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:39:33Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:39:33Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:39:33Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:39:33Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:39:33Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:39:33Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts/sullyo/prompt2ui:starlight
+requested to pull image cloud.cluster.local:5000/node/lts/sullyo/prompt2ui:starlight in 2231ms 
+delta image 369.5MiB / original 400.2MiB (skipped: 30.7MiB = 7.68%)
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-sullyo-prompt2ui-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-sullyo-prompt2ui-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/sullyo/prompt2ui:starlight trace-node-lts-sullyo-prompt2ui-starlight sh -c 'npm install'
+
+>> Executing: sudo ctr task start trace-node-lts-sullyo-prompt2ui-starlight
+npm error Tracker "idealTree" already exists
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-01-11T19_39_38_148Z-debug-0.log
+Command failed with exit code 1: sudo ctr task start trace-node-lts-sullyo-prompt2ui-starlight
+Command failed with exit code 1.
+Stopping container...
+
+>> Executing: sudo ctr task kill trace-node-lts-sullyo-prompt2ui-starlight
+ctr: no running task found: task trace-node-lts-sullyo-prompt2ui-starlight not found: not found
+Command failed with exit code 1: sudo ctr task kill trace-node-lts-sullyo-prompt2ui-starlight
+Removing container...
+
+>> Executing: sudo ctr container rm trace-node-lts-sullyo-prompt2ui-starlight
+
+Disabling optimizer...
+
+>> Executing: sudo ctr-starlight optimizer off
+set optimizer: completed request
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: collected 113.879s file access traces - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: collected 113.879s file access traces - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: collected 113.879s file access traces - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: collected 113.877s file access traces - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: collected 113.883s file access traces - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: collected 113.883s file access traces - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: collected 113.879s file access traces - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: collected 113.883s file access traces - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: collected 113.879s file access traces - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: collected 113.878s file access traces - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: collected 113.883s file access traces - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: collected 113.879s file access traces - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: collected 113.883s file access traces - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: collected 113.883s file access traces - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: collected 113.879s file access traces - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: collected 113.879s file access traces - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: collected 113.883s file access traces - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: collected 113.879s file access traces - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: collected 113.879s file access traces - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: collected 113.878s file access traces - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: collected 113.878s file access traces - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: collected 113.877s file access traces - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: collected 113.877s file access traces - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: collected 113.879s file access traces - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: collected 113.883s file access traces - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: collected 113.877s file access traces - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: collected 113.879s file access traces - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: collected 113.879s file access traces - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: collected 113.879s file access traces - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: collected 113.879s file access traces - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: collected 113.883s file access traces - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: collected 113.883s file access traces - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: collected 113.869s file access traces - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: collected 113.879s file access traces - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: collected 113.879s file access traces - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: collected 113.879s file access traces - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: collected 113.879s file access traces - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: collected 113.879s file access traces - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: collected 113.879s file access traces - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: collected 113.879s file access traces - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: collected 113.879s file access traces - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: collected 113.879s file access traces - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: collected 113.879s file access traces - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: collected 113.883s file access traces - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: collected 113.879s file access traces - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: collected 113.879s file access traces - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: collected 113.879s file access traces - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: collected 113.879s file access traces - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: collected 113.883s file access traces - okay 
+	sha256:df017390a43b5d0018eb11b928819cbfa81463aed791e7d3759524789f6bc80a: collected 4.703s file access traces - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: collected 113.879s file access traces - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: collected 113.879s file access traces - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: collected 113.878s file access traces - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: collected 113.879s file access traces - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: collected 113.879s file access traces - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: collected 113.879s file access traces - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: collected 113.879s file access traces - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: collected 113.883s file access traces - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: collected 113.883s file access traces - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: collected 113.883s file access traces - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: collected 113.879s file access traces - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: collected 113.879s file access traces - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: collected 113.879s file access traces - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: collected 113.878s file access traces - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: collected 113.879s file access traces - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: collected 113.883s file access traces - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: collected 113.878s file access traces - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: collected 113.879s file access traces - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: collected 113.883s file access traces - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: collected 113.883s file access traces - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: collected 113.878s file access traces - okay 
+Reporting traces...
+
+>> Executing: sudo ctr-starlight report --profile myproxy
+reported traces: uploaded traces
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts-buster/Sachu-fx/Siya-Mol-MD:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-buster cloud.cluster.local:5000/node/lts-buster/Sachu-fx/Siya-Mol-MD:starlight
+time="Jan 11 19:39:42.758494895" level=error msg="illegal image reference" error="convertor failed to parse destination image: could not parse reference: cloud.cluster.local:5000/node/lts-buster/Sachu-fx/Siya-Mol-MD:starlight"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:39:42Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:39:42Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:39:42Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:39:42Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:39:42Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:39:42Z - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:39:42Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:39:42Z - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:39:42Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:39:42Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:39:42Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:39:42Z - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: 2025-01-11T19:39:42Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:39:42Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:39:42Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:39:42Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:39:42Z - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:39:42Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:39:42Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:39:42Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:39:42Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:39:42Z - okay 
+	sha256:df017390a43b5d0018eb11b928819cbfa81463aed791e7d3759524789f6bc80a: 2025-01-11T19:39:42Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:39:42Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:39:42Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:39:42Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:39:42Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:39:42Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:39:42Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:39:42Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:39:42Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:39:42Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:39:42Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:39:42Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:39:42Z - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:39:42Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:39:42Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:39:42Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:39:42Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:39:42Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:39:42Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:39:42Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:39:42Z - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:39:42Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:39:42Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:39:42Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:39:42Z - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:39:42Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:39:42Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:39:42Z - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:39:42Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:39:42Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:39:42Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:39:42Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:39:42Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:39:42Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:39:42Z - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:39:42Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:39:42Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:39:42Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:39:42Z - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:39:42Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:39:42Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:39:42Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:39:42Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:39:42Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:39:42Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:39:42Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:39:42Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:39:42Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:39:42Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts-buster/Sachu-fx/Siya-Mol-MD:starlight
+pull image failed: failed to pull image cloud.cluster.local:5000/node/lts-buster/Sachu-fx/Siya-Mol-MD:starlight: {"status":"Bad Request","code":400,"error":"failed to obtain requested image: could not parse reference: cloud.cluster.local:5000/node/lts-buster/Sachu-fx/Siya-Mol-MD:starlight"}
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-buster-Sachu-fx-Siya-Mol-MD-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-buster-Sachu-fx-Siya-Mol-MD-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-buster/Sachu-fx/Siya-Mol-MD:starlight trace-node-lts-buster-Sachu-fx-Siya-Mol-MD-starlight sh -c 'git clone https://github.com/AbhishekSuresh2/X-AsenaDuplicated/ /root/X'
+ctr: image "cloud.cluster.local:5000/node/lts-buster/Sachu-fx/Siya-Mol-MD:starlight": not found
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-buster/Sachu-fx/Siya-Mol-MD:starlight trace-node-lts-buster-Sachu-fx-Siya-Mol-MD-starlight sh -c 'git clone https://github.com/AbhishekSuresh2/X-AsenaDuplicated/ /root/X'
+Error processing image node:lts-buster: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-buster/Sachu-fx/Siya-Mol-MD:starlight trace-node-lts-buster-Sachu-fx-Siya-Mol-MD-starlight sh -c 'git clone https://github.com/AbhishekSuresh2/X-AsenaDuplicated/ /root/X'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts/PedroH-Santos/api-gerenciador-financeiro:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node/lts/PedroH-Santos/api-gerenciador-financeiro:starlight
+time="Jan 11 19:39:44.217611092" level=error msg="illegal image reference" error="convertor failed to parse destination image: could not parse reference: cloud.cluster.local:5000/node/lts/PedroH-Santos/api-gerenciador-financeiro:starlight"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:39:44Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:39:44Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:39:44Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:39:44Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:39:44Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:39:44Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:39:44Z - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:39:44Z - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:39:44Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:39:44Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:39:44Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:39:44Z - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:39:44Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:39:44Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:39:44Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:39:44Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:39:44Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:39:44Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:39:44Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:39:44Z - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:39:44Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:39:44Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:39:44Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:39:44Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:39:44Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:39:44Z - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:39:44Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:39:44Z - okay 
+	sha256:df017390a43b5d0018eb11b928819cbfa81463aed791e7d3759524789f6bc80a: 2025-01-11T19:39:44Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:39:44Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:39:44Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:39:44Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:39:44Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:39:44Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:39:44Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:39:44Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:39:44Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:39:44Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:39:44Z - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:39:44Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:39:44Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:39:44Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:39:44Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:39:44Z - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:39:44Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:39:44Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:39:44Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:39:44Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:39:44Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:39:44Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:39:44Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:39:44Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:39:44Z - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:39:44Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:39:44Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:39:44Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:39:44Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:39:44Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:39:44Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:39:44Z - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: 2025-01-11T19:39:44Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:39:44Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:39:44Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:39:44Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:39:44Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:39:44Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:39:44Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:39:44Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:39:44Z - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:39:44Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:39:44Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts/PedroH-Santos/api-gerenciador-financeiro:starlight
+pull image failed: failed to pull image cloud.cluster.local:5000/node/lts/PedroH-Santos/api-gerenciador-financeiro:starlight: {"status":"Bad Request","code":400,"error":"failed to obtain requested image: could not parse reference: cloud.cluster.local:5000/node/lts/PedroH-Santos/api-gerenciador-financeiro:starlight"}
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-PedroH-Santos-api-gerenciador-financeiro-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-PedroH-Santos-api-gerenciador-financeiro-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/PedroH-Santos/api-gerenciador-financeiro:starlight trace-node-lts-PedroH-Santos-api-gerenciador-financeiro-starlight sh -c 'npm ci'
+ctr: image "cloud.cluster.local:5000/node/lts/PedroH-Santos/api-gerenciador-financeiro:starlight": not found
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/PedroH-Santos/api-gerenciador-financeiro:starlight trace-node-lts-PedroH-Santos-api-gerenciador-financeiro-starlight sh -c 'npm ci'
+Error processing image node:lts: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/PedroH-Santos/api-gerenciador-financeiro:starlight trace-node-lts-PedroH-Santos-api-gerenciador-financeiro-starlight sh -c 'npm ci'' returned non-zero exit status 1.
+
+Processing image: node:lts-slim
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts-slim/SwiftFiddle/swiftregex:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-slim cloud.cluster.local:5000/node/lts-slim/SwiftFiddle/swiftregex:starlight
+time="Jan 11 19:39:45.627659446" level=error msg="illegal image reference" error="convertor failed to parse destination image: could not parse reference: cloud.cluster.local:5000/node/lts-slim/SwiftFiddle/swiftregex:starlight"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:39:45Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:39:45Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:39:45Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:39:45Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:39:45Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:39:45Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:39:45Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:39:45Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:39:45Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:39:45Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:39:45Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:39:45Z - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:39:45Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:39:45Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:39:45Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:39:45Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:39:45Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:39:45Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:39:45Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:39:45Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:39:45Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:39:45Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:39:45Z - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:39:45Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:39:45Z - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:39:45Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:39:45Z - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:39:45Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:39:45Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:39:45Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:39:45Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:39:45Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:39:45Z - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:39:45Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:39:45Z - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:39:45Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:39:45Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:39:45Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:39:45Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:39:45Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:39:45Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:39:45Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:39:45Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:39:45Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:39:45Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:39:45Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:39:45Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:39:45Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:39:45Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:39:45Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:39:45Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:39:45Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:39:45Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:39:45Z - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:39:45Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:39:45Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:39:45Z - okay 
+	sha256:df017390a43b5d0018eb11b928819cbfa81463aed791e7d3759524789f6bc80a: 2025-01-11T19:39:45Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:39:45Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:39:45Z - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: 2025-01-11T19:39:45Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:39:45Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:39:45Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:39:45Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:39:45Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:39:45Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:39:45Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:39:45Z - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:39:45Z - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:39:45Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:39:45Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts-slim/SwiftFiddle/swiftregex:starlight
+pull image failed: failed to pull image cloud.cluster.local:5000/node/lts-slim/SwiftFiddle/swiftregex:starlight: {"status":"Bad Request","code":400,"error":"failed to obtain requested image: could not parse reference: cloud.cluster.local:5000/node/lts-slim/SwiftFiddle/swiftregex:starlight"}
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-slim-SwiftFiddle-swiftregex-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-slim-SwiftFiddle-swiftregex-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-slim/SwiftFiddle/swiftregex:starlight trace-node-lts-slim-SwiftFiddle-swiftregex-starlight sh -c 'echo "@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_TOKEN}" > ./.npmrc && npm ci && rm -f ./.npmrc'
+ctr: image "cloud.cluster.local:5000/node/lts-slim/SwiftFiddle/swiftregex:starlight": not found
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-slim/SwiftFiddle/swiftregex:starlight trace-node-lts-slim-SwiftFiddle-swiftregex-starlight sh -c 'echo "@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_TOKEN}" > ./.npmrc && npm ci && rm -f ./.npmrc'
+Error processing image node:lts-slim: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-slim/SwiftFiddle/swiftregex:starlight trace-node-lts-slim-SwiftFiddle-swiftregex-starlight sh -c 'echo "@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_TOKEN}" > ./.npmrc && npm ci && rm -f ./.npmrc'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts/Yang1998-jiale/node-sever:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node/lts/Yang1998-jiale/node-sever:starlight
+time="Jan 11 19:39:46.958801056" level=error msg="illegal image reference" error="convertor failed to parse destination image: could not parse reference: cloud.cluster.local:5000/node/lts/Yang1998-jiale/node-sever:starlight"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:39:46Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:39:46Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:39:46Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:39:46Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:39:46Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:39:46Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:39:46Z - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:39:46Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:39:46Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:39:46Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:39:46Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:39:46Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:39:46Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:39:46Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:39:46Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:39:46Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:39:46Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:39:46Z - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: 2025-01-11T19:39:46Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:39:46Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:39:46Z - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:39:46Z - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:39:46Z - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:39:46Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:39:46Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:39:46Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:39:46Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:39:46Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:39:46Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:39:46Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:39:46Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:39:46Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:39:46Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:39:46Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:39:46Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:39:46Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:39:46Z - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:39:46Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:39:46Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:39:46Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:39:46Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:39:46Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:39:46Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:39:46Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:39:46Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:39:46Z - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:39:46Z - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:39:46Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:39:46Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:39:46Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:39:46Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:39:46Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:39:46Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:39:46Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:39:46Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:39:46Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:39:46Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:39:46Z - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:39:46Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:39:46Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:39:46Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:39:46Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:39:46Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:39:46Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:39:46Z - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:39:46Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:39:46Z - okay 
+	sha256:df017390a43b5d0018eb11b928819cbfa81463aed791e7d3759524789f6bc80a: 2025-01-11T19:39:46Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:39:46Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:39:46Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:39:46Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts/Yang1998-jiale/node-sever:starlight
+pull image failed: failed to pull image cloud.cluster.local:5000/node/lts/Yang1998-jiale/node-sever:starlight: {"status":"Bad Request","code":400,"error":"failed to obtain requested image: could not parse reference: cloud.cluster.local:5000/node/lts/Yang1998-jiale/node-sever:starlight"}
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-Yang1998-jiale-node-sever-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-Yang1998-jiale-node-sever-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/Yang1998-jiale/node-sever:starlight trace-node-lts-Yang1998-jiale-node-sever-starlight sh -c 'mkdir -p /home/node-serve'
+ctr: image "cloud.cluster.local:5000/node/lts/Yang1998-jiale/node-sever:starlight": not found
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/Yang1998-jiale/node-sever:starlight trace-node-lts-Yang1998-jiale-node-sever-starlight sh -c 'mkdir -p /home/node-serve'
+Error processing image node:lts: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/Yang1998-jiale/node-sever:starlight trace-node-lts-Yang1998-jiale-node-sever-starlight sh -c 'mkdir -p /home/node-serve'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts/aldy97/Budget-Planner:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node/lts/aldy97/Budget-Planner:starlight
+time="Jan 11 19:39:48.368130415" level=error msg="illegal image reference" error="convertor failed to parse destination image: could not parse reference: cloud.cluster.local:5000/node/lts/aldy97/Budget-Planner:starlight"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:39:48Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:39:48Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:39:48Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:39:48Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:39:48Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:39:48Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:39:48Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:39:48Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:39:48Z - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:39:48Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:39:48Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:39:48Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:39:48Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:39:48Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:39:48Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:39:48Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:39:48Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:39:48Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:39:48Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:39:48Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:39:48Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:39:48Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:39:48Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:39:48Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:39:48Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:39:48Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:39:48Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:39:48Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:39:48Z - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:39:48Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:39:48Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:39:48Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:39:48Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:39:48Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:39:48Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:39:48Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:39:48Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:39:48Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:39:48Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:39:48Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:39:48Z - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:39:48Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:39:48Z - okay 
+	sha256:df017390a43b5d0018eb11b928819cbfa81463aed791e7d3759524789f6bc80a: 2025-01-11T19:39:48Z - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:39:48Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:39:48Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:39:48Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:39:48Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:39:48Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:39:48Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:39:48Z - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:39:48Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:39:48Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:39:48Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:39:48Z - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:39:48Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:39:48Z - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:39:48Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:39:48Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:39:48Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:39:48Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:39:48Z - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:39:48Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:39:48Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:39:48Z - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: 2025-01-11T19:39:48Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:39:48Z - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:39:48Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:39:48Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:39:48Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:39:48Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts/aldy97/Budget-Planner:starlight
+pull image failed: failed to pull image cloud.cluster.local:5000/node/lts/aldy97/Budget-Planner:starlight: {"status":"Bad Request","code":400,"error":"failed to obtain requested image: could not parse reference: cloud.cluster.local:5000/node/lts/aldy97/Budget-Planner:starlight"}
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-aldy97-Budget-Planner-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-aldy97-Budget-Planner-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/aldy97/Budget-Planner:starlight trace-node-lts-aldy97-Budget-Planner-starlight sh -c 'npm install'
+ctr: image "cloud.cluster.local:5000/node/lts/aldy97/Budget-Planner:starlight": not found
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/aldy97/Budget-Planner:starlight trace-node-lts-aldy97-Budget-Planner-starlight sh -c 'npm install'
+Error processing image node:lts: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/aldy97/Budget-Planner:starlight trace-node-lts-aldy97-Budget-Planner-starlight sh -c 'npm install'' returned non-zero exit status 1.
+
+Processing image: node:lts-iron
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts-iron/sgautam2-1/Assignment12:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-iron cloud.cluster.local:5000/node/lts-iron/sgautam2-1/Assignment12:starlight
+time="Jan 11 19:39:49.727948644" level=error msg="illegal image reference" error="convertor failed to parse destination image: could not parse reference: cloud.cluster.local:5000/node/lts-iron/sgautam2-1/Assignment12:starlight"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:39:49Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:39:49Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:39:49Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:39:49Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:39:49Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:39:49Z - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:39:49Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:39:49Z - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:39:49Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:39:49Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:39:49Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:39:49Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:39:49Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:39:49Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:39:49Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:39:49Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:39:49Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:39:49Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:39:49Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:39:49Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:39:49Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:39:49Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:39:49Z - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: 2025-01-11T19:39:49Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:39:49Z - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:39:49Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:39:49Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:39:49Z - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:39:49Z - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:39:49Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:39:49Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:39:49Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:39:49Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:39:49Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:39:49Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:39:49Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:39:49Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:39:49Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:39:49Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:39:49Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:39:49Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:39:49Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:39:49Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:39:49Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:39:49Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:39:49Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:39:49Z - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:39:49Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:39:49Z - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:39:49Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:39:49Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:39:49Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:39:49Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:39:49Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:39:49Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:39:49Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:39:49Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:39:49Z - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:39:49Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:39:49Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:39:49Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:39:49Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:39:49Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:39:49Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:39:49Z - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:39:49Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:39:49Z - okay 
+	sha256:df017390a43b5d0018eb11b928819cbfa81463aed791e7d3759524789f6bc80a: 2025-01-11T19:39:49Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:39:49Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:39:49Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:39:49Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts-iron/sgautam2-1/Assignment12:starlight
+pull image failed: failed to pull image cloud.cluster.local:5000/node/lts-iron/sgautam2-1/Assignment12:starlight: {"status":"Bad Request","code":400,"error":"failed to obtain requested image: could not parse reference: cloud.cluster.local:5000/node/lts-iron/sgautam2-1/Assignment12:starlight"}
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-iron-sgautam2-1-Assignment12-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-iron-sgautam2-1-Assignment12-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-iron/sgautam2-1/Assignment12:starlight trace-node-lts-iron-sgautam2-1-Assignment12-starlight sh -c 'npm install'
+ctr: image "cloud.cluster.local:5000/node/lts-iron/sgautam2-1/Assignment12:starlight": not found
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-iron/sgautam2-1/Assignment12:starlight trace-node-lts-iron-sgautam2-1-Assignment12-starlight sh -c 'npm install'
+Error processing image node:lts-iron: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-iron/sgautam2-1/Assignment12:starlight trace-node-lts-iron-sgautam2-1-Assignment12-starlight sh -c 'npm install'' returned non-zero exit status 1.
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts/equinor/flowify-workflows-UI:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts cloud.cluster.local:5000/node/lts/equinor/flowify-workflows-UI:starlight
+time="Jan 11 19:39:51.112027275" level=error msg="illegal image reference" error="convertor failed to parse destination image: could not parse reference: cloud.cluster.local:5000/node/lts/equinor/flowify-workflows-UI:starlight"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:39:51Z - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:39:51Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:39:51Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:39:51Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:39:51Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:39:51Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:39:51Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:39:51Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:39:51Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:39:51Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:39:51Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:39:51Z - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:39:51Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:39:51Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:39:51Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:39:51Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:39:51Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:39:51Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:39:51Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:39:51Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:39:51Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:39:51Z - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: 2025-01-11T19:39:51Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:39:51Z - okay 
+	sha256:df017390a43b5d0018eb11b928819cbfa81463aed791e7d3759524789f6bc80a: 2025-01-11T19:39:51Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:39:51Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:39:51Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:39:51Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:39:51Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:39:51Z - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:39:51Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:39:51Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:39:51Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:39:51Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:39:51Z - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:39:51Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:39:51Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:39:51Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:39:51Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:39:51Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:39:51Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:39:51Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:39:51Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:39:51Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:39:51Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:39:51Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:39:51Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:39:51Z - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:39:51Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:39:51Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:39:51Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:39:51Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:39:51Z - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:39:51Z - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:39:51Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:39:51Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:39:51Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:39:51Z - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:39:51Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:39:51Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:39:51Z - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:39:51Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:39:51Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:39:51Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:39:51Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:39:51Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:39:51Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:39:51Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:39:51Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:39:51Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:39:51Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts/equinor/flowify-workflows-UI:starlight
+pull image failed: failed to pull image cloud.cluster.local:5000/node/lts/equinor/flowify-workflows-UI:starlight: {"status":"Bad Request","code":400,"error":"failed to obtain requested image: could not parse reference: cloud.cluster.local:5000/node/lts/equinor/flowify-workflows-UI:starlight"}
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-equinor-flowify-workflows-UI-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-equinor-flowify-workflows-UI-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/equinor/flowify-workflows-UI:starlight trace-node-lts-equinor-flowify-workflows-UI-starlight sh -c 'yarn install'
+ctr: image "cloud.cluster.local:5000/node/lts/equinor/flowify-workflows-UI:starlight": not found
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/equinor/flowify-workflows-UI:starlight trace-node-lts-equinor-flowify-workflows-UI-starlight sh -c 'yarn install'
+Error processing image node:lts: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts/equinor/flowify-workflows-UI:starlight trace-node-lts-equinor-flowify-workflows-UI-starlight sh -c 'yarn install'' returned non-zero exit status 1.
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts-buster/GURUMD-TECH/BOTGURU:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-buster cloud.cluster.local:5000/node/lts-buster/GURUMD-TECH/BOTGURU:starlight
+time="Jan 11 19:39:52.560583124" level=error msg="illegal image reference" error="convertor failed to parse destination image: could not parse reference: cloud.cluster.local:5000/node/lts-buster/GURUMD-TECH/BOTGURU:starlight"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:39:52Z - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:39:52Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:39:52Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:39:52Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:39:52Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:39:52Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:39:52Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:39:52Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:39:52Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:39:52Z - okay 
+	sha256:df017390a43b5d0018eb11b928819cbfa81463aed791e7d3759524789f6bc80a: 2025-01-11T19:39:52Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:39:52Z - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:39:52Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:39:52Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:39:52Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:39:52Z - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:39:52Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:39:52Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:39:52Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:39:52Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:39:52Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:39:52Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:39:52Z - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:39:52Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:39:52Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:39:52Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:39:52Z - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:39:52Z - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:39:52Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:39:52Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:39:52Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:39:52Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:39:52Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:39:52Z - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:39:52Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:39:52Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:39:52Z - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:39:52Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:39:52Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:39:52Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:39:52Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:39:52Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:39:52Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:39:52Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:39:52Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:39:52Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:39:52Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:39:52Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:39:52Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:39:52Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:39:52Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:39:52Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:39:52Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:39:52Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:39:52Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:39:52Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:39:52Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:39:52Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:39:52Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:39:52Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:39:52Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:39:52Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:39:52Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:39:52Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:39:52Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:39:52Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:39:52Z - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:39:52Z - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: 2025-01-11T19:39:52Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:39:52Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:39:52Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts-buster/GURUMD-TECH/BOTGURU:starlight
+pull image failed: failed to pull image cloud.cluster.local:5000/node/lts-buster/GURUMD-TECH/BOTGURU:starlight: {"status":"Bad Request","code":400,"error":"failed to obtain requested image: could not parse reference: cloud.cluster.local:5000/node/lts-buster/GURUMD-TECH/BOTGURU:starlight"}
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-buster-GURUMD-TECH-BOTGURU-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-buster-GURUMD-TECH-BOTGURU-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-buster/GURUMD-TECH/BOTGURU:starlight trace-node-lts-buster-GURUMD-TECH-BOTGURU-starlight sh -c 'apt-get update && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && npm i pm2 -g && rm -rf /var/lib/apt/lists/*'
+ctr: image "cloud.cluster.local:5000/node/lts-buster/GURUMD-TECH/BOTGURU:starlight": not found
+Command failed with exit code 1: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-buster/GURUMD-TECH/BOTGURU:starlight trace-node-lts-buster-GURUMD-TECH-BOTGURU-starlight sh -c 'apt-get update && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && npm i pm2 -g && rm -rf /var/lib/apt/lists/*'
+Error processing image node:lts-buster: `CalledProcessError` Command 'sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node/lts-buster/GURUMD-TECH/BOTGURU:starlight trace-node-lts-buster-GURUMD-TECH-BOTGURU-starlight sh -c 'apt-get update && apt-get install -y ffmpeg imagemagick webp && apt-get upgrade -y && npm i pm2 -g && rm -rf /var/lib/apt/lists/*'' returned non-zero exit status 1.
+
+Processing image: node:lts-buster
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node/lts-buster/vuejsprojects/nhs-ui:starlight
+
+>> Executing: sudo ctr-starlight convert --insecure-destination --notify --profile myproxy --platform linux/amd64 node:lts-buster cloud.cluster.local:5000/node/lts-buster/vuejsprojects/nhs-ui:starlight
+time="Jan 11 19:39:53.900980052" level=info msg="requested platform" platform=linux/amd64
+time="Jan 11 19:39:53.901026375" level=info msg="fetching container image" image="node:lts-buster"
+time="Jan 11 19:39:55.705775784" level=info msg="found platform" _skip=true digest="sha256:da3b46cbd714a98a2cbee5e316347ffaa6a2fac735a0cbc393195c0db651fa7b" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:39:55.705783592" level=info msg="found platform" _skip=true digest="sha256:837872332ac827cb8b56f293e76363d92da59774c6e69d912b1e5fbaafeb4f9f" platform="&{unknown unknown  []  []}" size=842
+time="Jan 11 19:39:55.705809307" level=info msg="found platform" _skip=true digest="sha256:c0c113f17313347af14fc655b70333c291c79d864d0e258bb75bdc4d0900ecae" platform="&{arm64 linux  [] v8 []}" size=2498
+time="Jan 11 19:39:55.705814544" level=info msg="found platform" _skip=false digest="sha256:210343259138ad1b7bad23cd3be6aa1126f764f887c639749411387c9321c2d5" platform="&{amd64 linux  []  []}" size=2496
+time="Jan 11 19:41:21.640571751" level=info msg="converted platform" digest="sha256:66a25e5186aef8aaca8f8e23e28b28cff74eb618b877f740b0a0370d953da80d" platform="&{amd64 linux  []  []}" size=2496
+time="Jan 11 19:41:21.641409011" level=info msg="uploading converted container image" imageIndex="cloud.cluster.local:5000/node/lts-buster/vuejsprojects/nhs-ui:starlight"
+time="Jan 11 19:41:24.382155336" level=info msg="conversion completed"
+time="Jan 11 19:41:32.994708095" level=info msg="notify starlight proxy server success" reference="cloud.cluster.local:5000/node/lts-buster/vuejsprojects/nhs-ui:starlight"
+time="Jan 11 19:41:32.995302313" level=info msg="notified starlight proxy"
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-11T19:41:33Z - okay 
+	sha256:1b879435b42b02b4a0a8d8c00fa7b6ecca37b96d913511ccd0c7fbba00276090: 2025-01-11T19:41:33Z - okay 
+	sha256:42f0694a3ae30c29c5d089b3cc02ed714566dba63f7d07e0ac0f86f23d9b8da6: 2025-01-11T19:41:33Z - okay 
+	sha256:0abdeefb57ecdddb2c22bbd4abef78070f1d92a0f8eadb24dda888a6ddc06207: 2025-01-11T19:41:33Z - okay 
+	sha256:df017390a43b5d0018eb11b928819cbfa81463aed791e7d3759524789f6bc80a: 2025-01-11T19:41:33Z - okay 
+	sha256:d5e491e2bc735df7b9effa413c90bb300f1b0127b1c3cd45a00c34e4132d6760: 2025-01-11T19:41:33Z - okay 
+	sha256:e7a94d3f8fe30620afc86baaa81787073a04cdf9f612949f8132681cbab813c7: 2025-01-11T19:41:33Z - okay 
+	sha256:d12a278d0a6ce406f40168d7e4447bb0f27b3d835f8c408a79fb9219613cee4c: 2025-01-11T19:41:33Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-11T19:41:33Z - okay 
+	sha256:6d75e28fd0a06ba4a42bfca6c0b5082fe35654b8162be118e5d4f0f0207d119f: 2025-01-11T19:41:33Z - okay 
+	sha256:9d761f2aed9c4e9023ba6180bdbcd7d2097c321afe7f011878637f365fc6e7da: 2025-01-11T19:41:33Z - okay 
+	sha256:3dbdff3a81779254cd263dbcaafc53ae130a285f25499593f30b1d88f490d24a: 2025-01-11T19:41:33Z - okay 
+	sha256:ada10c6faa26fcf77a6cd4049ddc89bc97003b87fd6e6bdb0a44d7087cd2d5b5: 2025-01-11T19:41:33Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-11T19:41:33Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-11T19:41:33Z - okay 
+	sha256:4722aca6f2702a82f69cdfd3717c7df67f2ffcd1360245512223c891e67bd2d1: 2025-01-11T19:41:33Z - okay 
+	sha256:365e40bf103a856bda5976993d54b18adef744ec2b341532440ad5bd46ad0feb: 2025-01-11T19:41:33Z - okay 
+	sha256:81e1b81c2a0d7daac8b701b544072a504ed1569f99a1b5ee44f17e1148671841: 2025-01-11T19:41:33Z - okay 
+	sha256:771a52b36b562dd38ad7be157546d9add947bc77e1ed55136b46cd9f485d68cf: 2025-01-11T19:41:33Z - okay 
+	sha256:1942dae5cc68a1d40b3ecfcbc114690a76457b2a3852eb13de529d2b9050cdc0: 2025-01-11T19:41:33Z - okay 
+	sha256:b8d23cb1ba19a1dc3e5d35e85ccb0c137835bceb765136386523d28e149d3db2: 2025-01-11T19:41:33Z - okay 
+	sha256:1cd687a1464949bc36328695ff65b8eb648323ce7a7174105d0c95ee894452fb: 2025-01-11T19:41:33Z - okay 
+	sha256:6acfb95e700aced00d26001e939e2fc9a026c490a8b571142bbc702c4bca2a54: 2025-01-11T19:41:33Z - okay 
+	sha256:63286a6126de0a5441acd063b681210566ba5b41ac50fea18e85fccb8bded1f2: 2025-01-11T19:41:33Z - okay 
+	sha256:de96d6c26ac788603cedb9afed08acb32f61b2d8f9b5e17540060afbe8deba77: 2025-01-11T19:41:33Z - okay 
+	sha256:ef5014c4842800bce45bda05d7c4affdf090d945e45c19acf063b8e9a0733495: 2025-01-11T19:41:33Z - okay 
+	sha256:1720fa5ed9ef4992e992f28b4300c669420afec022c094a81912685c02e69461: 2025-01-11T19:41:33Z - okay 
+	sha256:21545ab536208779c0556333f1c4683e2be6ca18450d59ecea97ef0e78bbbaf4: 2025-01-11T19:41:33Z - okay 
+	sha256:5612ff78ce4dabfee34bd8367821a12d6fc2a8b97388ce81eae3d4b37a5a4da2: 2025-01-11T19:41:33Z - okay 
+	sha256:8a9df08f726d20d7deda0697b6b1ea2de51c3e990f308272598f6e756c05dfc9: 2025-01-11T19:41:33Z - okay 
+	sha256:b203c7932aaaf2e76696b00a74760ed674e612a5e280b8b817ae769843f09245: 2025-01-11T19:41:33Z - okay 
+	sha256:a9417c3b329e7dc7f8699bda17f69f6a0e953e800e88116a28ecfcfbe9a9a645: 2025-01-11T19:41:33Z - okay 
+	sha256:1e0270abb6675c029bd14251569322971b27abe06307296b97b63a86958e1257: 2025-01-11T19:41:33Z - okay 
+	sha256:311c35c51f85a8e0d696087a8fd5ea862e2b960e199ff75acbfc23a8c29a2f53: 2025-01-11T19:41:33Z - okay 
+	sha256:b319fd23034640641042462ce5c64b868e1b17c13fb6292f2ca78a9a88bd8696: 2025-01-11T19:41:33Z - okay 
+	sha256:fe8d8ff4af7aabb357d77731276aa1d3adbcc90d3e186d9678f67b0e573a9440: 2025-01-11T19:41:33Z - okay 
+	sha256:53ae3ca929d4fac1bd79ef1120ec26917152aa94191898376d5074443b8e5cf7: 2025-01-11T19:41:33Z - okay 
+	sha256:6e821ced42dcdb80662458cc17faad5f0152db705a940c52aeeee96b5b002299: 2025-01-11T19:41:33Z - okay 
+	sha256:b6fe960cda23d25a02fb038f4f31dfa722015fdea5994457bfaac96fd28655f8: 2025-01-11T19:41:33Z - okay 
+	sha256:18f1231acd88cba630790d151758c34b0bbd12757aa57dedec10c3c5d0b03b8e: 2025-01-11T19:41:33Z - okay 
+	sha256:a794c125da59f43f0324e6af6dedfc54458499365b0b2022ed0b4dff093dafb0: 2025-01-11T19:41:33Z - okay 
+	sha256:f4e9fd7d82e4a7f4560177fdd467f0be04721a0ee376033c686f97f5a300986b: 2025-01-11T19:41:33Z - okay 
+	sha256:a5cd565515b3d8dca3e75de0c6ebd9d0b3d7a0800690a49cac9aae49814585b8: 2025-01-11T19:41:33Z - okay 
+	sha256:21980257632c38406440da88a64ea4787209657b43fb3c9e538293c886060c7e: 2025-01-11T19:41:33Z - okay 
+	sha256:e587236a18a5df2880ec9501d55909bf304626dc84694f3fdaaa1795bc388d5d: 2025-01-11T19:41:33Z - okay 
+	sha256:2f1b59d71d7fcd3a31a0683eacc59eae4013d7f6afcb2a9b93efb15d17293ea4: 2025-01-11T19:41:33Z - okay 
+	sha256:c44226b82afac8a238acc6b237d94e215266eeedb18aea8f833fb22e87823344: 2025-01-11T19:41:33Z - okay 
+	sha256:fd0ba7309ea07f15e192207dabce3542e2a53bbdf39df8affd130b49a28b10a5: 2025-01-11T19:41:33Z - okay 
+	sha256:0e6a927b2cc0fb3ace9f471fc0c52c76c32589e8623d36fe013d2e6538209110: 2025-01-11T19:41:33Z - okay 
+	sha256:c47fd68a2d4549c7fded32cff8e1944cfcdeb58379efd7b4d6dec1180048d78f: 2025-01-11T19:41:33Z - okay 
+	sha256:c5bff9419bc1331b00a3f5de440d3b9db62367bf1cea021d9e79faab9ae7d295: 2025-01-11T19:41:33Z - okay 
+	sha256:a785de9fe097222ea6bdddaf75e0cf6901d6981f49c6cc0c020331f36344b716: 2025-01-11T19:41:33Z - okay 
+	sha256:35d54a7fb6cd17f2693a21c8b6b6f16d8ebab664f120b5bc9d76f525e316a5d2: 2025-01-11T19:41:33Z - okay 
+	sha256:605f1180b828729459f0d2bcc675ad791752f1e9526db86a12d0666ce36febb7: 2025-01-11T19:41:33Z - okay 
+	sha256:253a37c13325596569baaad66c8129bbf37675ee1741c6737868d7cc461aad47: 2025-01-11T19:41:33Z - okay 
+	sha256:ac1ff5abb1d5cf650cdd5dfb99f7cc41d7ede88dcf41fb2bc0b084185b86db27: 2025-01-11T19:41:33Z - okay 
+	sha256:f047d7cae6352ea333c767ac935a088ea72974945768f9c4ebccbccfe18f3b54: 2025-01-11T19:41:33Z - okay 
+	sha256:eed3b3eda2f838a271d12541f3716f271f4a9676af54b50c19dabdff1aa7195b: 2025-01-11T19:41:33Z - okay 
+	sha256:806b7b85fa5b7b652eebd2a9aba41276852128e41d2d0a50afa9ffb534115f9d: 2025-01-11T19:41:33Z - okay 
+	sha256:060e1ed9cfada925aee146d0d3e07c389e66363368ecc718a5e0da50934db4d6: 2025-01-11T19:41:33Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-11T19:41:33Z - okay 
+	sha256:acfbd0fc09fe7e9a8aa224f8fd43c623a08c98d63c44e2f08390e305317b20d9: 2025-01-11T19:41:33Z - okay 
+	sha256:79e795270e9ae28df1a425b829844d47f8b77577a2a8dabae8749e161383caf3: 2025-01-11T19:41:33Z - okay 
+	sha256:5fe64b451348263edf2ca92295d7d153f94fcf6bbbb5bf077d3d1a7465aff2a0: 2025-01-11T19:41:33Z - okay 
+	sha256:1f97100668fc2beae2ea0cdeae77c41195184a631a0026462d31f28dcc5f404c: 2025-01-11T19:41:33Z - okay 
+	sha256:280a45cd422bad95eb11a4b75fdcbafe4a32b8b030243c0463d712c0ad5a1d75: 2025-01-11T19:41:33Z - okay 
+	sha256:d21c948eba998c5790cfdd904d2d70ae71fa8746f96a4d318d07a53242a7cb37: 2025-01-11T19:41:33Z - okay 
+	sha256:61900e90bf358cb523a6959e84abf56a040a323414accf54394663778ac6c706: 2025-01-11T19:41:33Z - okay 
+	sha256:98b4c307fa69eb57c4c412e579093686ffcea7107e190731ed1989e341c4db79: 2025-01-11T19:41:33Z - okay 
+	sha256:f2315de138065f01fce6ea3a40474b360069ffd3bac6cb1e6b23ac2b4cbde569: 2025-01-11T19:41:33Z - okay 
+	sha256:d56307c77489a37a92699e940ecff0a83457f656f53ce92eb4c030bf36a6e530: 2025-01-11T19:41:33Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node/lts-buster/vuejsprojects/nhs-ui:starlight

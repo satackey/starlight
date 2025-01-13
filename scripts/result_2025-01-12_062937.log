@@ -1,0 +1,17 @@
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container rm trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight trace-node-lts-ionic-team-ionic-cli-starlight sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+
+>> Executing: sudo ctr task start trace-node-lts-ionic-team-ionic-cli-starlight

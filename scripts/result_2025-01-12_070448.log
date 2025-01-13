@@ -1,0 +1,63 @@
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight | grep 'pull image failed'
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:f25e122028fc46d0b0bcb662c3c48f2a5bab7f250fd1789664c956a89fbf6247: 2025-01-12T07:04:49Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-12T07:04:49Z - okay 
+	sha256:06426825ea4321a808a11795fb4d3bc4b49e36e0c0f7a177e598a78337621758: 2025-01-12T07:04:49Z - okay 
+	sha256:d1f80f80000b2bb3787dad982bc13688468057c24df85ddd53d9779f954ece79: 2025-01-12T07:04:49Z - okay 
+	sha256:92990ca8750095f114000461a0e1255ea0fc98a0ae5e63bf1b22ab84264d6024: 2025-01-12T07:04:49Z - okay 
+	sha256:e0685db6463b55f29a193df3bbade043501216ec54c3fffa111edadda30f9a92: 2025-01-12T07:04:49Z - okay 
+	sha256:486a73218d0b3e2f00e87c607171f7b604c003403d13676c3ca0c291e9d7857d: 2025-01-12T07:04:49Z - okay 
+	sha256:d70fe2647c8ec0a4b33bf63e136eeca4dda885189512c02b653a01fbaa3a62bd: 2025-01-12T07:04:49Z - okay 
+	sha256:575786b8a29a47473138f723197dd99b1122c58cfb1fef102db9337ba4f8a0d1: 2025-01-12T07:04:49Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-12T07:04:49Z - okay 
+	sha256:ec7d133d2d1b75e74d891acbd9fb4c015c0e7c50af1e72c38cbd1d580b34d15d: 2025-01-12T07:04:49Z - okay 
+	sha256:77142654ed345077f8b535431e234f77c1377f6a3d1871485f17d7ab6e44387b: 2025-01-12T07:04:49Z - okay 
+	sha256:dbc086a1ff55b51c38efa84b1990507d05b6f7d42cbb2e997dd216f9fcccd49b: 2025-01-12T07:04:49Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-12T07:04:49Z - okay 
+	sha256:8e4bf42d8dde9122f236cd298b6f293409e17b8aa66607e70f2647bce8ab9864: 2025-01-12T07:04:49Z - okay 
+	sha256:5d88a0be67e95031fe91e91c340ed6d68e5cc879d1d0ddd839559eeb1faf7c16: 2025-01-12T07:04:49Z - okay 
+	sha256:f4ba4e5cd8d7c84fb7a69d72c5f87ef74c62215f15913df40b002decd5d44449: 2025-01-12T07:04:49Z - okay 
+	sha256:37b00c14dac8dc2123274b37d26bef1c0048d6f9e0b2c9c6f78e266522c0eb51: 2025-01-12T07:04:49Z - okay 
+	sha256:8df162c755f1b8e181f62d9839cf28241d00227c05bc3b766d8cc4581804bb83: 2025-01-12T07:04:49Z - okay 
+	sha256:4e72187f67e2783a4d0d41ef7b4acdfae3910c98ba46d40515295efd4d353bc3: 2025-01-12T07:04:49Z - okay 
+	sha256:edb09f5e64a0eac08eb22d2f48cdea4f423cd987fd496f90b0a711b2c1934a29: 2025-01-12T07:04:49Z - okay 
+	sha256:e9c4833c3c7bf392378bf0d8004bc58fdd5f62373994b478548afee11485ff57: 2025-01-12T07:04:49Z - okay 
+	sha256:80c9ab78c4b7ffc796faedeb08f7da857b8b35ffce2ba1d0c9145bfa1f6561ee: 2025-01-12T07:04:49Z - okay 
+	sha256:a33516bdce53c61a5abd509cdac2cf39f066ed587ca403ef42a96b602e0d01dc: 2025-01-12T07:04:49Z - okay 
+	sha256:792f46834778cdcf04ceb56d0c228f2015e66004b4437df46cfcff6a205dd6f1: 2025-01-12T07:04:49Z - okay 
+	sha256:2aa1e8eb2649daa84c501cbf978900aeebc5b7d91bf48a1346aa5d701bd279c3: 2025-01-12T07:04:49Z - okay 
+	sha256:889d450be2301f3c71aa99a526723b70ff6436bf5b0569b82a042038da8876a1: 2025-01-12T07:04:49Z - okay 
+	sha256:c8ff8f7ce6df3bdb668643b316b094051e640b4ab2cda0e253ea7a902280471f: 2025-01-12T07:04:49Z - okay 
+	sha256:43d5b8623637a981e323d955d5f21b2215e841facc213534a37a9f69f2a2b287: 2025-01-12T07:04:49Z - okay 
+	sha256:6bd77e1fab55e69f470fa4f6f6841a901d807b7086e0931e0df4db405c95aad7: 2025-01-12T07:04:49Z - okay 
+	sha256:dad20afad79a9293e32657592000b15b06e8f4ba553c7578e5323fd69aa3cd3b: 2025-01-12T07:04:49Z - okay 
+	sha256:2016aa4a725ad1ee208d35ceac37f2c5add6e951097216125d8d7dc5e0189e89: 2025-01-12T07:04:49Z - okay 
+	sha256:3350a99b8b01a79b566a6de6c7cf0eb0c3587ebdd1288147f1563b90f34b9654: 2025-01-12T07:04:49Z - okay 
+	sha256:001aa3b100ad8281967f7e02d7e4bc987e3d3dbac0f524be55d933a65646f201: 2025-01-12T07:04:49Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-12T07:04:49Z - okay 
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-12T07:04:49Z - okay 
+	sha256:84c1730d45de6e48f3e7f5083fe0d36c6b97d350164c2035cecb941b611f04c4: 2025-01-12T07:04:49Z - okay 
+	sha256:b79e483ce569c8263c8a5581c1b17fdd83dd03e23aa1c4be3e42dc1bf2c4c277: 2025-01-12T07:04:49Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight
+requested image cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight already exists
+Creating and running container...
+
+>> Executing (quiet): sudo ctr task ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container rm trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr snapshot --snapshotter=starlight ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing: sudo ctr c create --snapshotter=starlight cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight trace-node-lts-ionic-team-ionic-cli-starlight sh -c 'npm i -g @ionic/cli@${IONIC_CLI_VERSION} && ionic --no-interactive config set -g daemon.updates false && ionic --no-interactive config set -g telemetry false'
+
+>> Executing: sudo ctr task start trace-node-lts-ionic-team-ionic-cli-starlight

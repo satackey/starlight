@@ -1,0 +1,4 @@
+  File "/home/vagrant/starlight/scripts/collect_traces.py", line 142
+    while run_command(f"sudo ctr container ls | grep {container_name}", allow_failure=True, shell=True quiet=True) == 0:
+                                                                                                  ^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?

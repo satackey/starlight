@@ -1,0 +1,618 @@
+
+Processing image: node:lts
+
+>> Executing (quiet): sudo ctr image ls | grep cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight
+
+>> Executing: sudo ctr-starlight optimizer on
+set optimizer: completed request
+	sha256:55d99e634e48e9ed16e9d8cc106646ff92e48d5242eb352504b6ddc008419f1e: 2025-01-12T06:33:14Z - okay 
+	sha256:e8bc17b0dead37f728f00f5e401ff3523c40fe8b33c1e2c37101b2c8068f6062: 2025-01-12T06:33:14Z - okay 
+	sha256:e3be283fefe8a57787eb7ef08796f3b74a7de08db5131cb4ac8df1202030daeb: 2025-01-12T06:33:14Z - okay 
+	sha256:841cebd48c20333a4555bdd1db0bdf3036d115e4c8c0c065cf7e24a7009ebcbc: 2025-01-12T06:33:14Z - okay 
+	sha256:3887ef7b1bb7d0849662575cba3ca691db88f61379baa64f003b1ab7a5fa6097: 2025-01-12T06:33:14Z - okay 
+
+>> Executing: sudo ctr-starlight pull --profile myproxy cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight
+requested image cloud.cluster.local:5000/node-lts/ionic-team-ionic-cli:starlight already exists
+Creating and running container...
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+Command failed with exit code 1: sudo ctr task kill -f trace-node-lts-ionic-team-ionic-cli-starlight
+
+>> Executing (quiet): sudo ctr container ls | grep trace-node-lts-ionic-team-ionic-cli-starlight
