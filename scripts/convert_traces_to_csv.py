@@ -133,6 +133,32 @@ def process_image_name(image_name: str) -> str:
         print(f"イメージ名の処理中にエラー: {str(e)}")
         return image_name
 
+def extract_base_image_name(image_name: str) -> str:
+    """イメージ名からベースイメージ名（最初のコンポーネント）を抽出"""
+    try:
+        # cloud.cluster.local:5000/ を除去
+        if 'cloud.cluster.local:5000/' in image_name:
+            image_name = image_name.split('cloud.cluster.local:5000/')[1]
+        
+        # パスの最初のコンポーネントを取得
+        components = image_name.split('/')
+        if len(components) > 1:
+            return components[0]
+        else:
+            return "unknown"
+    except Exception as e:
+        print(f"ベースイメージ名の抽出中にエラー: {str(e)}")
+        return "unknown"
+
+def get_base_image_type(base_image_name: str) -> str:
+    """ベースイメージ名からイメージタイプを判定"""
+    base_image_name = base_image_name.lower()
+    if base_image_name.startswith('node'):
+        return 'node'
+    elif base_image_name.startswith('ubuntu'):
+        return 'ubuntu'
+    return 'other'
+
 def main():
     if len(sys.argv) != 3:
         print("Usage: convert_traces_to_csv.py <input_csv> <output_csv>")
@@ -184,6 +210,11 @@ def main():
             processed_image_name = process_image_name(image_name)
             print(f"処理後のイメージ名: {processed_image_name}")
             
+            # ベースイメージ名の抽出とタイプの判定
+            base_image_name = extract_base_image_name(image_name)
+            base_image_type = get_base_image_type(base_image_name)
+            print(f"ベースイメージ名: {base_image_name} (タイプ: {base_image_type})")
+            
             # トレースを取得
             accessed_files = get_file_access_traces(conn, processed_image_name)
             if not accessed_files:
@@ -193,7 +224,9 @@ def main():
             # 行データを作成
             rows.append({
                 'command': command,
-                'accessed_files': json.dumps(accessed_files, ensure_ascii=False)
+                'accessed_files': json.dumps(accessed_files, ensure_ascii=False),
+                'base_image_name': base_image_name,
+                'base_image_type': base_image_type,  # 新しいカラムを追加
             })
             print(f"データ追加: トレース数 {len(accessed_files)}")
         
