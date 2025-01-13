@@ -18,12 +18,12 @@ import pickle
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import KFold
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import LabelEncoder
 import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
     GRU, Dense, Dropout, Embedding, Input, TextVectorization,
-    Concatenate, LayerNormalization, GlobalAveragePooling1D, Reshape
+    Concatenate, LayerNormalization, GlobalAveragePooling1D
 )
 from tensorflow.keras.callbacks import EarlyStopping
 from typing import Dict, List, Tuple, Set
@@ -35,7 +35,6 @@ class FileAccessPredictor:
         self.max_sequence_length = max_sequence_length
         self.command_vectorizer = None
         self.filepath_encoder = None
-        self.size_scaler = None
         self.model = None
     
     def save_preprocessed_data(self, X: Dict[str, np.ndarray], y: np.ndarray, 
@@ -48,28 +47,24 @@ class FileAccessPredictor:
             np.save(os.path.join(save_dir, f'X_{key}.npy'), value)
         np.save(os.path.join(save_dir, 'y.npy'), y)
         
-        # エンコーダーとスケーラーを保存
+        # エンコーダーを保存
         with open(os.path.join(save_dir, 'command_vectorizer.pkl'), 'wb') as f:
             pickle.dump(self.command_vectorizer, f)
         with open(os.path.join(save_dir, 'filepath_encoder.pkl'), 'wb') as f:
             pickle.dump(self.filepath_encoder, f)
-        with open(os.path.join(save_dir, 'size_scaler.pkl'), 'wb') as f:
-            pickle.dump(self.size_scaler, f)
     
     def load_preprocessed_data(self, save_dir: str) -> Tuple[Dict[str, np.ndarray], np.ndarray]:
         """前処理済みデータを読み込み"""
         X = {}
-        for key in ['command', 'history', 'history_sizes']:
+        for key in ['command', 'history']:
             X[key] = np.load(os.path.join(save_dir, f'X_{key}.npy'))
         y = np.load(os.path.join(save_dir, 'y.npy'))
         
-        # エンコーダーとスケーラーを読み込み
+        # エンコーダーを読み込み
         with open(os.path.join(save_dir, 'command_vectorizer.pkl'), 'rb') as f:
             self.command_vectorizer = pickle.load(f)
         with open(os.path.join(save_dir, 'filepath_encoder.pkl'), 'rb') as f:
             self.filepath_encoder = pickle.load(f)
-        with open(os.path.join(save_dir, 'size_scaler.pkl'), 'rb') as f:
-            self.size_scaler = pickle.load(f)
         
         return X, y
     
@@ -98,23 +93,9 @@ class FileAccessPredictor:
             print(f"ユニークなファイルパス数: {len(all_paths)}")
             self.filepath_encoder.fit(list(all_paths))
         
-        # サイズのスケーリング用のスケーラーを初期化
-        if self.size_scaler is None:
-            self.size_scaler = StandardScaler()
-            # 全サイズを収集してスケーラーを適合
-            all_sizes = []
-            for files_json in df['accessed_files'].fillna('[]'):
-                try:
-                    files = json.loads(files_json)
-                    all_sizes.extend(float(f['size']) for f in files)
-                except:
-                    continue
-            self.size_scaler.fit(np.array(all_sizes).reshape(-1, 1))
-        
         # 入力データの準備
         commands = self.command_vectorizer(df['command'].fillna(''))
         history_sequences = []
-        size_sequences = []
         targets = []
         
         print("シーケンスデータの生成...")
@@ -131,20 +112,12 @@ class FileAccessPredictor:
                 for i in range(len(files)):
                     # 入力：これまでのアクセス履歴
                     history_paths = [f['path'] for f in files[:i]]
-                    history_sizes = [float(f['size']) for f in files[:i]]
                     
                     # パディング
                     if len(history_paths) > self.max_sequence_length:
                         history_paths = history_paths[-self.max_sequence_length:]
-                        history_sizes = history_sizes[-self.max_sequence_length:]
                     while len(history_paths) < self.max_sequence_length:
                         history_paths.append('')
-                        history_sizes.append(0.0)
-                    
-                    # サイズのスケーリング
-                    history_sizes = self.size_scaler.transform(
-                        np.array(history_sizes).reshape(-1, 1)
-                    ).flatten()
                     
                     # 出力：次のアクセスファイル
                     next_file = files[i]['path']
@@ -155,7 +128,6 @@ class FileAccessPredictor:
                         for path in history_paths
                     ]
                     history_sequences.append(history_encoded)
-                    size_sequences.append(history_sizes)
                     targets.append(self.filepath_encoder.transform([next_file])[0])
             except Exception as e:
                 print(f"エラー (コマンド {command_idx}): {e}")
@@ -164,8 +136,7 @@ class FileAccessPredictor:
         print("NumPy配列への変換...")
         X = {
             'command': commands.numpy().astype(np.int32),
-            'history': np.array(history_sequences, dtype=np.int32),
-            'history_sizes': np.array(size_sequences, dtype=np.float32)
+            'history': np.array(history_sequences, dtype=np.int32)
         }
         y = np.array(targets, dtype=np.int32)
         
@@ -191,19 +162,12 @@ class FileAccessPredictor:
             32
         )(history_input)
         
-        # サイズ入力
-        sizes_input = Input(shape=(self.max_sequence_length,), name='history_sizes', dtype=tf.float32)
-        sizes_features = Reshape((self.max_sequence_length, 1))(sizes_input)
-        
-        # 特徴量の結合
-        combined_features = Concatenate(axis=-1)([history_embedding, sizes_features])
-        
         # GRU層
-        gru = GRU(128)(combined_features)
+        gru = GRU(128)(history_embedding)
         gru = LayerNormalization()(gru)
         gru = Dropout(0.3)(gru)
         
-        # コマンド特徴量との結合
+        # 特徴量の結合
         combined = Concatenate()([gru, command_features])
         
         # 出力層
@@ -213,7 +177,7 @@ class FileAccessPredictor:
         
         # モデルのコンパイル
         self.model = Model(
-            inputs=[command_input, history_input, sizes_input],
+            inputs=[command_input, history_input],
             outputs=output
         )
         self.model.compile(
@@ -234,13 +198,11 @@ class FileAccessPredictor:
             # データの分割
             X_train = {
                 'command': tf.convert_to_tensor(X['command'][train_idx], dtype=tf.int32),
-                'history': tf.convert_to_tensor(X['history'][train_idx], dtype=tf.int32),
-                'history_sizes': tf.convert_to_tensor(X['history_sizes'][train_idx], dtype=tf.float32)
+                'history': tf.convert_to_tensor(X['history'][train_idx], dtype=tf.int32)
             }
             X_val = {
                 'command': tf.convert_to_tensor(X['command'][val_idx], dtype=tf.int32),
-                'history': tf.convert_to_tensor(X['history'][val_idx], dtype=tf.int32),
-                'history_sizes': tf.convert_to_tensor(X['history_sizes'][val_idx], dtype=tf.float32)
+                'history': tf.convert_to_tensor(X['history'][val_idx], dtype=tf.int32)
             }
             y_train = tf.convert_to_tensor(y[train_idx], dtype=tf.int32)
             y_val = tf.convert_to_tensor(y[val_idx], dtype=tf.int32)
@@ -313,8 +275,7 @@ class FileAccessPredictor:
             ]
             print("\nアクセス履歴:")
             for j, path in enumerate(history_paths):
-                size = X['history_sizes'][i][j]
-                print(f"{j+1}. {path} (size: {size})")
+                print(f"{j+1}. {path}")
             
             # 実際の次のファイル
             true_path = self.filepath_encoder.inverse_transform([y[i]])[0]
@@ -323,8 +284,7 @@ class FileAccessPredictor:
             # 予測
             y_pred = self.model.predict({
                 'command': tf.convert_to_tensor(X['command'][i:i+1], dtype=tf.int32),
-                'history': tf.convert_to_tensor(X['history'][i:i+1], dtype=tf.int32),
-                'history_sizes': tf.convert_to_tensor(X['history_sizes'][i:i+1], dtype=tf.float32)
+                'history': tf.convert_to_tensor(X['history'][i:i+1], dtype=tf.int32)
             })[0]
             
             print("\n予測されたファイル (確率):")
