@@ -18,7 +18,7 @@ import pickle
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import KFold
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder, StandardScaler
 import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
@@ -35,6 +35,7 @@ class FileAccessPredictor:
         self.max_sequence_length = max_sequence_length
         self.command_vectorizer = None
         self.filepath_encoder = None
+        self.size_scaler = None
         self.model = None
     
     def save_preprocessed_data(self, X: Dict[str, np.ndarray], y: np.ndarray, 
@@ -47,11 +48,13 @@ class FileAccessPredictor:
             np.save(os.path.join(save_dir, f'X_{key}.npy'), value)
         np.save(os.path.join(save_dir, 'y.npy'), y)
         
-        # エンコーダーを保存
+        # エンコーダーとスケーラーを保存
         with open(os.path.join(save_dir, 'command_vectorizer.pkl'), 'wb') as f:
             pickle.dump(self.command_vectorizer, f)
         with open(os.path.join(save_dir, 'filepath_encoder.pkl'), 'wb') as f:
             pickle.dump(self.filepath_encoder, f)
+        with open(os.path.join(save_dir, 'size_scaler.pkl'), 'wb') as f:
+            pickle.dump(self.size_scaler, f)
     
     def load_preprocessed_data(self, save_dir: str) -> Tuple[Dict[str, np.ndarray], np.ndarray]:
         """前処理済みデータを読み込み"""
@@ -60,11 +63,13 @@ class FileAccessPredictor:
             X[key] = np.load(os.path.join(save_dir, f'X_{key}.npy'))
         y = np.load(os.path.join(save_dir, 'y.npy'))
         
-        # エンコーダーを読み込み
+        # エンコーダーとスケーラーを読み込み
         with open(os.path.join(save_dir, 'command_vectorizer.pkl'), 'rb') as f:
             self.command_vectorizer = pickle.load(f)
         with open(os.path.join(save_dir, 'filepath_encoder.pkl'), 'rb') as f:
             self.filepath_encoder = pickle.load(f)
+        with open(os.path.join(save_dir, 'size_scaler.pkl'), 'rb') as f:
+            self.size_scaler = pickle.load(f)
         
         return X, y
     
@@ -93,6 +98,19 @@ class FileAccessPredictor:
             print(f"ユニークなファイルパス数: {len(all_paths)}")
             self.filepath_encoder.fit(list(all_paths))
         
+        # サイズのスケーリング用のスケーラーを初期化
+        if self.size_scaler is None:
+            self.size_scaler = StandardScaler()
+            # 全サイズを収集してスケーラーを適合
+            all_sizes = []
+            for files_json in df['accessed_files'].fillna('[]'):
+                try:
+                    files = json.loads(files_json)
+                    all_sizes.extend(float(f['size']) for f in files)
+                except:
+                    continue
+            self.size_scaler.fit(np.array(all_sizes).reshape(-1, 1))
+        
         # 入力データの準備
         commands = self.command_vectorizer(df['command'].fillna(''))
         history_sequences = []
@@ -113,7 +131,7 @@ class FileAccessPredictor:
                 for i in range(len(files)):
                     # 入力：これまでのアクセス履歴
                     history_paths = [f['path'] for f in files[:i]]
-                    history_sizes = [float(f['size']) for f in files[:i]]  # 明示的に float に変換
+                    history_sizes = [float(f['size']) for f in files[:i]]
                     
                     # パディング
                     if len(history_paths) > self.max_sequence_length:
@@ -121,7 +139,12 @@ class FileAccessPredictor:
                         history_sizes = history_sizes[-self.max_sequence_length:]
                     while len(history_paths) < self.max_sequence_length:
                         history_paths.append('')
-                        history_sizes.append(0.0)  # float型で0を追加
+                        history_sizes.append(0.0)
+                    
+                    # サイズのスケーリング
+                    history_sizes = self.size_scaler.transform(
+                        np.array(history_sizes).reshape(-1, 1)
+                    ).flatten()
                     
                     # 出力：次のアクセスファイル
                     next_file = files[i]['path']
@@ -165,26 +188,27 @@ class FileAccessPredictor:
         history_input = Input(shape=(self.max_sequence_length,), name='history', dtype=tf.int32)
         history_embedding = Embedding(
             len(self.filepath_encoder.classes_) + 1,  # +1 はパディング用
-            32,
-            mask_zero=True
+            32
         )(history_input)
         
         # サイズ入力
         sizes_input = Input(shape=(self.max_sequence_length,), name='history_sizes', dtype=tf.float32)
-        sizes_reshape = tf.keras.layers.Reshape((self.max_sequence_length, 1))(sizes_input)
+        sizes_features = Dense(32, activation='relu')(sizes_input)
+        sizes_features = Dense(32, activation='relu')(sizes_features)
+        sizes_features = tf.keras.layers.Reshape((self.max_sequence_length, 32))(sizes_features)
         
         # 特徴量の結合
-        features = Concatenate(axis=-1)([history_embedding, sizes_reshape])
+        combined_features = Concatenate(axis=-1)([history_embedding, sizes_features])
         
-        # GRU層（アクセス順序の学習）
-        gru = GRU(128)(features)
+        # GRU層
+        gru = GRU(128)(combined_features)
         gru = LayerNormalization()(gru)
         gru = Dropout(0.3)(gru)
         
-        # 特徴量の結合
+        # コマンド特徴量との結合
         combined = Concatenate()([gru, command_features])
         
-        # 出力層（次のファイルの予測）
+        # 出力層
         dense = Dense(128, activation='relu')(combined)
         dropout = Dropout(0.3)(dense)
         output = Dense(len(self.filepath_encoder.classes_), activation='softmax')(dropout)
