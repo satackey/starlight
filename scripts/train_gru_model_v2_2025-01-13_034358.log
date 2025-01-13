@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/vagrant/starlight/scripts/train_gru_model_v2.py", line 112, in <module>
+    main()
+  File "/home/vagrant/starlight/scripts/train_gru_model_v2.py", line 77, in main
+    train_size, val_size = train_test_split(len(dataset), test_size=0.2)
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/sklearn/model_selection/_split.py", line 2848, in train_test_split
+    arrays = indexable(*arrays)
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/sklearn/utils/validation.py", line 532, in indexable
+    check_consistent_length(*result)
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/sklearn/utils/validation.py", line 472, in check_consistent_length
+    lengths = [_num_samples(X) for X in arrays if X is not None]
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/sklearn/utils/validation.py", line 472, in <listcomp>
+    lengths = [_num_samples(X) for X in arrays if X is not None]
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/sklearn/utils/validation.py", line 399, in _num_samples
+    raise TypeError(
+TypeError: Input should have at least 1 dimension i.e. satisfy `len(x.shape) > 0`, got scalar `array(87)` instead.

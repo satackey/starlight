@@ -1,0 +1,23 @@
+Fold 1
+Traceback (most recent call last):
+  File "/home/vagrant/starlight/scripts/train_gru_model_v2.py", line 160, in <module>
+    main()
+  File "/home/vagrant/starlight/scripts/train_gru_model_v2.py", line 145, in main
+    train_model_a(model_a, train_loader, criterion, optimizer_a)
+  File "/home/vagrant/starlight/scripts/train_gru_model_v2.py", line 57, in train_model_a
+    for commands_batch, files_batch in loader:
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 757, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 55, in fetch
+    return self.collate_fn(data)
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 398, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 211, in collate
+    return [
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 212, in <listcomp>
+    collate(samples, collate_fn_map=collate_fn_map)
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 207, in collate
+    raise RuntimeError("each element in list of batch should be of equal size")
+RuntimeError: each element in list of batch should be of equal size
