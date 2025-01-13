@@ -17,22 +17,22 @@ class ModelA(nn.Module):
         out = self.fc(hidden[-1])
         return out
 
+
 class ModelB(nn.Module):
-    """Model B: (コマンド, これまでのファイルID列) → 次のファイルを予測"""
-    def __init__(self, vocab_size, file_size, embed_dim, hidden_dim):
+    def __init__(self, cmd_vocab_size, file_vocab_size, embedding_dim, hidden_dim):
         super(ModelB, self).__init__()
-        self.cmd_embedding = nn.Embedding(vocab_size, embed_dim)
-        self.file_embedding = nn.Embedding(file_size, embed_dim)
-        self.rnn = nn.GRU(embed_dim*2, hidden_dim, batch_first=True)
-        self.fc = nn.Linear(hidden_dim, file_size)
+        self.cmd_embedding = nn.Embedding(cmd_vocab_size, embedding_dim)
+        self.file_embedding = nn.Embedding(file_vocab_size, embedding_dim)
+        self.lstm = nn.LSTM(embedding_dim * 2, hidden_dim, batch_first=True)
+        self.fc = nn.Linear(hidden_dim, 1)
 
     def forward(self, cmd_input, file_history):
-        cmd_emb = self.cmd_embedding(cmd_input).unsqueeze(1)
+        cmd_emb = self.cmd_embedding(cmd_input)[:, -1, :].unsqueeze(1)
         file_emb = self.file_embedding(file_history)
         combined = torch.cat([cmd_emb.repeat(1, file_emb.size(1), 1), file_emb], dim=2)
-        _, hidden = self.rnn(combined)
-        out = self.fc(hidden[-1])
-        return out
+        lstm_out, _ = self.lstm(combined)
+        output = self.fc(lstm_out[:, -1, :])
+        return output
 
 def load_data(csv_path):
     """CSVを読み込み、コマンドとファイルシーケンスのIDを返す"""
