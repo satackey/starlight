@@ -1,0 +1,23 @@
+Loading data from: result_2025-01-12_075226_processed_traces_v2.csv
+
+=== Training model for node type ===
+Traceback (most recent call last):
+  File "/home/vagrant/starlight/scripts/train_gru_model_v3.py", line 352, in <module>
+    main()
+  File "/home/vagrant/starlight/scripts/train_gru_model_v3.py", line 337, in main
+    results = train_model_by_type(df, model_dir)
+  File "/home/vagrant/starlight/scripts/train_gru_model_v3.py", line 295, in train_model_by_type
+    train_modelA(modelA, train_loaderA, criterion, optimizerA, epoch)
+  File "/home/vagrant/starlight/scripts/train_gru_model_v3.py", line 57, in train_modelA
+    for batch in train_loader:
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 757, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/vagrant/starlight/scripts/.venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/vagrant/starlight/scripts/train_gru_model_v3.py", line 209, in __getitem__
+    return torch.tensor(cmd_padded, dtype=torch.long), torch.tensor(self.first_files[idx], dtype=torch.long)
+TypeError: new(): invalid data type 'str'

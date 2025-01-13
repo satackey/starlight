@@ -6,6 +6,8 @@ import torch
 import torch.nn as nn
 import pandas as pd
 import sys
+import os
+import json
 
 class ModelA(nn.Module):
     """Model A: コマンド → 最初のファイルを予測"""
@@ -231,71 +233,120 @@ class CommandDatasetB(Dataset):
         file_history_padded = file_history[:10]
         return torch.tensor(cmd_padded, dtype=torch.long), torch.tensor(file_history_padded, dtype=torch.long), torch.tensor(next_file, dtype=torch.long)
 
-def main():
-    csv_path = sys.argv[1]
-    commands, accessed_files = load_data(csv_path)
-    # コマンドとファイルのマッピング
-    vocab = build_vocab(commands, min_freq=1)
-    file_map = build_file_map(accessed_files)
-    # エンコード
-    encoded_commands = [encode_command(cmd, vocab) for cmd in commands]
-    encoded_files = encode_files(accessed_files, file_map)
+def train_model_by_type(df: pd.DataFrame, model_dir: str):
+    """base_image_typeごとにモデルを学習"""
+    results = {}
     
-    # 最初のファイルを抽出
-    first_files = [eval(files)[0]['path'] for files in accessed_files]
-    first_file_ids = [file_map.get(f, 0) for f in first_files]
-    
-    # データの分割
-    commands_train, commands_val, files_train, files_val, file_seqs_train, file_seqs_val = train_test_split(
-        commands, first_file_ids, accessed_files, test_size=0.2, random_state=42
-    )
-    
-    # データセットとデータローダーの作成
-    datasetA_train = CommandDatasetA(commands_train, files_train, vocab)
-    datasetA_val = CommandDatasetA(commands_val, files_val, vocab)
-    
-    datasetB_train = CommandDatasetB(commands_train, file_seqs_train, vocab, file_map)
-    datasetB_val = CommandDatasetB(commands_val, file_seqs_val, vocab, file_map)
-    
-    train_loaderA = DataLoader(datasetA_train, batch_size=32, shuffle=True)
-    eval_loaderA = DataLoader(datasetA_val, batch_size=32, shuffle=False)
-    
-    train_loaderB = DataLoader(datasetB_train, batch_size=32, shuffle=True)
-    eval_loaderB = DataLoader(datasetB_val, batch_size=32, shuffle=False)
-    
-    # ハイパーパラメータ設定
-    vocab_size = len(vocab)
-    file_size = len(file_map)
-    embed_dim = 64
-    hidden_dim = 128
-    num_files = file_size
-    epochs = 10  # エポック数を設定
-    
-    # モデルの初期化
-    modelA = ModelA(vocab_size=vocab_size, embed_dim=embed_dim, hidden_dim=hidden_dim, num_files=num_files)
-    modelB = ModelB(vocab_size=vocab_size, file_size=file_size, embed_dim=embed_dim, hidden_dim=hidden_dim)
-    
-    criterion = nn.CrossEntropyLoss()
-    optimizerA = torch.optim.Adam(modelA.parameters(), lr=0.001)
-    optimizerB = torch.optim.Adam(modelB.parameters(), lr=0.001)
-    
-    # トレーニングループ
-    for epoch in range(1, epochs + 1):
-        train_modelA(modelA, train_loaderA, criterion, optimizerA, epoch)
-        train_modelB(modelB, train_loaderB, criterion, optimizerB, epoch)
+    # タイプごとにデータを分割
+    for image_type in df['base_image_type'].unique():
+        print(f"\n=== Training model for {image_type} type ===")
+        type_df = df[df['base_image_type'] == image_type]
         
-        # 評価
-        accuracyA = evaluate_modelA(modelA, eval_loaderA)
-        topkB = evaluate_modelB(modelB, eval_loaderB, k=5)
-        print(f"Epoch {epoch} - ModelA Accuracy: {accuracyA:.3f}, ModelB Top-5 Accuracy: {topkB:.3f}")
+        if len(type_df) < 10:
+            print(f"Skipping {image_type}: insufficient data")
+            continue
+            
+        # モデルのパスにタイプを含める
+        type_model_path = os.path.join(model_dir, f'model_{image_type}.pt')
+        
+        # データの準備
+        commands = type_df['command'].tolist()
+        accessed_files = type_df['accessed_files'].tolist()
+        
+        # 語彙とファイルマップの構築
+        vocab = build_vocab(commands)
+        file_map = build_file_map(accessed_files)
+        
+        # データセットの作成と学習の実行
+        train_val_split = train_test_split(commands, accessed_files, test_size=0.2)
+        commands_train, commands_val, files_train, files_val = train_val_split
+        
+        # 以下、既存のモデル学習処理を実行
+        datasetA_train = CommandDatasetA(commands_train, files_train, vocab)
+        datasetA_val = CommandDatasetA(commands_val, files_val, vocab)
+        
+        datasetB_train = CommandDatasetB(commands_train, files_train, vocab, file_map)
+        datasetB_val = CommandDatasetB(commands_val, files_val, vocab, file_map)
+        
+        train_loaderA = DataLoader(datasetA_train, batch_size=32, shuffle=True)
+        eval_loaderA = DataLoader(datasetA_val, batch_size=32, shuffle=False)
+        
+        train_loaderB = DataLoader(datasetB_train, batch_size=32, shuffle=True)
+        eval_loaderB = DataLoader(datasetB_val, batch_size=32, shuffle=False)
+        
+        # ハイパーパラメータ設定
+        vocab_size = len(vocab)
+        file_size = len(file_map)
+        embed_dim = 64
+        hidden_dim = 128
+        num_files = file_size
+        epochs = 10  # エポック数を設定
+        
+        # モデルの初期化
+        modelA = ModelA(vocab_size=vocab_size, embed_dim=embed_dim, hidden_dim=hidden_dim, num_files=num_files)
+        modelB = ModelB(vocab_size=vocab_size, file_size=file_size, embed_dim=embed_dim, hidden_dim=hidden_dim)
+        
+        criterion = nn.CrossEntropyLoss()
+        optimizerA = torch.optim.Adam(modelA.parameters(), lr=0.001)
+        optimizerB = torch.optim.Adam(modelB.parameters(), lr=0.001)
+        
+        # トレーニングループ
+        for epoch in range(1, epochs + 1):
+            train_modelA(modelA, train_loaderA, criterion, optimizerA, epoch)
+            train_modelB(modelB, train_loaderB, criterion, optimizerB, epoch)
+            
+            # 評価
+            accuracyA = evaluate_modelA(modelA, eval_loaderA)
+            topkB = evaluate_modelB(modelB, eval_loaderB, k=5)
+            print(f"Epoch {epoch} - ModelA Accuracy: {accuracyA:.3f}, ModelB Top-5 Accuracy: {topkB:.3f}")
+        
+        # モデルの保存
+        torch.save({
+            'modelA_state': modelA.state_dict(),
+            'modelB_state': modelB.state_dict(),
+            'vocab': vocab,
+            'file_map': file_map
+        }, type_model_path)
+        
+        results[image_type] = {
+            'accuracy_A': accuracyA,
+            'accuracy_B_top5': topkB,
+            'data_size': len(type_df)
+        }
     
-    # 最終推論サンプル
-    sample_cmd = "npm install express"
-    sample_cmd_encoded = encode_command(sample_cmd, vocab)
-    sample_cmd_padded = sample_cmd_encoded + [0]*(10 - len(sample_cmd_encoded)) if len(sample_cmd_encoded) < 10 else sample_cmd_encoded[:10]
-    cmd_input = torch.tensor([sample_cmd_padded], dtype=torch.long)
-    result = combined_inference(modelA, modelB, cmd_input, max_steps=5)
-    print("推定結果:", result)
+    return results
+
+def main():
+    if len(sys.argv) != 3:
+        print("Usage: train_gru_model_v3.py <input_csv> <model_dir>")
+        sys.exit(1)
+    
+    input_csv = sys.argv[1]
+    model_dir = sys.argv[2]
+    os.makedirs(model_dir, exist_ok=True)
+    
+    # CSVファイルの読み込み
+    print(f"Loading data from: {input_csv}")
+    df = pd.read_csv(input_csv)
+    
+    if 'base_image_type' not in df.columns:
+        print("Error: CSV must contain 'base_image_type' column")
+        sys.exit(1)
+    
+    # タイプごとのモデル学習
+    results = train_model_by_type(df, model_dir)
+    
+    # 結果の保存
+    results_path = os.path.join(model_dir, 'training_results.json')
+    with open(results_path, 'w') as f:
+        json.dump(results, f, indent=2)
+    
+    print("\n=== Training Results ===")
+    for image_type, metrics in results.items():
+        print(f"\n{image_type}:")
+        print(f"- Data size: {metrics['data_size']}")
+        print(f"- Model A accuracy: {metrics['accuracy_A']:.4f}")
+        print(f"- Model B top-5 accuracy: {metrics['accuracy_B_top5']:.4f}")
 
 if __name__ == "__main__":
     main()
