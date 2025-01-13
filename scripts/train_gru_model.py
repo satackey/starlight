@@ -23,19 +23,21 @@ import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
     GRU, Dense, Dropout, Embedding, Input, TextVectorization,
-    Concatenate, LayerNormalization, GlobalAveragePooling1D
+    Concatenate, LayerNormalization, GlobalAveragePooling1D, Bidirectional
 )
-from tensorflow.keras.callbacks import EarlyStopping
+from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
+from tensorflow.keras.optimizers import Adam
 from typing import Dict, List, Tuple, Set
 from tqdm import tqdm
 
 class FileAccessPredictor:
-    def __init__(self, max_text_length: int = 50, max_sequence_length: int = 50):
+    def __init__(self, max_text_length: int = 100, max_sequence_length: int = 100):
         self.max_text_length = max_text_length
         self.max_sequence_length = max_sequence_length
         self.command_vectorizer = None
         self.filepath_encoder = None
         self.model = None
+        self.df = None  # データフレームを保持
     
     def save_preprocessed_data(self, X: Dict[str, np.ndarray], y: np.ndarray, 
                              save_dir: str) -> None:
@@ -52,6 +54,10 @@ class FileAccessPredictor:
             pickle.dump(self.command_vectorizer, f)
         with open(os.path.join(save_dir, 'filepath_encoder.pkl'), 'wb') as f:
             pickle.dump(self.filepath_encoder, f)
+        
+        # データフレームを保存
+        if self.df is not None:
+            self.df.to_pickle(os.path.join(save_dir, 'df.pkl'))
     
     def load_preprocessed_data(self, save_dir: str) -> Tuple[Dict[str, np.ndarray], np.ndarray]:
         """前処理済みデータを読み込み"""
@@ -66,14 +72,21 @@ class FileAccessPredictor:
         with open(os.path.join(save_dir, 'filepath_encoder.pkl'), 'rb') as f:
             self.filepath_encoder = pickle.load(f)
         
+        # データフレームを読み込み
+        df_path = os.path.join(save_dir, 'df.pkl')
+        if os.path.exists(df_path):
+            self.df = pd.read_pickle(df_path)
+        
         return X, y
     
     def preprocess_data(self, df: pd.DataFrame) -> Tuple[Dict[str, np.ndarray], np.ndarray]:
         """データの前処理"""
+        self.df = df  # データフレームを保持
+        
         print("コマンドのベクトル化...")
         if self.command_vectorizer is None:
             self.command_vectorizer = TextVectorization(
-                max_tokens=5000,
+                max_tokens=10000,  # 語彙数を増やす
                 output_sequence_length=self.max_text_length
             )
             self.command_vectorizer.adapt(df['command'].fillna(''))
@@ -152,28 +165,37 @@ class FileAccessPredictor:
         """GRUモデルの構築"""
         # コマンド入力
         command_input = Input(shape=(self.max_text_length,), name='command', dtype=tf.int32)
-        command_embedding = Embedding(5000, 32)(command_input)
-        command_features = GlobalAveragePooling1D()(command_embedding)
+        command_embedding = Embedding(10000, 128)(command_input)  # Embedding次元を増やす
+        command_features = Bidirectional(GRU(128, return_sequences=True))(command_embedding)
+        command_features = GlobalAveragePooling1D()(command_features)
+        command_features = Dense(256, activation='relu')(command_features)
+        command_features = LayerNormalization()(command_features)
+        command_features = Dropout(0.5)(command_features)
         
         # アクセス履歴入力
         history_input = Input(shape=(self.max_sequence_length,), name='history', dtype=tf.int32)
         history_embedding = Embedding(
             len(self.filepath_encoder.classes_) + 1,  # +1 はパディング用
-            32
+            128  # Embedding次元を増やす
         )(history_input)
         
         # GRU層
-        gru = GRU(128)(history_embedding)
+        gru = Bidirectional(GRU(256, return_sequences=True))(history_embedding)
+        gru = Bidirectional(GRU(128))(gru)
         gru = LayerNormalization()(gru)
-        gru = Dropout(0.3)(gru)
+        gru = Dropout(0.5)(gru)
         
         # 特徴量の結合
         combined = Concatenate()([gru, command_features])
         
         # 出力層
-        dense = Dense(128, activation='relu')(combined)
-        dropout = Dropout(0.3)(dense)
-        output = Dense(len(self.filepath_encoder.classes_), activation='softmax')(dropout)
+        dense = Dense(512, activation='relu')(combined)
+        dense = LayerNormalization()(dense)
+        dense = Dropout(0.5)(dense)
+        dense = Dense(256, activation='relu')(dense)
+        dense = LayerNormalization()(dense)
+        dense = Dropout(0.5)(dense)
+        output = Dense(len(self.filepath_encoder.classes_), activation='softmax')(dense)
         
         # モデルのコンパイル
         self.model = Model(
@@ -181,7 +203,7 @@ class FileAccessPredictor:
             outputs=output
         )
         self.model.compile(
-            optimizer='adam',
+            optimizer=Adam(learning_rate=0.0001),  # 学習率を下げる
             loss='sparse_categorical_crossentropy',
             metrics=['accuracy']
         )
@@ -210,21 +232,29 @@ class FileAccessPredictor:
             # モデルの構築
             self.build_model()
             
-            # Early Stopping
-            early_stopping = EarlyStopping(
-                monitor='val_loss',
-                patience=3,
-                restore_best_weights=True
-            )
+            # コールバック
+            callbacks = [
+                EarlyStopping(
+                    monitor='val_loss',
+                    patience=5,
+                    restore_best_weights=True
+                ),
+                ReduceLROnPlateau(  # 学習率の自動調整
+                    monitor='val_loss',
+                    factor=0.5,
+                    patience=2,
+                    min_lr=1e-6
+                )
+            ]
             
             # モデルの学習
             history = self.model.fit(
                 X_train,
                 y_train,
                 validation_data=(X_val, y_val),
-                epochs=20,
-                batch_size=64,
-                callbacks=[early_stopping],
+                epochs=50,  # エポック数を増やす
+                batch_size=32,  # バッチサイズを調整
+                callbacks=callbacks,
                 verbose=1
             )
             
@@ -260,12 +290,13 @@ class FileAccessPredictor:
         
         return correct / total if total > 0 else 0
     
-    def print_example_predictions(self, df: pd.DataFrame, X: Dict[str, np.ndarray], y: np.ndarray, 
+    def print_example_predictions(self, X: Dict[str, np.ndarray], y: np.ndarray, 
                                 n_examples: int = 5) -> None:
         """予測例の表示"""
         for i in range(min(n_examples, len(y))):
             print(f"\n予測例 {i+1}:")
-            print(f"コマンド: {df['command'].iloc[i]}")
+            if self.df is not None:
+                print(f"コマンド: {self.df['command'].iloc[i]}")
             
             # アクセス履歴の表示
             history_paths = [
@@ -356,7 +387,7 @@ def main():
     
     # 予測例の表示
     print("\n予測例:")
-    predictor.print_example_predictions(df, X, y)
+    predictor.print_example_predictions(X, y)
 
 if __name__ == "__main__":
     main()
