@@ -24,10 +24,18 @@ GitHub Dockerfile Analyzer
   2. 最初のコマンドのみ出力（--first-output）
 
 使用方法:
-$ python dockerfile_analyzer.py --all-output <全コマンド出力ファイル> --first-output <最初のコマンドのみ出力ファイル> --image <ベースイメージ> [--image <ベースイメージ>...] [--count <イメージごとの処理件数>]
+$ python dockerfile_analyzer.py
+    --all-output <全コマンド出力ファイル>
+    --first-output <最初のコマンドのみ出力ファイル> 
+    --image <ベースイメージ> [--image <ベースイメージ>...] 
+    [--count <イメージごとの処理件数>]
 
 例:
-$ python dockerfile_analyzer.py --all-output dockerfile_commands.csv --first-output dockerfile_commands_first.csv --image node:lts --image ubuntu:22.04 --count 10
+$ python dockerfile_analyzer.py 
+    --all-output dockerfile_commands.csv 
+    --first-output dockerfile_commands_first.csv
+    --image node:lts --image ubuntu:22.04 
+    --count 10
 
 注: --count オプションで指定した件数は、各イメージごとの処理上限となります。
 例えば、--count 10 を指定すると、各イメージに対してそれぞれ最大10件のDockerfileを処理します。
@@ -157,8 +165,14 @@ def cached_request(url: str, headers: Optional[Dict] = None) -> Dict:
     response = requests.get(url, headers=headers)
     
     if response.status_code == 403:
-        rate_limit = response.headers.get('X-RateLimit-Remaining', '不明')
-        reset_time = response.headers.get('X-RateLimit-Reset', '不明')
+        rate_limit = response.headers.get(
+            'X-RateLimit-Remaining',
+            '不明'
+        )
+        reset_time = response.headers.get(
+            'X-RateLimit-Reset',
+            '不明'
+        )
         raise Exception(f"GitHub APIのレート制限に達しました。\n"
                       f"残りリクエスト数: {rate_limit}\n"
                       f"リセット時刻: {reset_time}")
@@ -174,8 +188,8 @@ def cached_request(url: str, headers: Optional[Dict] = None) -> Dict:
 
 def get_github_headers(check_rate_limit: bool = False) -> dict:
     """
-    GitHub APIリクエスト用のヘッダーを生成し、必要に応じてAPIレート制限情報を表示
-    環境変数GITHUB_TOKENが設定されている場合は認証ヘッダーを追加
+    GitHub APIリクエスト用のヘッダーを生成し、 必要に応じてAPIレート制限情報を表示
+    環境変数GITHUB_TOKENが設定されている場合は 認証ヘッダーを追加
     
     Args:
         check_rate_limit: レート制限をチェックするかどうか
@@ -189,7 +203,8 @@ def get_github_headers(check_rate_limit: bool = False) -> dict:
         headers["Authorization"] = f"token {token}"
         # print("GitHub Personal Access Tokenが設定されています（5000リクエスト/時）")
     else:
-        print("警告: GitHub Personal Access Tokenが設定されていません（60リクエスト/時）")
+        print("警告: GitHub Personal Access Tokenが設定されていません"
+              "（60リクエスト/時）")
         print("環境変数GITHUB_TOKENを設定することで制限を緩和できます")
     
     if check_rate_limit:
@@ -220,7 +235,7 @@ def get_github_headers(check_rate_limit: bool = False) -> dict:
 
 def search_dockerfiles(target_image: str, count: Optional[int] = None) -> List[dict]:
     """
-    GitHubのAPIを使用して指定されたイメージを使用しているDockerfileを検索
+    GitHubのAPIを使用して 指定されたイメージを使用している Dockerfileを検索
     
     Args:
         target_image: 検索対象のベースイメージ
@@ -257,7 +272,8 @@ def search_dockerfiles(target_image: str, count: Optional[int] = None) -> List[d
             total_count = data.get('total_count', 0)
             
             # 進捗状況を表示
-            print(f"イメージ {target_image} - ページ {page}/{max_pages} を処理中... ({len(all_items)}/{min(count or total_count, total_count)}件)")
+            print(f"イメージ {target_image} - ページ {page}/{max_pages} を処理中... "
+                  f"({len(all_items)}/{min(count or total_count, total_count)}件)")
             
             # 指定された件数に達した場合は終了
             if count and len(all_items) >= count:
@@ -290,7 +306,8 @@ def get_dockerfile_content(url: str, headers: dict) -> str:
         if 'content' not in data:
             raise Exception(f"予期しないAPIレスポンス形式です: {data}")
             
-        # GitHubのAPIはbase64エンコードされたコンテンツを返すのでデコード
+        # GitHubのAPIは base64 エンコードされた
+        # コンテンツを返すのでデコード
         content = data['content']
         try:
             decoded_content = base64.b64decode(content).decode('utf-8')
@@ -303,14 +320,16 @@ def get_dockerfile_content(url: str, headers: dict) -> str:
 
 def parse_dockerfile(content: str, target_image: str) -> Tuple[bool, str, List[str], List[str]]:
     """
-    Dockerfileをパースして指定されたベースイメージの使用を確認し、ベースイメージ、中間コマンド、RUNコマンドを抽出
+    Dockerfileをパースして指定されたベースイメージの使用を確認し、
+    ベースイメージ、中間コマンド、RUNコマンドを抽出
     
     Args:
         content: Dockerfileの内容
         target_image: 検索対象のベースイメージ
     
     Returns:
-        Tuple[bool, str, List[str], List[str]]: (対象イメージを使用しているか, ベースイメージ, 中間コマンド, RUNコマンドのリスト)
+        Tuple[bool, str, List[str], List[str]]:
+            (対象イメージを使用しているか, ベースイメージ, 中間コマンド, RUNコマンドのリスト)
     """
     lines = content.split('\n')
     run_commands = []
@@ -424,7 +443,8 @@ def main():
                         raw_url = dockerfile['url']
                         repo_name = dockerfile['repository']['full_name']
                         
-                        # URLからrefパラメータを抽出してコミットSHAを取得
+                        # URLからrefパラメータを抽出して
+                        # コミットSHAを取得
                         parsed_url = urlparse(dockerfile['url'])
                         query_params = dict(pair.split('=') for pair in parsed_url.query.split('&') if pair)
                         commit_sha = query_params.get('ref', '')
@@ -437,7 +457,8 @@ def main():
 
                         print(f"処理中 ({i}/{total_files}): {permalink}")
                         
-                        # Dockerfileの内容を取得（レート制限チェックなし）
+                        # Dockerfileの内容を取得 
+                        # （レート制限チェックなし）
                         content = get_dockerfile_content(raw_url, get_github_headers(check_rate_limit=False))
                         
                         # Dockerfileをパース
